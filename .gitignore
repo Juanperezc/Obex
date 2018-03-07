@@ -1,7 +1,8 @@
 vendor/
 node_modules/
 npm-debug.log
-
+storage/framework/views
+storgage/framework/sessions
 # Laravel 5 & Lumen specific
 public/storage
 public/hot
