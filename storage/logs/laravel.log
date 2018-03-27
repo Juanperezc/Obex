@@ -4311,3 +4311,637 @@ Stack trace:
 #18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #19 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #20 {main}  
+[2018-03-27 04:18:23] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}  
+[2018-03-27 04:18:23] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}
+
+Next Illuminate\Database\QueryException: could not find driver (SQL: select * from information_schema.tables where table_schema = obex and table_name = migrations) in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php:647
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#4 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#15 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 {main}  
+[2018-03-27 04:19:12] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}  
+[2018-03-27 04:19:12] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}
+
+Next Illuminate\Database\QueryException: could not find driver (SQL: select * from information_schema.tables where table_schema = obex and table_name = migrations) in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php:647
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#4 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#15 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 {main}  
+[2018-03-27 04:24:31] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}  
+[2018-03-27 04:24:31] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}
+
+Next Illuminate\Database\QueryException: could not find driver (SQL: select * from information_schema.tables where table_schema = obexbd and table_name = migrations) in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php:647
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#4 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#15 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 {main}  
+[2018-03-27 04:25:37] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}  
+[2018-03-27 04:25:37] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}
+
+Next Illuminate\Database\QueryException: could not find driver (SQL: select * from information_schema.tables where table_schema = obexbd and table_name = migrations) in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php:647
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#4 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#15 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 {main}  
+[2018-03-27 04:27:35] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}  
+[2018-03-27 04:27:35] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}
+
+Next Illuminate\Database\QueryException: could not find driver (SQL: select * from information_schema.tables where table_schema = obexbd and table_name = migrations) in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php:647
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#4 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#15 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 {main}  
+[2018-03-27 04:29:37] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}  
+[2018-03-27 04:29:37] development.ERROR: PDOException: could not find driver in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php:68
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(68): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/Connector.php(44): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=loca...', 'root', '', Array)
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connectors/ConnectionFactory.php(183): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 [internal function]: Illuminate\Database\Connectors\ConnectionFactory->Illuminate\Database\Connectors\{closure}()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(882): call_user_func(Object(Closure))
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(903): Illuminate\Database\Connection->getPdo()
+#7 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(392): Illuminate\Database\Connection->getReadPdo()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(318): Illuminate\Database\Connection->getPdoForSelect(true)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(640): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from i...', Array)
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#15 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#16 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#17 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#19 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#21 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#22 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#23 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#24 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#25 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#29 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#30 {main}
+
+Next Illuminate\Database\QueryException: could not find driver (SQL: select * from information_schema.tables where table_schema = obexbd and table_name = migrations) in /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php:647
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(607): Illuminate\Database\Connection->runQueryCallback('select * from i...', Array, Object(Closure))
+#1 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Connection.php(326): Illuminate\Database\Connection->run('select * from i...', Array, Object(Closure))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Schema/MySqlBuilder.php(18): Illuminate\Database\Connection->select('select * from i...', Array)
+#3 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(154): Illuminate\Database\Schema\MySqlBuilder->hasTable('migrations')
+#4 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(538): Illuminate\Database\Migrations\DatabaseMigrationRepository->repositoryExists()
+#5 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(96): Illuminate\Database\Migrations\Migrator->repositoryExists()
+#6 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(62): Illuminate\Database\Console\Migrations\MigrateCommand->prepareDatabase()
+#7 [internal function]: Illuminate\Database\Console\Migrations\MigrateCommand->fire()
+#8 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#9 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#10 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#11 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#12 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Illuminate\Container\Container->call(Array)
+#13 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Command/Command.php(265): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#14 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Console/Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#15 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(826): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 {main}  
+[2018-03-27 04:42:36] development.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: Command "migrate:fresh" is not defined.
+
+Did you mean one of these?
+    migrate:refresh
+    migrate:reset
+    migrate
+    migrate:install
+    migrate:rollback
+    migrate:status in /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php:545
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('migrate:fresh')
+#1 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2018-03-27 04:42:49] development.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: Command "migrate:fresh" is not defined.
+
+Did you mean one of these?
+    migrate:refresh
+    migrate:reset
+    migrate
+    migrate:install
+    migrate:rollback
+    migrate:status in /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php:545
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('migrate:fresh')
+#1 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2018-03-27 04:50:45] development.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: Command "make" is not defined.
+
+Did you mean one of these?
+    make:notification
+    make:controller
+    make:middleware
+    make:migration
+    make:listener
+    make:provider
+    make:command
+    make:request
+    make:policy
+    make:seeder
+    make:event
+    make:model
+    make:auth
+    make:mail
+    make:test
+    make:job in /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php:545
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('make')
+#1 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2018-03-27 05:06:23] development.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: Command "make" is not defined.
+
+Did you mean one of these?
+    make:notification
+    make:controller
+    make:middleware
+    make:migration
+    make:listener
+    make:provider
+    make:command
+    make:request
+    make:policy
+    make:seeder
+    make:event
+    make:model
+    make:auth
+    make:mail
+    make:test
+    make:job in /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php:545
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('make')
+#1 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2018-03-27 05:06:59] development.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: Command "tinker" is not defined. in /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php:545
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('tinker')
+#1 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2018-03-27 05:07:10] development.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: Command "tinker" is not defined. in /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php:545
+Stack trace:
+#0 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(186): Symfony\Component\Console\Application->find('tinker')
+#1 /home/juan/Documents/proyectos/Obex/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /home/juan/Documents/proyectos/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(123): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /home/juan/Documents/proyectos/Obex/artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
