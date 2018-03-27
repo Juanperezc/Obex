@@ -12,4 +12,8 @@
 */
 
 Route::get('/', 'HomeController@index')->name("main");
-Route::get('/minor', 'HomeController@minor')->name("minor");
+Route::get('/minor', 'ContactController@index')->name("minor");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
