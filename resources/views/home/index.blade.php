@@ -8,8 +8,7 @@
                     <div class="col-lg-12">
                         <div class="text-center m-t-lg">
                             <h1>
-                                Welcome in Obex Laravel Starter Project
-                                Welcome {{ $name }}
+                                Welcome in INSPINIA Laravel Starter Project
                             </h1>
                             <small>
                                 It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects.
@@ -17,6 +16,5 @@
                         </div>
                     </div>
                 </div>
-                
-        </div>
+            </div>
 @endsection

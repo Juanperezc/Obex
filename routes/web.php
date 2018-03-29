@@ -10,10 +10,11 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::Auth();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/', 'HomeController@index')->name("main");
-Route::get('/minor', 'ContactController@index')->name("minor");
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+Route::get('/minor', 'HomeController@minor')->name("minor");
+Route::get('/post', function () {
+    return 'Hello World';
+});
