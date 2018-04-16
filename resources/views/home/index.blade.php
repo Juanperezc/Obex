@@ -9,6 +9,11 @@
                         <div class="text-center m-t-lg">
                             <h1>
                                 Welcome in INSPINIA Laravel Starter Project
+                                @if(Auth::user()->hasRole('admin'))
+                                    <div>Acceso como administrador</div>
+                                @else
+                                    <div>Acceso usuario</div>
+                                @endif
                             </h1>
                             <small>
                                 It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects.
