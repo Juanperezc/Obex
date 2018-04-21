@@ -26,6 +26,6 @@ class CreateWorkAreasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('work__areas');
+        Schema::dropIfExists('work_areas');
     }
 }
