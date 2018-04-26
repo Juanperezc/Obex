@@ -8,4 +8,12 @@ class Navigation
             return $output;
         }
     }
+    public static function areActiveRoutes(Array $routes, $output = "active")
+    {
+    foreach ($routes as $route)
+    {
+        if (Route::currentRouteName() == $route) return $output;
+    }
+    }
+    
 }

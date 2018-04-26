@@ -19,10 +19,29 @@
                 </div>
             </li>
             <li class="<?php echo e(isActiveRoute('main')); ?>">
-                <a href="<?php echo e(url('/')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
+                <a href="<?php echo e(url('/')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
             </li>
-            <li class="<?php echo e(isActiveRoute('minor')); ?>">
-                <a href="<?php echo e(url('/minor')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Minor view</span> </a>
+            <li class="<?php echo e(areActiveRoutes(['manage-account.client', 'manage-account.user'])); ?>">
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Gestionar Cuentas</span> </a>
+                <ul class="nav nav-second-level collapse">
+                <li class="<?php echo e(isActiveRoute('manage-account.client')); ?>">
+                <a href="<?php echo e(url('/manage-account/client')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Registrar Clientes</span> </a>
+            </li>
+            </ul>
+            </li>
+            <li class="<?php echo e(isActiveRoute('manage-resource')); ?>">
+                <a href="<?php echo e(url('/manage-resource')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Gestion de recursos</span> </a>
+            </li>
+            <li class="<?php echo e(areActiveRoutes(['report.team', 'report.project'])); ?>" >
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Reportes</span> </a>
+                <ul class="nav nav-second-level collapse">
+                <li class="<?php echo e(isActiveRoute('report.team')); ?>"><a href="<?php echo e(url('/report/team')); ?>" >Equipo</a></li>
+                <li class="<?php echo e(isActiveRoute('report.project')); ?>"><a href="<?php echo e(url('/report/project')); ?>" >Proyecto</a></li></ul>
+            </li>
+         
+          
+            <li class="<?php echo e(isActiveRoute('manage-notification')); ?>">
+                <a href="<?php echo e(url('/manage-notification')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Notificaciones al cliente(?)</span> </a>
             </li>
         </ul>
 
