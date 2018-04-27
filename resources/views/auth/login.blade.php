@@ -8,15 +8,14 @@
                 <h1 class="logo-name">IN+</h1>
 
             </div>
-            <h3>Welcome to IN+</h3>
-            <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+            <h3>Bienvenido a Obex</h3>
+            <p>
                 <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
             </p>
-            <p>Login in. To see it in action.</p>
             <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required="">
+                    <input type="email" name="email" class="form-control" placeholder="Correo" value="{{ old('email') }}" required="">
                     @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -24,20 +23,19 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                    <input type="password" name="password" class="form-control" placeholder="Contraseña" required="">
                     @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                <button type="submit" class="btn btn-primary block full-width m-b">Ingresar</button>
 
-                <a href="#"><small>Forgot password?</small></a>
-                <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                <br>
+                <a href="#">Contacta con el administrador</a>
             </form>
-            <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 © 2014</small> </p>
         </div>
 </div>
 @endsection
