@@ -1,14 +1,26 @@
-/*
- *
- *   INSPINIA - Responsive Admin Theme
- *   version 2.7.1
- *
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
  */
+
+
+require('./bootstrap');
+
+window.Vue = require('vue');
+ 
+
+Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
+const app = new Vue({
+    el: '#app'
+});
 
 $(document).ready(function () {
 
     //var myChart = new Chart();
     
+    //var myChart = new Chart();
     // Add body-small class if window less than 768px
     if ($(this).width() < 769) {
         $('body').addClass('body-small')

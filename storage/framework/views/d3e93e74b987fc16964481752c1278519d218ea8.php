@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <title>INSPINIA - <?php echo $__env->yieldContent('title'); ?> </title>
 
 
@@ -14,7 +15,7 @@
 
   <!-- Wrapper-->
     <div id="wrapper">
-
+<div id='app' >
         <!-- Navigation -->
         <?php echo $__env->make('layouts.navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
@@ -32,11 +33,16 @@
 
         </div>
         <!-- End page wrapper-->
-
+</div>
     </div>
     <!-- End wrapper-->
-
-<script src="<?php echo asset('js/app.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo e(mix('/js/app.js')); ?>"></script>
+    <script src="<?php echo e(mix('/js/main.js')); ?>"></script>
+    <script>
+    window.Laravel = <?php echo json_encode([
+    'csrfToken' => csrf_token(),
+     ]); ?>
+     </script>
 
 <?php $__env->startSection('scripts'); ?>
 <?php echo $__env->yieldSection(); ?>
