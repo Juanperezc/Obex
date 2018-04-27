@@ -12007,3 +12007,234 @@ Did you mean one of these?
 #46 /home/juan/Documents/proyectos/Obex/server.php(21): require_once('/home/juan/Docu...')
 #47 {main}
 "} 
+[2018-04-27 03:22:03] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:22:03] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:23:06] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:23:06] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:27:32] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:27:32] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:28:04] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:28:04] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:28:27] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:28:27] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:30:19] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:30:19] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:30:24] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:30:24] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:31:28] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:31:28] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:32:59] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:32:59] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:35:38] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:35:38] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-04-27 03:36:13] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:181)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"optimi...', Array)
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(353): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-04-27 03:36:13] laravel.ERROR: Command "optimize" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"optimize\" is not defined. at /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php:611)
+[stacktrace]
+#0 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(224): Symfony\\Component\\Console\\Application->find('optimize')
+#1 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/symfony/console/Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/marco/Documents/Universidad/Sistemas 3/proyecto/Obex/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
