@@ -41,8 +41,8 @@
                                     12
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="font-bold">RANKING</div>
-                                    4th
+                                    <div class="font-bold">ID-Proyecto</div>
+                                    0001
                                 </div>
                                 <div class="col-sm-4 text-right">
                                     <div class="font-bold">Presupuesto</div>
@@ -83,8 +83,8 @@
                                     24
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="font-bold">RANKING</div>
-                                    3th
+                                    <div class="font-bold">ID-Proyecto</div>
+                                    0003
                                 </div>
                                 <div class="col-sm-4 text-right">
                                     <div class="font-bold">Presupuesto</div>
@@ -124,8 +124,8 @@
                                     11
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="font-bold">RANKING</div>
-                                    6th
+                                    <div class="font-bold">ID-Proyecto</div>
+                                    0006
                                 </div>
                                 <div class="col-sm-4 text-right">
                                     <div class="font-bold">Presupuesto</div>
@@ -166,8 +166,8 @@
                                     43
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="font-bold">RANKING</div>
-                                    1th
+                                    <div class="font-bold">ID-Proyecto</div>
+                                    0002
                                 </div>
                                 <div class="col-sm-4 text-right">
                                     <div class="font-bold">Presupuesto</div>

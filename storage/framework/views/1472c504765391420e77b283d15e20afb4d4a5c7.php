@@ -6,8 +6,10 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">Usuario: Admin</strong>
-                            </span> <span class="text-muted text-xs block">Menu: Admin<b class="caret"></b></span>
+                                <img class="logo_menu" src="<?php echo e(asset('images/LOGO2v2.png')); ?>"/>
+                                <br/>
+                                <strong class="font-bold">Example user</strong>
+                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">

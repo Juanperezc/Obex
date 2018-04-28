@@ -6,7 +6,8 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <img src="{{asset('images/LogoSinSombra.png')}}"/>
+                                <img class="logo_menu" src="{{asset('images/LOGO2v2.png')}}"/>
+                                <br/>
                                 <strong class="font-bold">Example user</strong>
                             </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
                         </span>

@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <title>INSPINIA - <?php echo $__env->yieldContent('title'); ?> </title>
 
+    <link href="/public/images/Obex.ico" rel="shortcut icon" type="image/x-icon" />
 
     <link rel="stylesheet" href="<?php echo asset('css/vendor.css'); ?>" />
     <link rel="stylesheet" href="<?php echo asset('css/app.css'); ?>" />
