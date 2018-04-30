@@ -4,16 +4,17 @@
             <li class="nav-header">
                 <div class="dropdown profile-element">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear">
+                       <center> <span class="clear">
                             <span class="block m-t-xs">
-                                <img class="logo_menu" src="{{asset('images/LOGO2v2.png')}}"/>
+                                <!--<img class="logo_menu" src="{{asset('images/LOGO2v2.png')}}"/>-->
+                                <img alt="image" class="img-profile" src="/images/a5.png">
                                 <br/>
-                                <strong class="font-bold">Example user</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
-                        </span>
+                                <strong class="font-bold">{{Auth::user()->name}}</strong>
+                          <!--  </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span> -->
+                        </span></center>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="#">Salir</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">

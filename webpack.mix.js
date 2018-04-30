@@ -1,10 +1,10 @@
 
 const { mix } = require('laravel-mix');
 
-mix.copy('resources/assets/sass/patterns', 'public/css/');
+mix.copy('resources/assets/sass/patterns', 'public/css');
 mix.copy('resources/assets/vendor/bootstrap/fonts', 'public/fonts');
 mix.copy('resources/assets/vendor/font-awesome/fonts', 'public/fonts')
-mix.copy('resources/assets/images', 'public/images/'); ///
+mix.copy('resources/assets/images', 'public/images'); ///
 mix.combine([
     'resources/assets/vendor/bootstrap/css/bootstrap.css',
     'resources/assets/vendor/animate/animate.css',
