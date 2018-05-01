@@ -24,6 +24,7 @@
             <li class="{{ isActiveRoute('main') }}">
                 <a href="{{ url('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
             </li>
+            @role('admin')
             <li class="{{ areActiveRoutes(['manage-account.client', 'manage-account.user']) }}">
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Gestionar Cuentas</span> </a>
                 <ul class="nav nav-second-level collapse">
@@ -32,15 +33,20 @@
             </li>
             </ul>
             </li>
+            @endrole
+            @role('admin|manager')
             <li class="{{ isActiveRoute('manage-resource') }}">
                 <a href="{{ url('/manage-resource') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Gestion de recursos</span> </a>
             </li>
+            @endrole
+            @role('admin|manager')
             <li class="{{ areActiveRoutes(['report.team', 'report.project']) }}" >
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Reportes</span> </a>
                 <ul class="nav nav-second-level collapse">
                 <li class="{{ isActiveRoute('report.team') }}"><a href="{{ url('/report/team') }}" >Equipo</a></li>
                 <li class="{{ isActiveRoute('report.project') }}"><a href="{{ url('/report/project') }}" >Proyecto</a></li></ul>
             </li>
+            @endrole
          
           
             <li class="{{ isActiveRoute('manage-notification') }}">

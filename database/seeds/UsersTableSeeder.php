@@ -17,19 +17,20 @@ class UsersTableSeeder extends Seeder
     {
 
 
-        $userRole 			= Role::where('name', '=', 'User')->first();
-        $adminRole 			= Role::where('name', '=', 'Admin')->first();
+        $adminRole 	= Role::where('name', '=', 'Admin')->first();
+		$employeeRole 	= Role::where('name', '=', 'Employee')->first();
+		$projectMRole	= Role::where('name', '=', 'Manager')->first();
 		$permissions 		= Permission::all();
 
 	    /**
 	     * Add Users
 	     *
 	     */
-        if (User::where('email', '=', 'admin@admin.com')->first() === null) {
+        if (User::where('email', '=', 'admin@obex.com')->first() === null) {
 
 	        $newUser = User::create([
 	            'name' => 'Admin',
-	            'email' => 'admin@admin.com',
+	            'email' => 'admin@obex.com',
 	            'password' => bcrypt('password'),
 	        ]);
 
@@ -40,16 +41,31 @@ class UsersTableSeeder extends Seeder
 
         }
 
-        if (User::where('email', '=', 'user@user.com')->first() === null) {
+        if (User::where('email', '=', 'user@obex.com')->first() === null) {
 
 	        $newUser = User::create([
 	            'name' => 'User',
-	            'email' => 'user@user.com',
+	            'email' => 'user@obex.com',
 	            'password' => bcrypt('password'),
 	        ]);
 
-	        $newUser;
-	        $newUser->attachRole($userRole);
+			$newUser->attachRole($employeeRole );
+			foreach ($permissions as $permission) {
+				$newUser->attachPermission($permission);
+			}
+
+		}
+		if (User::where('email', '=', 'projectmanager@obex.com')->first() === null) {
+
+	        $newUser = User::create([
+	            'name' => 'Project-Manager',
+	            'email' => 'projectmanager@obex.com',
+	            'password' => bcrypt('password'),
+	        ]);
+			$newUser->attachRole($projectMRole);
+			foreach ($permissions as $permission) {
+				$newUser->attachPermission($permission);
+			}
 
         }
 

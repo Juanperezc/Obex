@@ -6,11 +6,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>INSPINIA - @yield('title') </title>
 
-   <!-- <link href="/public/images/Obex.ico" rel="shortcut icon" type="image/x-icon" />
--->
+    <!--<link href="/images/Obex.ico" rel="shortcut icon" type="image/x-icon" />-->
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
-
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 

@@ -28,21 +28,46 @@ class RolesTableSeeder extends Seeder
         	]);
 	    }
 
-    	if (Role::where('name', '=', 'User')->first() === null) {
+    	if (Role::where('name', '=', 'Employee')->first() === null) {
 	        $userRole = Role::create([
-	            'name' => 'User',
-	            'slug' => 'user',
+	            'name' => 'Employee',
+	            'slug' => 'employee',
 	            'description' => 'User Role',
-	            'level' => 1,
+	            'level' => 5,
 	        ]);
 	    }
 
-    	if (Role::where('name', '=', 'Unverified')->first() === null) {
+    	if (Role::where('name', '=', 'Manager')->first() === null) {
 	        $userRole = Role::create([
-	            'name' => 'Unverified',
-	            'slug' => 'unverified',
-	            'description' => 'Unverified Role',
-	            'level' => 0,
+	            'name' => 'Manager',
+	            'slug' => 'manager',
+	            'description' => 'Proyect-Manager',
+	            'level' => 5,
+	        ]);
+		}
+		if (Role::where('name', '=', 'Secretary')->first() === null) {
+	        $userRole = Role::create([
+	            'name' => 'Secretary',
+	            'slug' => 'secretary',
+	            'description' => 'Secretary',
+	            'level' => 5,
+	        ]);
+		}
+		/* Mercadeo y postventa */ 
+		if (Role::where('name', '=', 'Marketing')->first() === null) {
+	        $userRole = Role::create([
+	            'name' => 'Marketing',
+	            'slug' => 'marketing',
+	            'description' => 'marketing',
+	            'level' => 5,
+	        ]);
+		}
+		if (Role::where('name', '=', 'Post-sale')->first() === null) {
+	        $userRole = Role::create([
+	            'name' => 'Post-sale',
+	            'slug' => 'post-sale',
+	            'description' => 'post-sale',
+	            'level' => 5,
 	        ]);
 	    }
 

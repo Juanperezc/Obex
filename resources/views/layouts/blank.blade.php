@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>INSPINIA - @yield('title') </title>
-
-   <!--<link href="/public/images/Obex.ico" rel="shortcut icon" type="image/x-icon" />
--->
+  <!--  <link href="/images/Obex.ico" rel="shortcut icon" type="image/x-icon" /> -->
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
-
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
-<body class="gray-bg">
+<body class="gray-bg body-login">
 
   <div id='app' >
             <!-- Main view  -->

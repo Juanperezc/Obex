@@ -14,21 +14,22 @@ Route::Auth();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/', 'HomeController@index')->name("main");
-Route::get('/minor', 'HomeController@minor')->name("minor");
-Route::group(['prefix' => 'report', 'as'=>'report.'], function () {  //middleware(['first', 'second'])->
+Route::get('/minor', 'HomeController@minor')->name("minor")->middleware('role:admin');
+Route::group(['prefix' => 'report', 'as'=>'report.', 'middleware' => ['role:admin|manager']], function () {  //middleware(['first', 'second'])->
     Route::get('/project', 'ReportController@project')->name("project");
     Route::get('/team', 'ReportController@team')->name("team");
 });
 Route::get('/post', function () {
     return 'Hello World';
 });
-Route::group(['prefix' => 'manage-account', 'as'=>'manage-account.'], function () {  //middleware(['first', 'second'])->
+Route::group(['prefix' => 'manage-account', 'as'=>'manage-account.', 'middleware' => ['role:admin']], function () {  //middleware(['first', 'second'])->
     Route::view('/client', 'other/building')->name("client");
     Route::view('/user', 'other/building')->name("user");
 });
 
-Route::view('/manage-resource', 'other/building')->name("manage-resource");
-Route::view('/manage-notification', 'other/building')->name("manage-notification");
+Route::view('/manage-resource', 'other/building')->name("manage-resource")->middleware('role:admin|manager');
+Route::view('/manage-notification', 'other/building')->name("manage-notification")->middleware('role:admin');
+
 /*// routes/web.php
 Route::group(['prefix' => 'books'], function () {
 // First Route

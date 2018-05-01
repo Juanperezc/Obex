@@ -67,3 +67,13 @@
     max-width: 50%;
     height: auto;
 }
+.logo-login{
+  height: 250px;
+    width: 100%;
+}
+.body-login{
+  background-image: url("/images/fondo.png");
+  background-repeat: repeat-x,repeat-y;
+  background-size: contain;  
+  font-family: 'Orbitron', sans-serif;
+}
