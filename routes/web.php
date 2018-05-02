@@ -16,7 +16,10 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/', 'HomeController@index')->name("main");
 Route::get('/minor', 'HomeController@minor')->name("minor")->middleware('role:admin');
 Route::group(['prefix' => 'report', 'as'=>'report.', 'middleware' => ['role:admin|manager']], function () {  //middleware(['first', 'second'])->
-    Route::get('/project', 'ReportController@project')->name("project");
+    Route::group(['prefix' => 'project', 'as'=>'project'], function () {  //middleware(['first', 'second'])->
+    Route::get('/', 'ReportController@project');
+    Route::get('/{id}', 'ReportController@project_detail');
+    }); 
     Route::get('/team', 'ReportController@team')->name("team");
 });
 Route::get('/post', function () {

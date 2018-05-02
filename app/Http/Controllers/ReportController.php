@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
-    //
     public function project()
     {
         return view('reports/project');
@@ -15,4 +14,9 @@ class ReportController extends Controller
     {
         return view('reports/team');
     }
+    public function project_detail()
+    {
+        return view('reports/project-detail/index');
+    }
+
 }
