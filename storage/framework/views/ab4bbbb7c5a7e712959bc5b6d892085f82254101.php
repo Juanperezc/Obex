@@ -4,23 +4,27 @@
             <li class="nav-header">
                 <div class="dropdown profile-element">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear">
+                       <center> <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">Example user</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
-                        </span>
+                                <!--<img class="logo_menu" src="<?php echo e(asset('images/LOGO2v2.png')); ?>"/>-->
+                                <img alt="image" class="img-profile" src="/images/a5.png">
+                                <br/>
+                                <strong class="font-bold"><?php echo e(Auth::user()->name); ?></strong>
+                          <!--  </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span> -->
+                        </span></center>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="#">Salir</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
-                    IN+
+                    Obex
                 </div>
             </li>
             <li class="<?php echo e(isActiveRoute('main')); ?>">
-                <a href="<?php echo e(url('/')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+                <a href="<?php echo e(url('/')); ?>"><i class="fa fa-home"></i> <span class="nav-label">Dashboard</span></a>
             </li>
+            <?php if (Auth::check() && Auth::user()->hasRole('admin')): ?>
             <li class="<?php echo e(areActiveRoutes(['manage-account.client', 'manage-account.user'])); ?>">
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Gestionar Cuentas</span> </a>
                 <ul class="nav nav-second-level collapse">
@@ -29,19 +33,24 @@
             </li>
             </ul>
             </li>
+            <?php endif; ?>
+            <?php if (Auth::check() && Auth::user()->hasRole('admin|manager')): ?>
             <li class="<?php echo e(isActiveRoute('manage-resource')); ?>">
                 <a href="<?php echo e(url('/manage-resource')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Gestion de recursos</span> </a>
             </li>
+            <?php endif; ?>
+            <?php if (Auth::check() && Auth::user()->hasRole('admin|manager')): ?>
             <li class="<?php echo e(areActiveRoutes(['report.team', 'report.project'])); ?>" >
-                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Reportes</span> </a>
+                <a href="#"><i class="fa fa-archive"></i> <span class="nav-label">Reportes</span> </a>
                 <ul class="nav nav-second-level collapse">
                 <li class="<?php echo e(isActiveRoute('report.team')); ?>"><a href="<?php echo e(url('/report/team')); ?>" >Equipo</a></li>
                 <li class="<?php echo e(isActiveRoute('report.project')); ?>"><a href="<?php echo e(url('/report/project')); ?>" >Proyecto</a></li></ul>
             </li>
+            <?php endif; ?>
          
           
             <li class="<?php echo e(isActiveRoute('manage-notification')); ?>">
-                <a href="<?php echo e(url('/manage-notification')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Notificaciones al cliente(?)</span> </a>
+                <a href="<?php echo e(url('/manage-notification')); ?>"><i class="fa fa-bullhorn"></i> <span class="nav-label">Notificaciones al cliente(?)</span> </a>
             </li>
         </ul>
 

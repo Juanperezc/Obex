@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Minor page')
+@section('title', 'Proyectos')
 
 @section('content')
   <div class="wrapper wrapper-content animated fadeInRight">
@@ -34,12 +34,12 @@
                         <span class="label label-primary">Activo</span>
                     </td>
                     <td class="project-title">
-                        <a href="project_detail.html">Contract with Zender Company</a>
+                        <a href="project_detail.html">Contrato con Zender Company</a>
                         <br>
-                        <small>Created 14.08.2014</small>
+                        <small>Creado el 14.08.2014</small>
                     </td>
                     <td class="project-completion">
-                            <small>Completion with: 48%</small>
+                            <small>Completación: 48%</small>
                             <div class="progress progress-mini">
                                 <div style="width: 48%;" class="progress-bar"></div>
                             </div>
@@ -61,12 +61,12 @@
                         <span class="label label-primary">Activo</span>
                     </td>
                     <td class="project-title">
-                        <a href="project_detail.html">There are many variations of passages</a>
+                        <a href="project_detail.html">Hay diferentes variaciones</a>
                         <br>
-                        <small>Created 11.08.2014</small>
+                        <small>Creado el 11.08.2014</small>
                     </td>
                     <td class="project-completion">
-                        <small>Completion with: 28%</small>
+                        <small>Completación: 28%</small>
                         <div class="progress progress-mini">
                             <div style="width: 28%;" class="progress-bar"></div>
                         </div>
@@ -86,12 +86,12 @@
                         <span class="label label-default">Inactivo</span>
                     </td>
                     <td class="project-title">
-                        <a href="project_detail.html">Many desktop publishing packages and web</a>
+                        <a href="project_detail.html">Muchos paquetes disponibles para la web</a>
                         <br>
-                        <small>Created 10.08.2014</small>
+                        <small>Creado el 10.08.2014</small>
                     </td>
                     <td class="project-completion">
-                        <small>Completion with: 8%</small>
+                        <small>Completación: 8%</small>
                         <div class="progress progress-mini">
                             <div style="width: 8%;" class="progress-bar"></div>
                         </div>
@@ -110,12 +110,12 @@
                         <span class="label label-primary">Activo</span>
                     </td>
                     <td class="project-title">
-                        <a href="project_detail.html">Letraset sheets containing</a>
+                        <a href="project_detail.html">Lorem ipsum dolor sit, amersdfa</a>
                         <br>
-                        <small>Created 22.07.2014</small>
+                        <small>Creado el 22.07.2014</small>
                     </td>
                     <td class="project-completion">
-                        <small>Completion with: 83%</small>
+                        <small>Completación: 83%</small>
                         <div class="progress progress-mini">
                             <div style="width: 83%;" class="progress-bar"></div>
                         </div>
@@ -136,12 +136,12 @@
                         <span class="label label-primary">Activo</span>
                     </td>
                     <td class="project-title">
-                        <a href="project_detail.html">Letraset sheets containing</a>
+                        <a href="project_detail.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis non doloremque, at sapiente atque a qui veritatis, nihil hic fugiat totam! Aliquid nobis culpa maiores tempora ipsum laborum itaque blanditiis.</a>
                         <br>
-                        <small>Created 22.07.2014</small>
+                        <small>Creado el 22.07.2014</small>
                     </td>
                     <td class="project-completion">
-                        <small>Completion with: 83%</small>
+                        <small>Completación: 83%</small>
                         <div class="progress progress-mini">
                             <div style="width: 83%;" class="progress-bar"></div>
                         </div>

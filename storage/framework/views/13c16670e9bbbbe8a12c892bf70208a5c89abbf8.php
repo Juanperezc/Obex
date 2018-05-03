@@ -2,8 +2,7 @@
 <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
             <div>
-
-                <h1 class="logo-name">IN+</h1>
+<img class="logo-login"src="/images/logo.png"></img>
 
             </div>
             <h3>Bienvenido a Obex</h3>

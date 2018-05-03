@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Minor page')
+@section('title', 'Proyecto')
 
 @section('content')
   <div class="wrapper wrapper-content animated fadeInRight">
@@ -76,11 +76,11 @@
                                     <table class="table table-striped">
                                         <thead>
                                         <tr>
-                                            <th>Status</th>
-                                            <th>Title</th>
-                                            <th>Start Time</th>
-                                            <th>End Time</th>
-                                            <th>Comments</th>
+                                            <th>Estatus</th>
+                                            <th>Titulo</th>
+                                            <th>Inicio</th>
+                                            <th>Finalizacion</th>
+                                            <th>Comentarios</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -89,7 +89,7 @@
                                                 <span class="label label-primary"><i class="fa fa-check"></i> Completed</span>
                                             </td>
                                             <td>
-                                               Create project in webapp
+                                                Crear proyecto en webapp
                                             </td>
                                             <td>
                                                12.07.2014 10:10:1
@@ -119,7 +119,7 @@
                                             </td>
                                             <td>
                                                 <p class="small">
-                                                    Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                                                    varias versiones han evolucionado con los años.
                                                 </p>
                                             </td>
 
@@ -129,7 +129,7 @@
                                                 <span class="label label-primary"><i class="fa fa-check"></i> Sent</span>
                                             </td>
                                             <td>
-                                                There are many variations
+                                                Hay muchas variaciones
                                             </td>
                                             <td>
                                                 12.07.2014 10:10:1
@@ -139,7 +139,7 @@
                                             </td>
                                             <td>
                                                 <p class="small">
-                                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nihil quibusdam maxime non assumenda. Consequatur praesentium fugit exercitationem incidunt, illum, optio voluptatum, debitis aliquid eligendi obcaecati error ab laborum rerum.
                                                 </p>
                                             </td>
 
@@ -149,7 +149,7 @@
                                                 <span class="label label-primary"><i class="fa fa-check"></i> Reported</span>
                                             </td>
                                             <td>
-                                                Latin words
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta facere neque, est, corporis sint officia minus nisi adipisci pariatur fuga commodi recusandae sed laudantium itaque. Voluptatem rem molestias voluptatum pariatur!
                                             </td>
                                             <td>
                                                 12.07.2014 10:10:1
@@ -159,7 +159,7 @@
                                             </td>
                                             <td>
                                                 <p class="small">
-                                                    Latin words, combined with a handful of model sentence structures
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur non eos esse velit, dolorum aspernatur. Et dolores placeat dolore odio, delectus cumque ut reprehenderit vitae unde libero, ab, voluptatem atque.
                                                 </p>
                                             </td>
 
