@@ -22,7 +22,9 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <input type="password" name="password" class="form-control" placeholder="Contraseña" required="">
+                <div class="input-group">
+                   <input id="password" type="password" name="password" class="form-control" placeholder="Contraseña" required="">
+                   <span class="input-group-btn"><button-password></button-password></span></div>
                     @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -35,6 +37,11 @@
                 <br>
                 <a href="#">Contacta con el administrador</a>
             </form>
+            
         </div>
+  
+
+
 </div>
+
 @endsection

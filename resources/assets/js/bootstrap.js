@@ -18,7 +18,7 @@ require('bootstrap-sass');
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = require('vue');
+//window.Vue = require('vue');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -58,6 +58,12 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap-sass');
+    require('metismenu');
+    require('jquery-slimscroll');
+require('select2');
+//require('datatables.net-bs');
+require("bootstrap-slider");
+require("ion-rangeslider");
 } catch (e) {}
 
 /**

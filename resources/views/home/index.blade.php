@@ -31,6 +31,8 @@
                                 <h1 class="no-margins">275,800</h1>
                                 <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i></div>
                                 <small>New orders</small>
+                          
+                          
                             </div>
                         </div>
                     </div>
