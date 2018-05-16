@@ -26,28 +26,28 @@
             </li>
             <?php if (Auth::check() && Auth::user()->hasRole('admin')): ?>
             <li class="<?php echo e(areActiveRoutes(['manage-account.client', 'manage-account.user'])); ?>">
-                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Gestionar Cuentas</span> </a>
+                <a href="#"><i class="fa fa-gears"></i> <span class="nav-label">Gestionar Cuentas</span> </a>
                 <ul class="nav nav-second-level collapse">
                 <li class="<?php echo e(isActiveRoute('manage-account.client')); ?>">
-                <a href="<?php echo e(url('/manage-account/client')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Registrar Clientes</span> </a>
+                <a href="<?php echo e(url('/manage-account/client')); ?>"><i class="fa fa-plus"></i> <span class="nav-label">Registrar Clientes</span> </a>
             </li>
             </ul>
             </li>
             <?php endif; ?>
             <?php if (Auth::check() && Auth::user()->hasRole('admin|manager')): ?>
             <li class="<?php echo e(areActiveRoutes(['project.view','project.create','project.resources','project.modify'])); ?>">
-                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Proyectos</span> </a>
+                <a href="#"><i class="fa fa-book"></i> <span class="nav-label">Proyectos</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="<?php echo e(isActiveRoute('project.view')); ?>"><a href="<?php echo e(url('/project/view')); ?>" >Ver Proyectos</a></li>
-                <li class="<?php echo e(isActiveRoute('project.create')); ?>"><a href="<?php echo e(url('/project/create')); ?>">Crear Proyecto</a></li>
-                <li class="<?php echo e(isActiveRoute('project.resources')); ?>"><a href="<?php echo e(url('/project/resources')); ?>" >Gestionar Recursos</a></li>
-                <li class="<?php echo e(isActiveRoute('project.modify')); ?>"><a href="<?php echo e(url('/project/modify')); ?>">Modificar o eliminar</a></li>
+                <li class="<?php echo e(isActiveRoute('project.view')); ?>"><a href="<?php echo e(url('/project/view')); ?>" ><i class="fa fa-eye"></i>Ver Proyectos</a></li>
+                <li class="<?php echo e(isActiveRoute('project.create')); ?>"><a href="<?php echo e(url('/project/create')); ?>"><i class="fa fa-plus"></i>Crear Proyecto</a></li>
+                <li class="<?php echo e(isActiveRoute('project.resources')); ?>"><a href="<?php echo e(url('/project/resources')); ?>" ><i class="fa fa-th-large"></i>Gestionar Recursos</a></li>
+                <li class="<?php echo e(isActiveRoute('project.modify')); ?>"><a href="<?php echo e(url('/project/modify')); ?>"><i class="fa fa-exclamation-triangle"></i>Modificar o eliminar</a></li>
                 </ul>
             </li>
             <?php endif; ?>
             <?php if (Auth::check() && Auth::user()->hasRole('admin|manager')): ?>
             <li class="<?php echo e(areActiveRoutes(['team.view','team.create','team.modify'])); ?>">
-                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Equipos</span> </a>
+                <a href="#"><i class="fa fa-group"></i> <span class="nav-label">Equipos</span> </a>
                 <ul class="nav nav-second-level collapse">
                 <li class="<?php echo e(isActiveRoute('team.view')); ?>"><a href="<?php echo e(url('/team/view')); ?>" >Ver Equipos</a></li>
                 <li class="<?php echo e(isActiveRoute('team.create')); ?>"><a href="<?php echo e(url('/team/create')); ?>" >Crear Equipo</a></li>
@@ -57,7 +57,7 @@
             <?php endif; ?>
             <?php if (Auth::check() && Auth::user()->hasRole('admin|manager')): ?>
             <li class="<?php echo e(areActiveRoutes(['report.team', 'report.project'])); ?>" >
-                <a href="#"><i class="fa fa-archive"></i> <span class="nav-label">Reportes</span> </a>
+                <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Reportes</span> </a>
                 <ul class="nav nav-second-level collapse">
                 <li class="<?php echo e(isActiveRoute('report.team')); ?>"><a href="<?php echo e(url('/report/team')); ?>" >Equipo</a></li>
                 <li class="<?php echo e(isActiveRoute('report.project')); ?>"><a href="<?php echo e(url('/report/project')); ?>" >Proyecto</a></li>
