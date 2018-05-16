@@ -25,12 +25,13 @@
                 <a href="{{ url('/') }}"><i class="fa fa-home"></i> <span class="nav-label">Dashboard</span></a>
             </li>
             @role('admin')
-            <li class="{{ areActiveRoutes(['manage-account.client', 'manage-account.user']) }}">
+            <li class="{{ areActiveRoutes(['manage-account.user-register', 'manage-account.user-management','manage-account.client-register','manage-account.client-management']) }}">
                 <a href="#"><i class="fa fa-gears"></i> <span class="nav-label">Gestionar Cuentas</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="{{ isActiveRoute('manage-account.client') }}">
-                <a href="{{ url('/manage-account/client') }}"><i class="fa fa-plus"></i> <span class="nav-label">Registrar Clientes</span> </a>
-            </li>
+                <li class="{{ isActiveRoute('manage-account.client-register') }}"><a href="{{ url('/manage-account/client-register') }}"><i class="fa fa-plus"></i> Registrar Clientes </a></li>
+                <li class="{{ isActiveRoute('manage-account.user-register') }}"><a href="{{ url('/manage-account/user-register') }}"><i class="fa fa-plus"></i>Registrar Usuarios</a></li>
+                <li class="{{ isActiveRoute('manage-account.client-management') }}"><a href="{{ url('/manage-account/client-management') }}"><i class="fa fa-exclamation-triangle"></i>Modificar o Eliminar Clientes </a></li>
+                <li class="{{ isActiveRoute('manage-account.user-management') }}"><a href="{{ url('/manage-account/user-management') }}"><i class="fa fa-exclamation-triangle"></i>Modificar o Eliminar Usuarios</a></li>
             </ul>
             </li>
             @endrole
@@ -40,7 +41,7 @@
                 <ul class="nav nav-second-level collapse">
                 <li class="{{ isActiveRoute('project.view') }}"><a href="{{ url('/project/view') }}" ><i class="fa fa-eye"></i>Ver Proyectos</a></li>
                 <li class="{{ isActiveRoute('project.create') }}"><a href="{{ url('/project/create') }}"><i class="fa fa-plus"></i>Crear Proyecto</a></li>
-                <li class="{{ isActiveRoute('project.resources') }}"><a href="{{ url('/project/resources') }}" ><i class="fa fa-th-large"></i>Gestionar Recursos</a></li>
+                <li class="{{ isActiveRoute('project.resources') }}"><a href="{{ url('/project/resources') }}" ><i class="fa fa-stack-overflow"></i>Gestionar Recursos</a></li>
                 <li class="{{ isActiveRoute('project.modify') }}"><a href="{{ url('/project/modify') }}"><i class="fa fa-exclamation-triangle"></i>Modificar o eliminar</a></li>
                 </ul>
             </li>
@@ -49,9 +50,9 @@
             <li class="{{ areActiveRoutes(['team.view','team.create','team.modify']) }}">
                 <a href="#"><i class="fa fa-group"></i> <span class="nav-label">Equipos</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="{{ isActiveRoute('team.view') }}"><a href="{{ url('/team/view') }}" >Ver Equipos</a></li>
-                <li class="{{ isActiveRoute('team.create') }}"><a href="{{ url('/team/create') }}" >Crear Equipo</a></li>
-                <li class="{{ isActiveRoute('team.modify') }}"><a href="{{ url('/team/modify') }}">Modificar o eliminar Equipo</a></li>
+                <li class="{{ isActiveRoute('team.view') }}"><a href="{{ url('/team/view') }}" ><i class="fa fa-eye"></i>Ver Equipos</a></li>
+                <li class="{{ isActiveRoute('team.create') }}"><a href="{{ url('/team/create') }}" ><i class="fa fa-plus"></i>Crear Equipo</a></li>
+                <li class="{{ isActiveRoute('team.modify') }}"><a href="{{ url('/team/modify') }}"><i class="fa fa-exclamation-triangle"></i>Modificar o eliminar Equipo</a></li>
                 </ul>
             </li>
             @endrole
@@ -59,8 +60,8 @@
             <li class="{{ areActiveRoutes(['report.team', 'report.project']) }}" >
                 <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Reportes</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="{{ isActiveRoute('report.team') }}"><a href="{{ url('/report/team') }}" >Equipo</a></li>
-                <li class="{{ isActiveRoute('report.project') }}"><a href="{{ url('/report/project') }}" >Proyecto</a></li>
+                <li class="{{ isActiveRoute('report.team') }}"><a href="{{ url('/report/team') }}" ><i class="fa fa-group"></i>Equipo</a></li>
+                <li class="{{ isActiveRoute('report.project') }}"><a href="{{ url('/report/project') }}" ><i class="fa fa-stack-overflow"></i>Proyecto</a></li>
                 </ul>
             </li>
             @endrole
