@@ -26,12 +26,29 @@ Route::get('/post', function () {
     return 'Hello World';
 });
 Route::group(['prefix' => 'manage-account', 'as'=>'manage-account.', 'middleware' => ['role:admin']], function () {  //middleware(['first', 'second'])->
-    Route::view('/client', 'other/building')->name("client");
-    Route::view('/user', 'other/building')->name("user");
+    Route::view('/client-register', 'account-management/client-register')->name("client-register");
+    Route::view('/user-register', 'account-management/user-register')->name("user-register");
+    Route::view('/client-management', 'account-management/client-management')->name("client-management");
+    Route::view('/user-management', 'account-management/user-management')->name("user-management");
 });
 
-Route::view('/manage-resource', 'other/building')->name("manage-resource")->middleware('role:admin|manager');
+//Route::view('/manage-resource', 'other/building')->name("manage-resource")->middleware('role:admin|manager');
 Route::view('/manage-notification', 'other/building')->name("manage-notification")->middleware('role:admin');
+Route::group(['prefix' => 'project', 'as'=>'project.', 'middleware' => ['role:admin|manager']], function () {
+
+Route::view('/create', 'projects/create')->name("create");
+Route::view('/view', 'projects/view')->name("view");
+Route::view('/resources', 'projects/resources')->name("resources");
+Route::view('/modify', 'projects/modify')->name("modify");
+});
+
+Route::group(['prefix' => 'team', 'as'=>'team.', 'middleware' => ['role:admin|manager']], function () {
+
+    Route::view('/view', 'teams/view')->name("view");
+    Route::view('/create', 'teams/create')->name("create");
+    Route::view('/modify', 'teams/modify')->name("modify");
+    });
+
 
 /*// routes/web.php
 Route::group(['prefix' => 'books'], function () {

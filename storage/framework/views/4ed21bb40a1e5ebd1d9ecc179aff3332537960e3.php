@@ -14,6 +14,7 @@
 <body class="gray-bg body-login">
 
   <div id='app' >
+ 
             <!-- Main view  -->
             <?php echo $__env->yieldContent('content'); ?>
      
