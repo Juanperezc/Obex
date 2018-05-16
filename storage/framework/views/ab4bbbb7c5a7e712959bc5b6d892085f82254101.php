@@ -35,8 +35,24 @@
             </li>
             <?php endif; ?>
             <?php if (Auth::check() && Auth::user()->hasRole('admin|manager')): ?>
-            <li class="<?php echo e(isActiveRoute('manage-resource')); ?>">
-                <a href="<?php echo e(url('/manage-resource')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Gestion de recursos</span> </a>
+            <li class="<?php echo e(areActiveRoutes(['project.view','project.create','project.resources','project.modify'])); ?>">
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Proyectos</span> </a>
+                <ul class="nav nav-second-level collapse">
+                <li class="<?php echo e(isActiveRoute('project.view')); ?>"><a href="<?php echo e(url('/project/view')); ?>" >Ver Proyectos</a></li>
+                <li class="<?php echo e(isActiveRoute('project.create')); ?>"><a href="<?php echo e(url('/project/create')); ?>">Crear Proyecto</a></li>
+                <li class="<?php echo e(isActiveRoute('project.resources')); ?>"><a href="<?php echo e(url('/project/resources')); ?>" >Gestionar Recursos</a></li>
+                <li class="<?php echo e(isActiveRoute('project.modify')); ?>"><a href="<?php echo e(url('/project/modify')); ?>">Modificar o eliminar</a></li>
+                </ul>
+            </li>
+            <?php endif; ?>
+            <?php if (Auth::check() && Auth::user()->hasRole('admin|manager')): ?>
+            <li class="<?php echo e(areActiveRoutes(['team.view','team.create','team.modify'])); ?>">
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Equipos</span> </a>
+                <ul class="nav nav-second-level collapse">
+                <li class="<?php echo e(isActiveRoute('team.view')); ?>"><a href="<?php echo e(url('/team/view')); ?>" >Ver Equipos</a></li>
+                <li class="<?php echo e(isActiveRoute('team.create')); ?>"><a href="<?php echo e(url('/team/create')); ?>" >Crear Equipo</a></li>
+                <li class="<?php echo e(isActiveRoute('team.modify')); ?>"><a href="<?php echo e(url('/team/modify')); ?>">Modificar o eliminar Equipo</a></li>
+                </ul>
             </li>
             <?php endif; ?>
             <?php if (Auth::check() && Auth::user()->hasRole('admin|manager')): ?>
@@ -44,7 +60,8 @@
                 <a href="#"><i class="fa fa-archive"></i> <span class="nav-label">Reportes</span> </a>
                 <ul class="nav nav-second-level collapse">
                 <li class="<?php echo e(isActiveRoute('report.team')); ?>"><a href="<?php echo e(url('/report/team')); ?>" >Equipo</a></li>
-                <li class="<?php echo e(isActiveRoute('report.project')); ?>"><a href="<?php echo e(url('/report/project')); ?>" >Proyecto</a></li></ul>
+                <li class="<?php echo e(isActiveRoute('report.project')); ?>"><a href="<?php echo e(url('/report/project')); ?>" >Proyecto</a></li>
+                </ul>
             </li>
             <?php endif; ?>
          

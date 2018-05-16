@@ -21,7 +21,9 @@
                     <?php endif; ?>
                 </div>
                 <div class="form-group<?php echo e($errors->has('password') ? ' has-error' : ''); ?>">
-                    <input type="password" name="password" class="form-control" placeholder="Contraseña" required="">
+                <div class="input-group">
+                   <input id="password" type="password" name="password" class="form-control" placeholder="Contraseña" required="">
+                   <span class="input-group-btn"><button-password></button-password></span></div>
                     <?php if($errors->has('password')): ?>
                                     <span class="help-block">
                                         <strong><?php echo e($errors->first('password')); ?></strong>
@@ -34,8 +36,13 @@
                 <br>
                 <a href="#">Contacta con el administrador</a>
             </form>
+            
         </div>
+  
+
+
 </div>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.blank', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

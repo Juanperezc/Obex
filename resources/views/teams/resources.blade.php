@@ -1,6 +1,8 @@
-<?php $__env->startSection('title', 'Main page'); ?>
+@extends('layouts.app')
 
-<?php $__env->startSection('content'); ?>
+@section('title', 'Main page')
+
+@section('content')
     <div class="wrapper wrapper-content animated fadeInRight">
                 <div class="row">
                     <div class="col-lg-12">
@@ -123,6 +125,4 @@
                 </div>
             </div>
          
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('layouts.app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@endsection
