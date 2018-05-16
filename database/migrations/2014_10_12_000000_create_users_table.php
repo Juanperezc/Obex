@@ -15,11 +15,18 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('doc_id'); // cedula
             $table->string('name');
+            $table->string('last-name');
+            $table->string('profile_img');
+            $table->decimal('salary', 8, 2);
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('charge')->unsigned();
+            $table->integer('status')->default(0);
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('charge')->references('id')->on('charges');
         });
     }
 

@@ -13,10 +13,10 @@ class TeamsTableSeeder extends Seeder
     {
         //
         $newTeam = Team::create([
-            'description' => 'First',
+            1 , 'description' => 'First',
         ]);
         $newTeam = Team::create([
-            'description' => 'Second',
+            2 , 'description' => 'Second',
         ]);
     }
 }

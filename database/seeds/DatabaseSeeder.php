@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call('ConnectRelationshipsSeeder');
         $this->call('TeamsTableSeeder');
         $this->call('UsersTableSeeder');
+        $this->call('ProjectTableSeeder');
     }
 }

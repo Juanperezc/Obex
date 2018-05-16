@@ -13,6 +13,7 @@ window.Vue = require('vue');
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('button-password', require('./components/ButtonPasswordComponent.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('project-table', require('./components/ProjectTableComponent.vue'));
 
 const app = new Vue({
     el: '#app',
