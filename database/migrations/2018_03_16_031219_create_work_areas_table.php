@@ -15,6 +15,9 @@ class CreateWorkAreasTable extends Migration
     {
         Schema::create('work_areas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

@@ -12,4 +12,7 @@ class Project extends Model
     {
         return $this->belongsToMany('App\Team');
     }
+    public function clients(){
+    return $this->hasMany('App\Client');
+    }
 }

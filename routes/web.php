@@ -12,7 +12,7 @@
 */
 Route::Auth();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
+Route::view('/profile', 'other/building')->name("profile");
 Route::get('/', 'HomeController@index')->name("main");
 Route::get('/minor', 'HomeController@minor')->name("minor")->middleware('role:admin');
 Route::group(['prefix' => 'report', 'as'=>'report.', 'middleware' => ['role:admin|manager']], function () {  //middleware(['first', 'second'])->
@@ -50,6 +50,14 @@ Route::group(['prefix' => 'team', 'as'=>'team.', 'middleware' => ['role:admin|ma
     });
 
 
+    //? api vue ////
+Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
+
+Route::resource('/projects', 'ProjectController', [
+    'except' => ['edit', 'show', 'store']
+  ]);
+
+});
 /*// routes/web.php
 Route::group(['prefix' => 'books'], function () {
 // First Route

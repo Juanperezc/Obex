@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Project;
 class ProjectController extends Controller
 {
     //
-public function load()
+public function index()
 {
-  return response(Project::all()->jsonSerialize(), Response::HTTP_OK);
+  return response(Project::with('teams.users')->get()->jsonSerialize(), Response::HTTP_OK);
 }
+
 }

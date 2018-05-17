@@ -12,9 +12,9 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
-        $project1 = Team::create(['Test1', 'Web', 'Lorem ipsu'
-        , Carbon::parse('2000-01-01'), Carbon::parse('2000-02-02')
-    ,'in-progress'
+        $project1 = Project::create(['name' => 'Test1', 'type' => 'Web', 'description' => 'Lorem ipsu'
+        , 'start' => Carbon::parse('2000-01-01'), 'finish' => Carbon::parse('2000-02-02')
+    ,'state' => 'in-progress', 'client' => 1
         ]);
         //
     }

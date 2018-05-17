@@ -26,7 +26,6 @@
         </div>
 
         <div class="project-list">
-
         <project-table></project-table>
         </div>
     </div>
