@@ -13,7 +13,8 @@
 Route::Auth();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::view('/profile', 'other/building')->name("profile");
-Route::get('/', 'HomeController@index')->name("main");
+Route::get('/panel', 'HomeController@index')->name("main");
+Route::view('/', 'landing-page/index')->name("index");
 Route::get('/minor', 'HomeController@minor')->name("minor")->middleware('role:admin');
 Route::group(['prefix' => 'report', 'as'=>'report.', 'middleware' => ['role:admin|manager']], function () {  //middleware(['first', 'second'])->
     Route::group(['prefix' => 'project', 'as'=>'project'], function () {  //middleware(['first', 'second'])->
