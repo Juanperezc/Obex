@@ -58,7 +58,7 @@
             @endrole
             @role('admin|manager')
             <li class="{{ areActiveRoutes(['report.team', 'report.project']) }}" >
-                <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Reportes</span> </a>
+                <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Reportes</span> </a>
                 <ul class="nav nav-second-level collapse">
                 <li class="{{ isActiveRoute('report.team') }}"><a href="{{ url('/report/team') }}" ><i class="fa fa-group"></i>Equipo</a></li>
                 <li class="{{ isActiveRoute('report.project') }}"><a href="{{ url('/report/project') }}" ><i class="fa fa-stack-overflow"></i>Proyecto</a></li>
