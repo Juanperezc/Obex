@@ -19,4 +19,9 @@ class Team extends Model
     {
         return $this->belongsToMany('App\Project');
     }
+    public function activities()
+    {
+        return $this->hasMany('App\Activity');
+    }
+
 }

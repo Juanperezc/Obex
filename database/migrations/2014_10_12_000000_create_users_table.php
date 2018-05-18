@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('doc_id')->unique();// cedula
             $table->string('name');
             $table->string('last_name');
-            $table->string('profile_img')->nullable()->default('a1.png');
+            $table->string('profile_img')->nullable()->default('a5.png');
             $table->decimal('salary', 8, 2)->default(0);
             $table->string('email')->unique();
             $table->string('password');

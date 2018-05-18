@@ -33,7 +33,8 @@ class UsersTableSeeder extends Seeder
 				'name' => 'Admin',
 				'last_name' => 'Admin',
 	            'email' => 'admin@obex.com',
-	            'password' => bcrypt('password'),
+				'password' => bcrypt('password'),
+				'profile_img' => 'a1.png',
 				'charge' => 1
 	        ]);
 
@@ -52,6 +53,7 @@ class UsersTableSeeder extends Seeder
 				'last_name' => 'User',
 	            'email' => 'user@obex.com',
 				'password' => bcrypt('password'),
+				'profile_img' => 'a2.png',
 				'charge' => 1
 	        ]);
 
@@ -69,6 +71,7 @@ class UsersTableSeeder extends Seeder
 				'last_name' => 'Project-Manager',
 	            'email' => 'projectmanager@obex.com',
 				'password' => bcrypt('password'),
+				'profile_img' => 'a3.png',
 				'charge' => 1
 	        ]);
 			$newUser->attachRole($projectMRole);

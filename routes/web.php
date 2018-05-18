@@ -12,7 +12,10 @@
 */
 Route::Auth();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::view('/profile', 'other/building')->name("profile");
+//* profile //
+Route::get('profile', 'UserController@profile')->name("profile");
+Route::post('profile', 'UserController@update_avatar');
+///
 Route::get('/panel', 'HomeController@index')->name("main");
 Route::view('/', 'landing-page/index')->name("index");
 Route::get('/minor', 'HomeController@minor')->name("minor")->middleware('role:admin');

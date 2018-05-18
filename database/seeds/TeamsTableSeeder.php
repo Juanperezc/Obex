@@ -14,7 +14,7 @@ class TeamsTableSeeder extends Seeder
         //
         $newTeam = Team::create(['description' => 'First', 'leader' => 1 , 'work_area' => 1
         ]);
-        $newTeam = Team::create(['description' => 'First', 'leader' => 1 , 'work_area' => 2
+        $newTeam = Team::create(['description' => 'Second', 'leader' => 1 , 'work_area' => 2
         ]);
     }
 }

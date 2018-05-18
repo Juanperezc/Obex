@@ -10,7 +10,7 @@ class ProjectController extends Controller
     //
 public function index()
 {
-  return response(Project::with('teams.users')->get()->jsonSerialize(), Response::HTTP_OK);
+  return response(Project::with(['teams.users', 'teams.activities'])->get()->jsonSerialize(), Response::HTTP_OK);
 }
 
 }

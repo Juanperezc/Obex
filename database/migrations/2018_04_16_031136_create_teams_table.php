@@ -16,7 +16,7 @@ class CreateTeamsTable extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('id');
             $table->text('description');
-            $table->integer('leader')->unsigned();
+            $table->integer('leader')->unsigned()->default(0);
             $table->integer('work_area')->unsigned();
             $table->timestamps();
             $table->foreign('work_area')->references('id')->on('work_areas');

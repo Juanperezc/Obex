@@ -10463,3 +10463,7 @@ body.md-skin {
   font-family: 'Orbitron', sans-serif;
 }
 
+.avatar-profile {
+  max-width: 40%;
+}
+

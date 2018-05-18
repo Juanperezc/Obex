@@ -5,7 +5,7 @@
                 <div class="dropdown profile-element">
                     <span>
                         <center>
-                            <img alt="image" class="img-profile" src="/images/a5.png"></span>
+                            <img alt="image" class="img-profile" src="/storage/avatars/{{Auth::user()->profile_img}}"></span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                     <span class="block m-t-xs">
