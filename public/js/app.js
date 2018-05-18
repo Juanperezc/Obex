@@ -92474,20 +92474,8 @@ function Project(_ref) {
             } else {
                 return "Inactivo";
             }
-        },
-        percent_complete_project: function percent_complete_project(project) {
-            var conte = 0;
-            var contg = 0;
-            for (var team in project.teams) {
-                console.log(team.id);
-            }
-            return "a";
-            /*if (contg != 0)
-            return contc * (100 / contg);
-            else
-            return 0;
-            }*/
         }
+
     },
 
     created: function created() {
@@ -92511,7 +92499,7 @@ var render = function() {
         return _c("tr", [
           _c("td", { staticClass: "project-status" }, [
             _c("span", { staticClass: "label label-primary" }, [
-              _vm._v(_vm._s(_vm.percent_complete_project(p)))
+              _vm._v(_vm._s(_vm.status(p.status)))
             ])
           ]),
           _vm._v(" "),
@@ -92527,7 +92515,18 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(0, true),
+          _c("td", { staticClass: "project-completion" }, [
+            _c("small", [
+              _vm._v("Completación: " + _vm._s(p.percent_complete) + "%")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "progress progress-mini" }, [
+              _c("div", {
+                staticClass: "progress-bar",
+                style: { width: p.percent_complete + "%" }
+              })
+            ])
+          ]),
           _vm._v(" "),
           _c(
             "td",
@@ -92545,28 +92544,13 @@ var render = function() {
             })
           ),
           _vm._v(" "),
-          _vm._m(1, true)
+          _vm._m(0, true)
         ])
       })
     )
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", { staticClass: "project-completion" }, [
-      _c("small", [_vm._v("Completación: 48%")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "progress progress-mini" }, [
-        _c("div", {
-          staticClass: "progress-bar",
-          staticStyle: { width: "48%" }
-        })
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

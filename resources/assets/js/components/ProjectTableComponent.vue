@@ -3,7 +3,7 @@
         <tbody >
             <tr v-for="p in projects">
                 <td class="project-status">
-                    <span class="label label-primary">{{ percent_complete_project(p) }}</span>
+                    <span class="label label-primary">{{ status(p.status) }}</span>
                 </td>
                 <td class="project-title">
                     <a href="project_detail.html">{{ p.name }}</a>
@@ -12,9 +12,9 @@
                             {{ p.start }}</small>
                     </td>
                     <td class="project-completion">
-                        <small>Completación: 48%</small>
+                        <small>Completación: {{p.percent_complete}}%</small>
                         <div class="progress progress-mini">
-                            <div style="width: 48%;" class="progress-bar"></div>
+                            <div v-bind:style="{ width: p.percent_complete + '%' }"  class="progress-bar"></div>
                         </div>
                     </td>
                     <td class="project-people">
@@ -66,20 +66,8 @@
                         } else {
                             return "Inactivo";
                         }
-                    },
-                    percent_complete_project: function (project) {
-                        var conte = 0;
-                        var contg = 0;
-                        for (var team in project.teams) {
-                            console.log(team.id);
-                        }
-                        return "a";
-                        /*if (contg != 0)
-                        return contc * (100 / contg);
-                    else
-                        return 0;
-                    }*/
                     }
+                
                 },
 
                 created() {

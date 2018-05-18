@@ -16,7 +16,7 @@ class ProjectTeamTableSeeder extends Seeder
         
         //! attach //
         $pt1->teams()->attach([1]);
-        $pt2->teams()->attach([2]);
+        $pt2->teams()->attach([2,3]);
         //
     }
 }

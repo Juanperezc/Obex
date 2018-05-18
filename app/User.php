@@ -19,6 +19,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+    //* esto!!
+    protected $appends = ['test'];
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -38,6 +40,11 @@ class User extends Authenticatable
     public function charge()
     {
         return $this->hasMany('App\Charge');
+    }
+    //! serialization ohh yea 
+    public function getTestAttribute()
+    {
+        return "test";
     }
 
 }

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     //
+    protected $appends = ['percent_complete'];
     protected $fillable = [
         'description'
     ];
@@ -23,5 +24,17 @@ class Team extends Model
     {
         return $this->hasMany('App\Activity');
     }
+
+     //! serialization ohh yea 
+     public function getPercentCompleteAttribute()
+     {
+        /* $conte = 0;
+         $contg = 0;
+foreach ($this->activities() as $key => $value) {
+    # code...
+}*/
+         
+         return "test";
+     }
 
 }
