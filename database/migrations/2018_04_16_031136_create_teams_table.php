@@ -18,7 +18,7 @@ class CreateTeamsTable extends Migration
             $table->text('description');
             $table->integer('leader')->unsigned()->default(0);
             $table->integer('work_area')->unsigned();
-            $table->timestamps();
+             $table->timestamps();$table->softDeletes();
             $table->foreign('work_area')->references('id')->on('work_areas');
             $table->foreign('leader')->references('id')->on('users');
         });

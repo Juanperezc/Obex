@@ -182,6 +182,7 @@ return [
         // Other service providers...
         Laravel\Tinker\TinkerServiceProvider::class,
         jeremykenedy\LaravelRoles\RolesServiceProvider::class
+        
 
     ],
 
@@ -230,6 +231,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+       
 
     ],
 

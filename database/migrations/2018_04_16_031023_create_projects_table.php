@@ -21,10 +21,11 @@ class CreateProjectsTable extends Migration
             $table->date('start');
             $table->date('finish');
             $table->enum('state', ['on-hold', 'in-progress', 'culminated', 'cancelled']);
-            $table->integer('status')->default(0);
+            $table->integer('delete_At')->default(0);
             $table->integer('client')->unsigned();
             // en e  
-            $table->timestamps();
+       
+             $table->timestamps();$table->softDeletes();
             $table->foreign('client')->references('id')->on('clients');
         });
     }

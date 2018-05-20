@@ -4,15 +4,17 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use jeremykenedy\LaravelRoles\Traits\HasRoleAndPermission;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use App\Traits\ExposePermissions;
 class User extends Authenticatable
 {
     use Notifiable;
     use HasRoleAndPermission;
-
+    use ExposePermissions;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +22,8 @@ class User extends Authenticatable
      * @var array
      */
     //* esto!!
-    protected $appends = ['test'];
+    protected $dates = ['deleted_at'];
+    protected $appends = ['test','can'];
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -46,5 +49,5 @@ class User extends Authenticatable
     {
         return "test";
     }
-
+  
 }

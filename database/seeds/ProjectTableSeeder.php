@@ -18,7 +18,7 @@ class ProjectTableSeeder extends Seeder
         ]);
         $project2 = Project::create(['name' => 'Test2', 'type' => 'App', 'description' => 'Lorem ipsu'
         , 'start' => Carbon::parse('03/10/2017'), 'finish' => Carbon::parse('05/10/2018')
-    ,'state' => 'in-progress', 'client' => 1, 'status' => 1
+    ,'state' => 'in-progress', 'client' => 1
         ]);
         //
     }

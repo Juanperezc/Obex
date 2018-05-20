@@ -102,3 +102,5 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+//let user = document.head.querySelector('meta[name="user"]');

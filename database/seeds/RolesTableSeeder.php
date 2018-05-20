@@ -15,6 +15,24 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
+
+		//* Permisos */
+
+
+
+		$createProjectPermission = Permission::create([
+			'name' => 'Create Projects',
+			'slug' => 'create.projects',
+			'description' => '', // optional
+		]);
+		
+		$deleteProjectPermission = Permission::create([
+			'name' => 'Delete Projects',
+			'slug' => 'delete.projects',
+		]);
+
+
+
 	    /**
 	     * Add Roles
 	     *
@@ -25,7 +43,10 @@ class RolesTableSeeder extends Seeder
 	            'slug' => 'admin',
 	            'description' => 'Admin Role',
 	            'level' => 5,
-        	]);
+			]);
+			$adminRole->attachPermission($createProjectPermission); // permission attached to a role
+			$adminRole->attachPermission($deleteProjectPermission); // permission attached to a role
+
 	    }
 
     	if (Role::where('name', '=', 'Employee')->first() === null) {

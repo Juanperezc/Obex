@@ -23,9 +23,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('charge')->unsigned();
-            $table->integer('status')->default(0);
+            
             $table->rememberToken();
-            $table->timestamps();
+             $table->timestamps();$table->softDeletes();
             $table->foreign('charge')->references('id')->on('charges');
         });
     }

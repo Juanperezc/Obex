@@ -3,11 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Team extends Model
 {
     //
-    protected $appends = ['percent_complete'];
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
     protected $fillable = [
         'description'
     ];
@@ -25,16 +26,6 @@ class Team extends Model
         return $this->hasMany('App\Activity');
     }
 
-     //! serialization ohh yea 
-     public function getPercentCompleteAttribute()
-     {
-        /* $conte = 0;
-         $contg = 0;
-foreach ($this->activities() as $key => $value) {
-    # code...
-}*/
-         
-         return "test";
-     }
+
 
 }

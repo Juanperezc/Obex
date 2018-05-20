@@ -20,8 +20,8 @@ class CreateClientsTable extends Migration
             $table->string('email')->unique();
             $table->string('direction');
             $table->enum('type', ['service', 'manufacture', 'commerce', 'natural']);
-            $table->integer('status')->default(0);
-            $table->timestamps(); // aqui esta la fecha de creacion
+            
+             $table->timestamps();$table->softDeletes(); // aqui esta la fecha de creacion
         });
     }
 

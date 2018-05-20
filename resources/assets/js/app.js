@@ -8,12 +8,13 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
- 
+import swalPlugin from './plugins/VueSweetalert2';
+Vue.use(swalPlugin);
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('button-password', require('./components/ButtonPasswordComponent.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('project-table', require('./components/ProjectTableComponent.vue'));
+Vue.component('project-table', require('./components/projects/ProjectTableComponent.vue'));
 
 const app = new Vue({
     el: '#app',

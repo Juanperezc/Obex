@@ -39,10 +39,10 @@ class UsersTableSeeder extends Seeder
 	        ]);
 
 	        $newUser->attachRole($adminRole);
-			foreach ($permissions as $permission) {
+		/*	foreach ($permissions as $permission) {
 				$newUser->attachPermission($permission);
 			}
-
+*/
         }
 
         if (User::where('email', '=', 'user@obex.com')->first() === null) {
@@ -58,9 +58,9 @@ class UsersTableSeeder extends Seeder
 	        ]);
 
 			$newUser->attachRole($employeeRole );
-			foreach ($permissions as $permission) {
+			/*foreach ($permissions as $permission) {
 				$newUser->attachPermission($permission);
-			}
+			}*/
 
 		}
 		if (User::where('email', '=', 'projectmanager@obex.com')->first() === null) {
@@ -75,9 +75,9 @@ class UsersTableSeeder extends Seeder
 				'charge' => 1
 	        ]);
 			$newUser->attachRole($projectMRole);
-			foreach ($permissions as $permission) {
+			/*foreach ($permissions as $permission) {
 				$newUser->attachPermission($permission);
-			}
+			}*/
 
         }
 
