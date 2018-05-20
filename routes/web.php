@@ -10,14 +10,16 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::view('/', 'landing-page/index')->name("index");
+Route::group(['prefix' => 'panel', 'as'=>''], function () {
+
 Route::Auth();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //* profile //
 Route::get('profile', 'UserController@profile')->name("profile");
 Route::post('profile', 'UserController@update_avatar');
 ///
-Route::get('/panel', 'HomeController@index')->name("main");
-Route::view('/', 'landing-page/index')->name("index");
+Route::get('/', 'HomeController@index')->name("main");
 Route::get('/minor', 'HomeController@minor')->name("minor")->middleware('role:admin');
 Route::group(['prefix' => 'report', 'as'=>'report.', 'middleware' => ['role:admin|manager']], function () {  //middleware(['first', 'second'])->
     Route::group(['prefix' => 'project', 'as'=>'project'], function () {  //middleware(['first', 'second'])->
@@ -55,13 +57,15 @@ Route::group(['prefix' => 'team', 'as'=>'team.', 'middleware' => ['role:admin|ma
 
 
     //? api vue ////
-Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
-
-Route::resource('/projects', 'ProjectController', [
-    'except' => ['edit', 'show', 'store']
-  ]);
 
 });
+Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
+
+    Route::resource('/projects', 'ProjectController', [
+        'except' => ['edit', 'show', 'store']
+      ]);
+    
+    });
 /*// routes/web.php
 Route::group(['prefix' => 'books'], function () {
 // First Route

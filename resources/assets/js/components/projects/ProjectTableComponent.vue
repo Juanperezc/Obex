@@ -1,7 +1,7 @@
 <template>
     <table class="table table-hover">
         <tbody >
-            <tr v-for="p in projects">
+            <tr v-bind:key="p.id" v-for="p in projects">
                 <td class="project-status">
                     <span class="label label-primary">{{ status(p.status) }}</span>
                 </td>
@@ -18,7 +18,7 @@
                         </div>
                     </td>
                     <td class="project-people">
-                        <a v-for="u in p.teams[0].users.slice(0, 5)" href="">
+                        <a v-bind:key="u.id" v-for="u in p.teams[0].users.slice(0, 5)" href="">
                             <img
                                 alt="image"
                                 class="img-circle"
