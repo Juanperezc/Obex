@@ -58233,7 +58233,7 @@ module.exports = Vue;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(151);
-module.exports = __webpack_require__(254);
+module.exports = __webpack_require__(259);
 
 
 /***/ }),
@@ -58260,7 +58260,7 @@ Vue.component('button-password', __webpack_require__(235));
 Vue.component('example-component', __webpack_require__(238));
 Vue.component('project-table', __webpack_require__(241));
 //* details
-Vue.component('project-detail', __webpack_require__(266));
+Vue.component('project-detail', __webpack_require__(247));
 
 var app = new Vue({
     el: '#app'
@@ -96794,7 +96794,139 @@ var normalizeComponent = __webpack_require__(7)
 /* script */
 var __vue_script__ = __webpack_require__(248)
 /* template */
-var __vue_template__ = __webpack_require__(249)
+var __vue_template__ = __webpack_require__(258)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/projects/detail/ProjectDetailComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ddd5aa1a", Component.options)
+  } else {
+    hotAPI.reload("data-v-ddd5aa1a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 248 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__DetailComponent_vue__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__DetailComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__DetailComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ActivityComponent_vue__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ActivityComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__ActivityComponent_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ManagerComponent_vue__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ManagerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ManagerComponent_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        'detail': __WEBPACK_IMPORTED_MODULE_0__DetailComponent_vue___default.a,
+        'project-activity': __WEBPACK_IMPORTED_MODULE_1__ActivityComponent_vue___default.a,
+        'project-manager': __WEBPACK_IMPORTED_MODULE_2__ManagerComponent_vue___default.a
+    },
+    data: function data() {
+        return {
+            project: {
+                'clients': {
+                    'name': ''
+                },
+                'activities': {}
+            },
+            loading: false
+        };
+    },
+
+    methods: {
+        read: function read() {
+            var _this = this;
+
+            console.log(this.id);
+            window.axios.get('/api/projects/' + this.id).then(function (_ref) {
+                var data = _ref.data;
+
+                _this.project = data;
+                _this.loading = true;
+            });
+        },
+
+
+        status: function status(_status) {
+            if (_status == 0) {
+                return "Activo";
+            } else {
+                return "Inactivo";
+            }
+        }
+
+    },
+    props: ['id'],
+    created: function created() {
+        this.read();
+
+        // this.percent_complete_project();
+    }
+});
+
+/***/ }),
+/* 249 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(7)
+/* script */
+var __vue_script__ = __webpack_require__(250)
+/* template */
+var __vue_template__ = __webpack_require__(251)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -96833,7 +96965,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 248 */
+/* 250 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96932,7 +97064,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 249 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97054,15 +97186,15 @@ if (false) {
 }
 
 /***/ }),
-/* 250 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(7)
 /* script */
-var __vue_script__ = __webpack_require__(264)
+var __vue_script__ = __webpack_require__(253)
 /* template */
-var __vue_template__ = __webpack_require__(251)
+var __vue_template__ = __webpack_require__(254)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97101,7 +97233,102 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 251 */
+/* 253 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+//  import ActionTableComponent from './ActionTableComponent.vue';
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        // 'action-table-component': ActionTableComponent
+    },
+    data: function data() {
+        return {
+            project: {
+                'clients': {
+                    'name': ''
+                }
+            },
+            loading: false
+        };
+    },
+
+    props: ['id']
+
+});
+
+/***/ }),
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97239,15 +97466,15 @@ if (false) {
 }
 
 /***/ }),
-/* 252 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(7)
 /* script */
-var __vue_script__ = __webpack_require__(265)
+var __vue_script__ = __webpack_require__(256)
 /* template */
-var __vue_template__ = __webpack_require__(253)
+var __vue_template__ = __webpack_require__(257)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -97286,7 +97513,46 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 253 */
+/* 256 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+//  import ActionTableComponent from './ActionTableComponent.vue';
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        // 'action-table-component': ActionTableComponent
+    },
+    data: function data() {
+        return {
+            project: {
+                'clients': {
+                    'name': ''
+                }
+            },
+            loading: false
+        };
+    }
+});
+
+/***/ }),
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97334,288 +97600,7 @@ if (false) {
 }
 
 /***/ }),
-/* 254 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-//  import ActionTableComponent from './ActionTableComponent.vue';
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        // 'action-table-component': ActionTableComponent
-    },
-    data: function data() {
-        return {
-            project: {
-                'clients': {
-                    'name': ''
-                }
-            },
-            loading: false
-        };
-    },
-
-    props: ['id']
-
-});
-
-/***/ }),
-/* 265 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-//  import ActionTableComponent from './ActionTableComponent.vue';
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        // 'action-table-component': ActionTableComponent
-    },
-    data: function data() {
-        return {
-            project: {
-                'clients': {
-                    'name': ''
-                }
-            },
-            loading: false
-        };
-    }
-});
-
-/***/ }),
-/* 266 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(7)
-/* script */
-var __vue_script__ = __webpack_require__(267)
-/* template */
-var __vue_template__ = __webpack_require__(268)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/projects/detail/ProjectDetailComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ddd5aa1a", Component.options)
-  } else {
-    hotAPI.reload("data-v-ddd5aa1a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 267 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__DetailComponent_vue__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__DetailComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__DetailComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ActivityComponent_vue__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ActivityComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__ActivityComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ManagerComponent_vue__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ManagerComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ManagerComponent_vue__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        'detail': __WEBPACK_IMPORTED_MODULE_0__DetailComponent_vue___default.a,
-        'project-activity': __WEBPACK_IMPORTED_MODULE_1__ActivityComponent_vue___default.a,
-        'project-manager': __WEBPACK_IMPORTED_MODULE_2__ManagerComponent_vue___default.a
-    },
-    data: function data() {
-        return {
-            project: {
-                'clients': {
-                    'name': ''
-                },
-                'activities': {}
-            },
-            loading: false
-        };
-    },
-
-    methods: {
-        read: function read() {
-            var _this = this;
-
-            console.log(this.id);
-            window.axios.get('/api/projects/' + this.id).then(function (_ref) {
-                var data = _ref.data;
-
-                _this.project = data;
-                _this.loading = true;
-            });
-        },
-
-
-        status: function status(_status) {
-            if (_status == 0) {
-                return "Activo";
-            } else {
-                return "Inactivo";
-            }
-        }
-
-    },
-    props: ['id'],
-    created: function created() {
-        this.read();
-
-        // this.percent_complete_project();
-    }
-});
-
-/***/ }),
-/* 268 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -97670,6 +97655,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-ddd5aa1a", module.exports)
   }
 }
+
+/***/ }),
+/* 259 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
