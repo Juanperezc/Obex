@@ -73,7 +73,7 @@
             <li class="{{ areActiveRoutes(['project.view','project.create','project.resources','project.modify']) }}">
                 <a href="#"><i class="fa fa-book"></i> <span class="nav-label">Proyectos</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="{{ isActiveRoute('project.view') }}"><a href="{{ url('panel/project/view') }}" ><i class="fa fa-eye"></i>Ver Proyectos</a></li>
+                <li class="{{ isActiveRoute('project.view') }}"><a href="{{ url('panel/project/') }}" ><i class="fa fa-eye"></i>Ver Proyectos</a></li>
                 <li class="{{ isActiveRoute('project.create') }}"><a href="{{ url('panel/project/create') }}"><i class="fa fa-plus"></i>Crear Proyecto</a></li>
                 <li class="{{ isActiveRoute('project.resources') }}"><a href="{{ url('panel/project/resources') }}" ><i class="fa fa-stack-overflow"></i>Gestionar Recursos</a></li>
                 <li class="{{ isActiveRoute('project.modify') }}"><a href="{{ url('panel/project/modify') }}"><i class="fa fa-exclamation-triangle"></i>Modificar o eliminar</a></li>

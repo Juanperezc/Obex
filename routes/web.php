@@ -42,8 +42,10 @@ Route::group(['prefix' => 'manage-account', 'as'=>'manage-account.', 'middleware
 Route::view('/manage-notification', 'other/building')->name("manage-notification")->middleware('role:admin');
 Route::group(['prefix' => 'project', 'as'=>'project.', 'middleware' => ['role:admin|manager']], function () {
 
+Route::get('/', 'ProjectController@view')->name("view");
+Route::get('/{id}', 'ProjectController@view')->name("view");
+
 Route::view('/create', 'projects/create')->name("create");
-Route::view('/view', 'projects/view')->name("view");
 Route::view('/resources', 'projects/resources')->name("resources");
 Route::view('/modify', 'projects/modify')->name("modify");
 });
@@ -62,7 +64,7 @@ Route::group(['prefix' => 'team', 'as'=>'team.', 'middleware' => ['role:admin|ma
 Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
 
     Route::resource('/projects', 'ProjectController', [
-        'except' => ['edit', 'show', 'store']
+        'except' => ['edit','store']
       ]);
     
     });

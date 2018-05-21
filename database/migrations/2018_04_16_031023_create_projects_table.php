@@ -21,12 +21,9 @@ class CreateProjectsTable extends Migration
             $table->date('start');
             $table->date('finish');
             $table->enum('state', ['on-hold', 'in-progress', 'culminated', 'cancelled']);
-            $table->integer('delete_At')->default(0);
-            $table->integer('client')->unsigned();
-            // en e  
-       
+            $table->unsignedInteger('client_id');
              $table->timestamps();$table->softDeletes();
-            $table->foreign('client')->references('id')->on('clients');
+            $table->foreign('client_id')->references('id')->on('clients');
         });
     }
 
@@ -37,6 +34,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proyects');
+        Schema::dropIfExists('projects');
     }
 }

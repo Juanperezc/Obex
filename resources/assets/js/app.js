@@ -15,11 +15,11 @@ Vue.use(swalPlugin);
 Vue.component('button-password', require('./components/ButtonPasswordComponent.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('project-table', require('./components/projects/ProjectTableComponent.vue'));
+//* details
+Vue.component('project-detail', require('./components/projects/detail/ProjectDetailComponent.vue'));
 
 const app = new Vue({
     el: '#app',
-
-     
 });
 
 

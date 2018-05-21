@@ -11,13 +11,13 @@ class Project extends Model
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $appends = ['percent_complete'];
+    protected $appends = ['percent_complete','section'];
     public function teams()
     {
         return $this->belongsToMany('App\Team');
     }
     public function clients(){
-    return $this->hasMany('App\Client');
+    return $this->belongsTo('App\Client', 'client_id');
     }
     
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="col-md-12">
-       <a v-if="Laravel.user.can['create.projects']" href="project/1" class="btn btn-white btn-sm">
+       <a v-if="Laravel.user.can['create.projects']" :href="'/panel/' + section + '/' + id"  class="btn btn-white btn-sm">
                                 <i class="fa fa-folder"></i>
                                 Ver
         </a>
@@ -26,6 +26,6 @@
         this.$emit('delete', this.id);
       }
     },
-        props: ['id']
+        props: ['id','section']
     }
 </script>

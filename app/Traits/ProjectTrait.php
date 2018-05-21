@@ -22,6 +22,9 @@ Trait ProjectTrait{
          else
          return 0;
      }
-
+     public function getSectionAttribute()
+     {
+     return "project";
+     }
 
 }
