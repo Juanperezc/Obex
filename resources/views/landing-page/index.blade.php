@@ -1,4 +1,4 @@
-@extends('layouts.blank')
+@extends('layouts.landing')
 
 @section('content')
 <div class="navbar-wrapper">
@@ -46,7 +46,7 @@
                     </p>
                 </div>
                 <div class="carousel-image wow zoomIn">
-                    <img src="img/landing/laptop.png" alt="laptop"/>
+                    <img src="images/laptop.png" alt="laptop"/>
                 </div>
             </div>
             <!-- Set background for slide in css -->
@@ -123,7 +123,7 @@
             </div>
         </div>
         <div class="col-md-6 text-center  wow zoomIn">
-            <img src="img/landing/perspective.png" alt="dashboard" class="img-responsive">
+            <img src="images/perspective.png" alt="dashboard" class="img-responsive">
         </div>
         <div class="col-md-3 text-center wow fadeInRight">
             <div>
@@ -153,7 +153,7 @@
             <a href="" class="btn btn-primary">Learn more</a>
         </div>
         <div class="col-lg-6 text-right wow fadeInRight">
-            <img src="img/landing/dashboard.png" alt="dashboard" class="img-responsive pull-right">
+            <img src="images/dashboard.png" alt="dashboard" class="img-responsive pull-right">
         </div>
     </div>
 </section>
@@ -170,7 +170,7 @@
         <div class="row">
             <div class="col-sm-4 wow fadeInLeft">
                 <div class="team-member">
-                    <img src="img/landing/avatar3.jpg" class="img-responsive img-circle img-small" alt="">
+                    <img src="images/avatar3.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Amelia</span> Smith</h4>
                     <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus. </p>
                     <ul class="list-inline social-icon">
@@ -185,7 +185,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="team-member wow zoomIn">
-                    <img src="img/landing/avatar1.jpg" class="img-responsive img-circle" alt="">
+                    <img src="images/avatar1.jpg" class="img-responsive img-circle" alt="">
                     <h4><span class="navy">John</span> Novak</h4>
                     <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
                     <ul class="list-inline social-icon">
@@ -200,7 +200,7 @@
             </div>
             <div class="col-sm-4 wow fadeInRight">
                 <div class="team-member">
-                    <img src="img/landing/avatar2.jpg" class="img-responsive img-circle img-small" alt="">
+                    <img src="images/avatar2.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Peter</span> Johnson</h4>
                     <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
                     <ul class="list-inline social-icon">
@@ -239,7 +239,7 @@
                 <a href="" class="btn btn-primary">Learn more</a>
             </div>
             <div class="col-lg-6 text-right m-t-n-lg wow zoomIn">
-                <img src="img/landing/iphone.jpg" class="img-responsive" alt="dashboard">
+                <img src="images/iphone.jpg" class="img-responsive" alt="dashboard">
             </div>
             <div class="col-lg-3 features-text text-right wow fadeInRight">
                 <small>INSPINIA</small>
@@ -350,7 +350,7 @@
                 </div>
                 <div class="comments-avatar">
                     <a href="" class="pull-left">
-                        <img alt="image" src="img/landing/avatar3.jpg">
+                        <img alt="image" src="images/avatar3.jpg">
                     </a>
                     <div class="media-body">
                         <div class="commens-name">
@@ -367,7 +367,7 @@
                 </div>
                 <div class="comments-avatar">
                     <a href="" class="pull-left">
-                        <img alt="image" src="img/landing/avatar1.jpg">
+                        <img alt="image" src="images/avatar1.jpg">
                     </a>
                     <div class="media-body">
                         <div class="commens-name">
@@ -384,7 +384,7 @@
                 </div>
                 <div class="comments-avatar">
                     <a href="" class="pull-left">
-                        <img alt="image" src="img/landing/avatar2.jpg">
+                        <img alt="image" src="images/avatar2.jpg">
                     </a>
                     <div class="media-body">
                         <div class="commens-name">
@@ -607,65 +607,5 @@
         </div>
     </div>
 </section>
-
-<!-- Mainly scripts -->
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-<!-- Custom and plugin javascript -->
-<script src="js/inspinia.js"></script>
-<script src="js/plugins/pace/pace.min.js"></script>
-<script src="js/plugins/wow/wow.min.js"></script>
-
-
-<script>
-    $(document).ready(function () {
-        $('body').scrollspy({
-            target: '.navbar-fixed-top',
-            offset: 80
-        });
-        // Page scrolling feature
-        $('a.page-scroll').bind('click', function(event) {
-            var link = $(this);
-            $('html, body').stop().animate({
-                scrollTop: $(link.attr('href')).offset().top - 50
-            }, 500);
-            event.preventDefault();
-            $("#navbar").collapse('hide');
-        });
-    });
-    var cbpAnimatedHeader = (function() {
-        var docElem = document.documentElement,
-                header = document.querySelector( '.navbar-default' ),
-                didScroll = false,
-                changeHeaderOn = 200;
-        function init() {
-            window.addEventListener( 'scroll', function( event ) {
-                if( !didScroll ) {
-                    didScroll = true;
-                    setTimeout( scrollPage, 250 );
-                }
-            }, false );
-        }
-        function scrollPage() {
-            var sy = scrollY();
-            if ( sy >= changeHeaderOn ) {
-                $(header).addClass('navbar-scroll')
-            }
-            else {
-                $(header).removeClass('navbar-scroll')
-            }
-            didScroll = false;
-        }
-        function scrollY() {
-            return window.pageYOffset || docElem.scrollTop;
-        }
-        init();
-    })();
-    // Activate WOW.js plugin for animation on scrol
-    new WOW().init();
-</script>
 
 @endsection

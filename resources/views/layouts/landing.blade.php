@@ -12,13 +12,15 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
-<body class="gray-bg body-login">
-
+<body id="page-top" class="landing-page no-skin-config">
+  <div class="navbar-wrapper">
+  
   <div id='app' >
  
             <!-- Main view  -->
             @yield('content')
      
+</div>
 </div>
 
     <!-- End wrapper-->
