@@ -11,9 +11,10 @@ Trait ProjectTrait{
          $contg = 0;
       foreach ($this->teams as $t) {
       # code...
-      $contg+= count($t->activities);
        foreach ($t->activities as $a) {
-        if ($a->state == "culminated")
+        if ($a->state != "cancelled" ) 
+        $contg++;
+        if ($a->state == "culminated" ) 
         $conte++;
        }
       }

@@ -16,13 +16,13 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('type');
+            $table->string('type'); //! enum de los tipos de proyectos
             $table->string('description');
             $table->date('start');
             $table->date('finish');
             $table->enum('state', ['on-hold', 'in-progress', 'culminated', 'cancelled']);
             $table->unsignedInteger('client_id');
-             $table->timestamps();$table->softDeletes();
+            $table->timestamps();$table->softDeletes();
             $table->foreign('client_id')->references('id')->on('clients');
         });
     }

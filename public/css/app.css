@@ -10467,3 +10467,13 @@ body.md-skin {
   max-width: 40%;
 }
 
+.parent-img {
+  position: relative;
+}
+
+.over-crown {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+

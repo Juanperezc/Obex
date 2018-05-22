@@ -4,8 +4,8 @@
                            <div class="wrapper wrapper-content animated fadeInUp">
                                <div class="ibox">
                                    <div class="ibox-content">
-                                   <detail v-bind="project" :key="project.id"></detail>
-                                      <project-activity  v-for="a in project.teams[0].activities" v-bind="a" :key="a.id" >
+                                      <detail v-bind="project" :key="project.id"></detail>
+                                      <project-activity  v-bind="project"  > <!--v-for="a in project.teams[0].activities" v-bind="a" :key="a.id"-->
                                       </project-activity>
                                    </div>
                                </div>
@@ -43,11 +43,12 @@
                                 },
                                 methods: {
                                     read() {
-                                        console.log(this.id);
+                                        
                                         window
                                             .axios
                                             .get('/api/projects/' + this.id)
                                             .then(({data}) => {
+                                                console.log(data);
                                                 this.project = data;
                                                 this.loading = true;
                                             });
@@ -63,9 +64,9 @@
 
                                 },
                                 props: ['id'],
-                                created() {
+                                mounted() {
                                     this.read();
-
+                                    console.log("mrk");
                                     // this.percent_complete_project();
                                 }
                             }

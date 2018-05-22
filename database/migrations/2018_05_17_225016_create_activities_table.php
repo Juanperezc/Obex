@@ -16,11 +16,11 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('type');
+            $table->enum('type', ['design', 'development','marketing', 'configuration', 'implantation']);
             $table->string('description');
             $table->date('start');
             $table->date('finish');
-            $table->enum('state', ['on-hold', 'in-progress', 'culminated', 'cancelled']);
+            $table->enum('state', ['on-hold', 'in-progress', 'culminated', 'cancelled'])->default('on-hold');
             
             $table->integer('team_id')->unsigned();
              $table->timestamps();$table->softDeletes();

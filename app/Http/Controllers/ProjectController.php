@@ -25,7 +25,7 @@ public function index()
 }
 public function show($id){
 
-  return response(Project::with(['teams.users', 'teams.activities', 'clients'])->findOrFail(1)->jsonSerialize(), Response::HTTP_OK);
+  return response(Project::with(['teams.users', 'teams.activities', 'clients'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
 }
 public function destroy($id)
 {
