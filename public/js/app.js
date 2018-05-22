@@ -97572,7 +97572,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             loading: false
         };
-    }
+    },
+
+    props: ['description']
 });
 
 /***/ }),
@@ -97593,9 +97595,9 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "small" }, [
       _vm._v(
-        "\n" +
-          _vm._s(_vm.project.description) +
-          "\n                               "
+        "\n                        " +
+          _vm._s(_vm.description) +
+          "\n                           "
       )
     ]),
     _vm._v(" "),

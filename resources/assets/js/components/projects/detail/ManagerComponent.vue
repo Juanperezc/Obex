@@ -3,7 +3,7 @@
                                <h4>Descripcion del proyecto:</h4>
                                <img src="/images/clientlogo.png" class="img-responsive">
                                <p class="small">
-{{project.description}}
+                            {{description}}
                                </p>
                               
                                <div class="text-center m-t-md">
@@ -28,6 +28,7 @@
                                         },
                                         loading: false
                                     }
-                                }
+                                },
+                                 props: ['description']
                             }
                         </script>

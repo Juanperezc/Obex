@@ -24,14 +24,17 @@
 </div>
 
     <!-- End wrapper-->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/main.js"></script>
+    
     <script>
     window.Laravel = <?php echo json_encode([
     'csrfToken' => csrf_token(),
      ]); ?>
      </script>
 @section('scripts')
+
 @show
 
 </body>

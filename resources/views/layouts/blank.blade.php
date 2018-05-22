@@ -30,6 +30,7 @@
      ]); ?>
      </script>
 @section('scripts')
+
 @show
 
 </body>
