@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <meta name="user" content="Auth::user()">
+    
     <title>Obex - <?php echo $__env->yieldContent('title'); ?> </title>
 
     <!--<link href="/images/Obex.ico" rel="shortcut icon" type="image/x-icon" />-->
@@ -16,7 +18,8 @@
 
   <!-- Wrapper-->
     <div id="wrapper">
-<div id='app' >
+        
+<div id='app' :permissions="<?php echo e(auth()->user()->roles()->get()); ?>"   :user="<?php echo e(auth()->user()); ?>"  >
         <!-- Navigation -->
         <?php echo $__env->make('layouts.navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
@@ -39,11 +42,13 @@
     <!-- End wrapper-->
     <script src="/js/app.js"></script>
     <script src="/js/main.js"></script>
-    <script>
+<script>
     window.Laravel = <?php echo json_encode([
-    'csrfToken' => csrf_token(),
-     ]); ?>
-     </script>
+        'csrfToken' => csrf_token(),
+        'roles' => Auth::user()->roles()->get(),
+        'user' => Auth::user()
+    ]); ?>;
+    </script>
 
 <?php $__env->startSection('scripts'); ?>
 <?php echo $__env->yieldSection(); ?>

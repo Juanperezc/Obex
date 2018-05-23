@@ -8,6 +8,7 @@
   <!--  <link href="/images/Obex.ico" rel="shortcut icon" type="image/x-icon" /> -->
     <link rel="stylesheet" href="<?php echo asset('css/vendor.css'); ?>" />
     <link rel="stylesheet" href="<?php echo asset('css/app.css'); ?>" />
+    
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
@@ -29,6 +30,7 @@
      ]); ?>
      </script>
 <?php $__env->startSection('scripts'); ?>
+
 <?php echo $__env->yieldSection(); ?>
 
 </body>
