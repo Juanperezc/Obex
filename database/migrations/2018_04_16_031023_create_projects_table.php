@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('type'); //! enum de los tipos de proyectos
+            $table->enum('type', ['web-design']);
             $table->string('description');
             $table->date('start');
             $table->date('finish');

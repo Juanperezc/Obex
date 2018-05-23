@@ -12,7 +12,7 @@
     <div class="ibox-title">
         <h5>Todos los proyectos</h5>
         <div class="ibox-tools">
-        <a href="" class="btn btn-primary btn-xs">Crear nuevo proyecto</a>
+        <a href="/panel/project/create" class="btn btn-primary btn-xs">Crear nuevo proyecto</a>
         </div>
     </div>
     <div class="ibox-content">

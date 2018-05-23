@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-    <title>INSPINIA - <?php echo $__env->yieldContent('title'); ?> </title>
+    <title>Obex - <?php echo $__env->yieldContent('title'); ?> </title>
   <!--  <link href="/images/Obex.ico" rel="shortcut icon" type="image/x-icon" /> -->
     <link rel="stylesheet" href="<?php echo asset('css/vendor.css'); ?>" />
     <link rel="stylesheet" href="<?php echo asset('css/app.css'); ?>" />

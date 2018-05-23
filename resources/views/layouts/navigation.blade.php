@@ -76,7 +76,7 @@
                 <li class="{{ isActiveRoute('project.view') }}"><a href="{{ url('panel/project/') }}" ><i class="fa fa-eye"></i>Ver Proyectos</a></li>
                 <li class="{{ isActiveRoute('project.create') }}"><a href="{{ url('panel/project/create') }}"><i class="fa fa-plus"></i>Crear Proyecto</a></li>
                 <li class="{{ isActiveRoute('project.resources') }}"><a href="{{ url('panel/project/resources') }}" ><i class="fa fa-stack-overflow"></i>Gestionar Recursos</a></li>
-                <li class="{{ isActiveRoute('project.modify') }}"><a href="{{ url('panel/project/modify') }}"><i class="fa fa-exclamation-triangle"></i>Modificar o eliminar</a></li>
+
                 </ul>
             </li>
             @endrole
