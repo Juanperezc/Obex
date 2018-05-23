@@ -33,6 +33,7 @@
     29 => 'App\\Providers\\RouteServiceProvider',
     30 => 'Laravel\\Tinker\\TinkerServiceProvider',
     31 => 'jeremykenedy\\LaravelRoles\\RolesServiceProvider',
+    32 => 'App\\Providers\\CollectionServiceProvider',
   ),
   'eager' => 
   array (
@@ -53,6 +54,7 @@
     14 => 'App\\Providers\\EventServiceProvider',
     15 => 'App\\Providers\\RouteServiceProvider',
     16 => 'jeremykenedy\\LaravelRoles\\RolesServiceProvider',
+    17 => 'App\\Providers\\CollectionServiceProvider',
   ),
   'deferred' => 
   array (

@@ -12,8 +12,8 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
-<body id="page-top" class="landing-page no-skin-config">
-  <div class="navbar-wrapper">
+<body id="page-top" class=" no-skin-config">
+  <div class="navbar-wrapper landing-page">
   
   <div id='app' >
  

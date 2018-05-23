@@ -12,6 +12,17 @@
 @import "import/variables";
 @import "import/mixins";
 
+
+//
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
+//@import "~font-awesome/scss/font-awesome";
+
+@import "~select2/src/scss/core";
+
+//import "~chosen-npm/public/style";
+
+
 // INSPINIA Theme Elements
 @import "import/typography";
 @import "import/navigation";
@@ -80,11 +91,10 @@
 .avatar-profile{
   max-width: 40%;
 }
-.parent-img{
+.parentimg{
   position: relative;
 }
 .over-crown{
   position: absolute;
-  top: 0;
   left: 0;
 }

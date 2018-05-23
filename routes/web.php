@@ -26,7 +26,7 @@ Route::group(['prefix' => 'report', 'as'=>'report.', 'middleware' => ['role:admi
     Route::get('/', 'ReportController@project');
     Route::get('/{id}', 'ReportController@project_detail');
     }); 
-    Route::get('/team', 'ReportController@team')->name("team");
+    Route::get('/create', 'ReportController@project_create')->name("team");
 });
 Route::get('/post', function () {
     return 'Hello World';
@@ -43,9 +43,9 @@ Route::view('/manage-notification', 'other/building')->name("manage-notification
 Route::group(['prefix' => 'project', 'as'=>'project.', 'middleware' => ['role:admin|manager']], function () {
 
 Route::get('/', 'ProjectController@view')->name("view");
-Route::get('/{id}', 'ProjectController@view')->name("view");
-
-Route::view('/create', 'projects/create')->name("create");
+Route::get('/view/{id}', 'ProjectController@view')->name("view");
+Route::get('/create', 'ProjectController@view_create')->name("create");
+Route::get('/edit', 'ProjectController@view_edit')->name("");
 Route::view('/resources', 'projects/resources')->name("resources");
 Route::view('/modify', 'projects/modify')->name("modify");
 });
