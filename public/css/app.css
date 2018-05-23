@@ -8444,6 +8444,19 @@ body.landing-page {
   transition: all 0.3s ease-in-out 0s;
 }
 
+.landing-page .navbar-default .navbar-brand2 {
+  color: #fff;
+  height: auto;
+  display: block;
+  font-size: 14px;
+  background: #1ab394;
+  padding: 0px 10px 0px 10px;
+  border-radius: 0 0 5px 5px;
+  font-weight: 700;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
 .landing-page .navbar-scroll.navbar-default .nav li a {
   color: #676a6c;
 }
@@ -8499,11 +8512,11 @@ body.landing-page {
 }
 
 .landing-page .header-back.one {
-  background: image-url("landing/header_one.jpg") 50% 0 no-repeat;
+  background: url("/images/header_one.jpg") 50% 0 no-repeat;
 }
 
 .landing-page .header-back.two {
-  background: image-url("landing/header_two.jpg") 50% 0 no-repeat;
+  background: url("/images/header_two.jpg") 50% 0 no-repeat;
 }
 
 .landing-page .carousel {
@@ -8578,6 +8591,7 @@ body.landing-page {
   bottom: auto;
   right: auto;
   text-align: left;
+  color: black;
 }
 
 .landing-page .carousel-caption {
@@ -8587,6 +8601,7 @@ body.landing-page {
   bottom: auto;
   right: auto;
   text-align: left;
+  color: black;
 }
 
 .landing-page .carousel-caption.blank {
@@ -8609,16 +8624,18 @@ body.landing-page {
   text-transform: uppercase;
   text-shadow: none;
   letter-spacing: -1.5px;
+  color: black;
 }
 
 .landing-page .carousel-caption p {
   font-weight: 700;
   text-transform: uppercase;
   text-shadow: none;
+  color: black;
 }
 
 .landing-page .caption-link {
-  color: #fff;
+  color: black;
   margin-left: 10px;
   text-transform: capitalize;
   font-weight: 400;

@@ -149,6 +149,18 @@ body.landing-page {
     font-weight: 700;
     transition: all 0.3s ease-in-out 0s;
   }
+  .navbar-default .navbar-brand2 {
+    color: #fff;
+    height: auto;
+    display: block;
+    font-size: 14px;
+    background: $navy;
+    padding: 0px 10px 0px 10px;
+    border-radius: 0 0 5px 5px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
   .navbar-scroll.navbar-default .nav li a {
     color: $text-color;
   }
@@ -201,10 +213,10 @@ body.landing-page {
     width: 100%;
   }
   .header-back.one {
-    background: image-url("landing/header_one.jpg")  50% 0 no-repeat;
+    background: url("/images/header_one.jpg")  50% 0 no-repeat;
   }
   .header-back.two {
-    background: image-url("landing/header_two.jpg") 50% 0 no-repeat;
+    background: url("/images/header_two.jpg") 50% 0 no-repeat;
   }
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
@@ -270,6 +282,7 @@ body.landing-page {
     bottom: auto;
     right: auto;
     text-align: left;
+    color: rgb(0, 0, 0);
   }
   .carousel-caption {
     position: absolute;
@@ -278,6 +291,7 @@ body.landing-page {
     bottom: auto;
     right: auto;
     text-align: left;
+    color: rgb(0, 0, 0);
   }
   .carousel-caption.blank {
     top: 140px;
@@ -296,14 +310,16 @@ body.landing-page {
     text-transform: uppercase;
     text-shadow: none;
     letter-spacing: -1.5px;
+    color: rgb(0, 0, 0);
   }
   .carousel-caption p {
     font-weight: 700;
     text-transform: uppercase;
     text-shadow: none;
+    color: rgb(0, 0, 0);
   }
   .caption-link {
-    color: #fff;
+    color: rgb(0, 0, 0);
     margin-left: 10px;
     text-transform: capitalize;
     font-weight: 400;
