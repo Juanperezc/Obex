@@ -29,7 +29,7 @@ const app = new Vue({
 $(document).ready(function () {
 
     //var myChart = new Chart();
-    
+  
     //var myChart = new Chart();
     // Add body-small class if window less than 768px
     if ($(this).width() < 769) {

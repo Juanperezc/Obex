@@ -12,8 +12,10 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
+
 <body id="page-top" class="no-skin-config">
   <div class="landing-page navbar-wrapper">
+
   
   <div id='app' >
  

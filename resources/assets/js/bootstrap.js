@@ -56,9 +56,13 @@ try {
     window.$ = window.jQuery = require('jquery');
 require('bootstrap');
 require('bootstrap-sass');
+require('bootstrap-touchspin');
+require('daterangepicker');
+require('bootstrap-datepicker');
 require('metismenu');
 require('jquery-slimscroll');
 require('select2');
+//require('chosen-npm');
 //require('datatables.net-bs');
 require("bootstrap-slider");
 require("ion-rangeslider");

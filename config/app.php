@@ -181,8 +181,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         // Other service providers...
         Laravel\Tinker\TinkerServiceProvider::class,
-        jeremykenedy\LaravelRoles\RolesServiceProvider::class
-        
+        jeremykenedy\LaravelRoles\RolesServiceProvider::class,
+        App\Providers\CollectionServiceProvider::class,
 
     ],
 
