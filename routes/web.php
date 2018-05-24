@@ -66,7 +66,12 @@ Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
     Route::resource('/projects', 'ProjectController', [
         'except' => ['edit','store']
       ]);
-    
+      Route::resource('/teams', 'TeamController', [
+        'except' => ['edit','store']
+      ]);
+      Route::resource('/clients', 'ClientController', [
+        'except' => ['edit','store']
+      ]);
     });
 /*// routes/web.php
 Route::group(['prefix' => 'books'], function () {

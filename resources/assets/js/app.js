@@ -8,15 +8,25 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-import swalPlugin from './plugins/VueSweetalert2';
-Vue.use(swalPlugin);
+
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('button-password', require('./components/ButtonPasswordComponent.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('project-table', require('./components/projects/ProjectTableComponent.vue'));
 //* details
-Vue.component('project-detail', require('./components/projects/detail/ProjectDetailComponent.vue'));
+Vue.component('project-detail', require('./components/projects/ProjectDetailComponent.vue'));
+Vue.component('project-save', require('./components/projects/ProjectSaveComponent.vue'));
+
+//vue
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import swalPlugin from './plugins/VueSweetalert2';
+import locale from 'element-ui/lib/locale/lang/es'
+
+Vue.use(swalPlugin);
+Vue.use(ElementUI, { locale })
+
 
 const app = new Vue({
     el: '#app',
