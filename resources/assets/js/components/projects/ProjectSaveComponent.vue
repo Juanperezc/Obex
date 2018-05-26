@@ -4,8 +4,9 @@
         @on-complete="onComplete"
         shape="tab"
         color="#18A689"
-        :start-index="1"
-        error-color="#ff4949" slot-scope="propswizzard" >
+    
+        error-color="#ff4949"
+        slot-scope="propswizzard">
         <tab-content
             title="Personal details"
             icon="fa fa-user"
@@ -32,17 +33,19 @@
 
                     <el-date-picker
                         type="date"
+                         format="yyyy-MM-dd"
                         placeholder="Escoge una fecha"
                         v-model="formGeneral.start"
                         style="width: 100%;"></el-date-picker>
 
                 </el-form-item>
-                <el-form-item label="Fecha de Finalización" prop="end">
+                <el-form-item label="Fecha de Finalización" prop="finish">
 
                     <el-date-picker
+                    format="yyyy-MM-dd"
                         type="date"
                         placeholder="Escoge una fecha"
-                        v-model="formGeneral.end"
+                        v-model="formGeneral.finish"
                         style="width: 100%;"></el-date-picker>
 
                 </el-form-item>
@@ -70,14 +73,13 @@
                     </el-select>
                 </el-form-item>
                 <el-form-item label="Cliente" prop="client">
-                <el-select v-model="formTeam.client" placeholder="Selecciona un Cliente">
-    <el-option
-      v-for="item in formTeam.oClient"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value">
-    </el-option>
-  </el-select>
+                    <el-select v-model="formTeam.client" placeholder="Selecciona un Cliente">
+                        <el-option
+                            v-for="item in formTeam.oClient"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value"></el-option>
+                    </el-select>
                 </el-form-item>
             </el-form>
         </tab-content>
@@ -104,21 +106,22 @@
         },
         data() {
             return {
-                   propswizzard: {
-  title: {
-    type: String,
-    default: 'Awesssadsdome Wizard'
-  },
-  subtitle: {
-    type: String,
-    default: 'Split a complicated flow in multiple steps'
-  }},
+                propswizzard: {
+                    title: {
+                        type: String,
+                        default: 'Awesssadsdome Wizard'
+                    },
+                    subtitle: {
+                        type: String,
+                        default: 'Split a complicated flow in multiple steps'
+                    }
+                },
                 formGeneral: {
                     name: '',
                     type: '',
                     description: '',
                     start: '',
-                    end: ''
+                    finish: ''
                 },
                 grules: {
                     name: [
@@ -150,7 +153,7 @@
                             trigger: 'change'
                         }
                     ],
-                    end: [
+                    finish: [
                         {
                             type: 'date',
                             required: true,
@@ -159,58 +162,99 @@
                         }
                     ]
                 },
-                    formTeam: {
+                formTeam: {
                     teams: [],
-                    oTeams: [
-                     
-                    ],
-                    oClient: [
-                   
-                    ],
-                    client: ''
+                    client: '',
+                    oTeams: [],
+                    oClient: []
                 },
-            
-                trules: {}
+
+                trules: {
+                    teams: [
+                        {
+                            required: true,
+                            message: 'Porfavor selecciona al menos un equipo',
+                            trigger: 'blur'
+                        }
+                    ],
+                    client: [
+                        {
+                            required: true,
+                            message: 'Porfavor selecciona un cliente',
+                            trigger: 'blur'
+                        }
+                    ]
+                }
             }
         },
         methods: {
-             readTeams() {
-                   
-                        window
-                            .axios
-                            .get('/api/teams')
-                            .then(({data}) => {
-                                data.forEach(team => {
-                                    let ot={'value': '', 'label': ''};
-                                    console.log(team);
-                                    ot.value=team.id;
-                                    ot.label = team.description;
-                                    this.formTeam.oTeams.push(ot);
-                                });
-                                this.mute = false;
-                            });
-                    },
-                          readClients() {
-                   
-                        window
-                            .axios
-                            .get('/api/clients')
-                            .then(({data}) => {
-                                data.forEach(client => {
-                                    let oc={'value': '', 'label': ''};
-                                    console.log(client);
-                                    oc.value=client.id;
-                                    oc.label = client.name;
-                                    this.formTeam.oClient.push(oc);
-                                });
-                                this.mute = false;
-                            });
-                    },
+            readTeams() {
+
+                window
+                    .axios
+                    .get('/api/teams')
+                    .then(({data}) => {
+                        data.forEach(team => {
+                            let ot = {
+                                'value': '',
+                                'label': ''
+                            };
+                            console.log(team);
+                            ot.value = team.id;
+                            ot.label = team.description;
+                            this
+                                .formTeam
+                                .oTeams
+                                .push(ot);
+                        });
+                        this.mute = false;
+                    });
+            },
+            saveProject() {
+                
+                var Form = this.formGeneral;
+                this.formGeneral.other = this.formTeam;
+                console.log(Form);
+                window
+                    .axios
+                    .post('/api/projects', Form)
+                    .then(function (resp) {
+                        console.log(resp);
+                        //  app.$router.push({path: '/'});
+                    })
+                    .catch(function (resp) {
+                        console.log(resp);
+                        alert("Could not create your company");
+                    });
+            },
+            readClients() {
+
+                window
+                    .axios
+                    .get('/api/clients')
+                    .then(({data}) => {
+                        data.forEach(client => {
+                            let oc = {
+                                'value': '',
+                                'label': ''
+                            };
+                            console.log(client);
+                            oc.value = client.id;
+                            oc.label = client.name;
+                            this
+                                .formTeam
+                                .oClient
+                                .push(oc);
+                        });
+                        this.mute = false;
+                    });
+            },
             onComplete: function () {
-                alert('Yay. Done!');
-                tableData.push(
+               /* alert('Yay. Done!');
+                /*tableData.push(
                     {date: '2016-05-03', name: 'Tom', address: 'No. 189, Grove St, Los Angeles'}
-                );
+                );*/
+                this.saveProject();
             },
             validateFirstStep() {
                 return new Promise((resolve, reject) => {
@@ -233,11 +277,10 @@
                 })
             }
         },
-        created(){
-             this.readTeams();
-             this.readClients();
+        created() {
+            this.readTeams();
+            this.readClients();
         }
-     
 
     }
 </script>

@@ -64,13 +64,13 @@ Route::group(['prefix' => 'team', 'as'=>'team.', 'middleware' => ['role:admin|ma
 Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
 
     Route::resource('/projects', 'ProjectController', [
-        'except' => ['edit','store']
+        'except' => ['create', 'edit']
       ]);
       Route::resource('/teams', 'TeamController', [
-        'except' => ['edit','store']
+        'except' => ['create', 'edit']
       ]);
       Route::resource('/clients', 'ClientController', [
-        'except' => ['edit','store']
+        'except' => ['create', 'edit']
       ]);
     });
 /*// routes/web.php

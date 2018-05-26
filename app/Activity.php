@@ -9,8 +9,8 @@ class Activity extends Model
     //
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    public function teams()
+    public function project_team()
     {
-        return $this->belongsTo('App\Team');
+        return $this->belongsTo('App\ProjectTeam');
     }
 }

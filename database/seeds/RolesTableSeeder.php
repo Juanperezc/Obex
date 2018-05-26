@@ -62,7 +62,7 @@ class RolesTableSeeder extends Seeder
 	        $userRole = Role::create([
 	            'name' => 'Manager',
 	            'slug' => 'manager',
-	            'description' => 'Proyect-Manager',
+	            'description' => 'Project-Manager',
 	            'level' => 5,
 	        ]);
 		}
