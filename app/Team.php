@@ -19,12 +19,12 @@ class Team extends Model
     }
     public function projects()
     {
-        $this->hasMany('App\ProjectTeam');
-        //return $this->belongsToMany('App\Project');
+        //$this->hasMany('App\ProjectTeam');
+        return $this->belongsToMany('App\Project')->using('App\ProjectTeam');
     }
-    public function activities()
+   /* public function activities()
     {
         return $this->hasMany('App\Activity');
-    }
+    }*/
 
 }

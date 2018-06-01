@@ -15,9 +15,10 @@ class Project extends Model
     protected $appends = ['percent_complete','section'];
     public function teams()
     {
-        $this->hasMany('App\ProjectTeam');
+        
+    //   $this->hasMany('App\ProjectTeam');
 
-    //    return $this->belongsToMany('App\Team');
+       return $this->belongsToMany('App\Team')->using('App\ProjectTeam');
     }
   /*  public function activities()
     {

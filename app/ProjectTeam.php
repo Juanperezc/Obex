@@ -1,19 +1,15 @@
 <?php
 
 namespace App;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-use Illuminate\Database\Eloquent\Model;
 
-class ProjectTeam extends Model
+class ProjectTeam extends Pivot
 {
     //
-    public function project(){
-        $this->belongsTo('App\Project');
+    public function activities()
+    {
+        return $this->hasMany('App\Activity');
     }
-    public function team(){
-        $this->belongsTo('App\Team');
-    }
-    public function activities(){
-        $this->hasMany('App\Activity');
-    }
+   
 }
