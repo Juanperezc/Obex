@@ -54,7 +54,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="a in t.activities">
+                                        <tr v-for="a in t.activities" v-if='a.pivot.team_id = '>
                                             <td>
                                                 <span class="label" v-bind:class="classLabel(a.state)">
                                                     <i class="fa fa-check "></i>
@@ -131,7 +131,7 @@
                 }
 
             },
-            props: ['teams']
+            props: ['teams','activities']
 
         }
     </script>

@@ -9,8 +9,12 @@ class Activity extends Model
     //
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    public function project_team()
+    public function teams()
     {
-        return $this->belongsTo('App\ProjectTeam');
+       return $this->belongsToMany('App\Team','activity_project_team')->withPivot('project_id');
+    }
+    public function project()
+    {
+       return $this->belongsToMany('App\Project','activity_project_team')->withPivot('team_id');
     }
 }

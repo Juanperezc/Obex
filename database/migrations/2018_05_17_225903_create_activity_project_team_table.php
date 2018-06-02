@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectTeamTable extends Migration
+class CreateActivityProjectTeamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateProjectTeamTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_team', function (Blueprint $table) {
+        Schema::create('activity_project_team', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('project_id')->unsigned();
             $table->foreign('project_id')->references('id')->on('projects');
             $table->integer('team_id')->unsigned();
             $table->foreign('team_id')->references('id')->on('teams');
+            $table->integer('activity_id')->unsigned();
+            $table->foreign('activity_id')->references('id')->on('activities');
+            $table->unique(['project_id', 'team_id','activity_id']);
              $table->timestamps();$table->softDeletes();
         });
     }

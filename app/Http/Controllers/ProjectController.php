@@ -27,7 +27,14 @@ public function view_create()
 }
 public function index()
 {
-  return response(Project::with(['teams.users', 'teams.activities'])->get()->jsonSerialize(), Response::HTTP_OK);
+  $obj = Project::with(['teams.users', 'activities'])->get();
+  //!broma del team
+
+
+  return response($obj, Response::HTTP_OK);
+  /*$posts = App\Post::whereHas('comments', function ($query) {
+    $query->where('content', 'like', 'foo%');
+})->get();/**/ 
 }
 public function show($id){
 

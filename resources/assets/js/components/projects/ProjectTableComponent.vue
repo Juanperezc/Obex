@@ -33,11 +33,7 @@
             </table>
         </template>
         <script>
-            function Project({id, name, description}) {
-                this.id = id;
-                this.name = name;
-                this.description = description;
-            }
+         
             import ActionTableComponent from '../globals/ActionTableComponent.vue';
             export default {
                 components: {

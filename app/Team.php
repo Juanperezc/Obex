@@ -12,6 +12,9 @@ class Team extends Model
     protected $fillable = [
         'description'
     ];
+    protected $hidden = [
+        'activities'
+    ];
 
     public function users()
     {
@@ -19,12 +22,11 @@ class Team extends Model
     }
     public function projects()
     {
-        //$this->hasMany('App\ProjectTeam');
-        return $this->belongsToMany('App\Project')->using('App\ProjectTeam');
+        return $this->belongsToMany('App\Project','activity_project_team')->withPivot('activity_id');
     }
-   /* public function activities()
+    public function activities()
     {
-        return $this->hasMany('App\Activity');
-    }*/
+        return $this->belongsToMany('App\Activity','activity_project_team')->withPivot('project_id')->as('subscription');
+    }
 
 }

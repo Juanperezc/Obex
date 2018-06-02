@@ -21,10 +21,8 @@ class CreateActivitiesTable extends Migration
             $table->date('start');
             $table->date('finish');
             $table->enum('state', ['on-hold', 'in-progress', 'culminated', 'cancelled'])->default('on-hold');
+            $table->timestamps();$table->softDeletes();
             
-            $table->integer('team_id')->unsigned();
-             $table->timestamps();$table->softDeletes();
-            $table->foreign('team_id')->references('id')->on('teams');
         });
     }
 

@@ -16,16 +16,17 @@ class CreateTeamUserTable extends Migration
         //
         Schema::create('team_user', function (Blueprint $table) {
             $table->increments('id');
-            //// claves foraneas
+            //* claves foraneas
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('team_id')->unsigned();
             $table->foreign('team_id')->references('id')->on('teams');
+          
              $table->timestamps();$table->softDeletes();
         });
     }
 
-    /**
+    /**z
      * Reverse the migrations.
      *
      * @return void
