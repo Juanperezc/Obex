@@ -63,7 +63,7 @@
                                     }
 
                                 },
-                                props: ['id'],
+                                props: ['id','clients.name','activities','teams'],
                                 mounted() {
                                     this.read();
                                     console.log("mrk");

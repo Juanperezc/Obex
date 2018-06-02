@@ -12,10 +12,10 @@ class Team extends Model
     protected $fillable = [
         'description'
     ];
-    protected $hidden = [
+  /*  protected $hidden = [
         'activities'
-    ];
-
+    ]; */
+//*makevisible
     public function users()
     {
         return $this->belongsToMany('App\User');

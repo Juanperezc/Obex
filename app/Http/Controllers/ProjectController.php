@@ -40,7 +40,9 @@ public function show($id){
 
   return response(Project::with(['teams.users' => function ($q) {
     $q->orderBy('users.id', 'desc');
-  }, 'teams.activities', 'clients'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
+  }, 'teams.activities' => function ($q) use ($id) {
+    $q->whereRaw("project_id = $id");
+  }, 'clients'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
 }
 public function destroy($id)
 {
