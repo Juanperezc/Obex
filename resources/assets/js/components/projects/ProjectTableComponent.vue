@@ -106,8 +106,6 @@
 
                 created() {
                     this.read();
-                   
-                    // this.percent_complete_project();
                 }
             }
         </script>

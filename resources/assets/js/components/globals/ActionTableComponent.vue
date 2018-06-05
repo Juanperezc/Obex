@@ -4,6 +4,10 @@
                                 <i class="fa fa-folder"></i>
                                 Ver
         </a>
+         <a v-if="Laravel.user.can['edit.projects']" :href="'/panel/' + section + '/edit/' + id"  class="btn btn-white btn-sm">
+                                <i class="fa fa-folder"></i>
+                                Editar
+        </a>
          <a v-if="Laravel.user.can['delete.projects']" href="#" @click="del" class="btn btn-white btn-sm">
                                 <i class="fa fa-trash"></i>
                                 Borrar

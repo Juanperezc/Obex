@@ -84,9 +84,9 @@
             <li class="{{ areActiveRoutes(['team.view','team.create','team.modify']) }}">
                 <a href="#"><i class="fa fa-group"></i> <span class="nav-label">Equipos</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="{{ isActiveRoute('team.view') }}"><a href="{{ url('panel/team/view') }}" ><i class="fa fa-eye"></i>Ver Equipos</a></li>
+                <li class="{{ isActiveRoute('team.view') }}"><a href="{{ url('panel/team/') }}" ><i class="fa fa-eye"></i>Ver Equipos</a></li>
                 <li class="{{ isActiveRoute('team.create') }}"><a href="{{ url('panel/team/create') }}" ><i class="fa fa-plus"></i>Crear Equipo</a></li>
-                <li class="{{ isActiveRoute('team.modify') }}"><a href="{{ url('panel/team/modify') }}"><i class="fa fa-exclamation-triangle"></i>Modificar o eliminar Equipo</a></li>
+               
                 </ul>
             </li>
             @endrole

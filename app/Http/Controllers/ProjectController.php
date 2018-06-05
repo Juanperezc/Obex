@@ -10,7 +10,7 @@ use App\Project;
 class ProjectController extends Controller
 {
     //
-    public $primaryKey = 'id';
+ //public $primaryKey = 'id';
 
 public function view($id = null)
 {
@@ -21,20 +21,27 @@ public function view($id = null)
   }
        
 }
-public function view_create()
+public function view_create($id = null)
 {
-  return view('projects/save');
+
+    return view('projects/save', compact('id'));
+
+  
 }
+public function view_edit($id = null){
+  $project = Project::findOrFail($id);
+    if ($project)
+    return view('projects/save', compact('id'));
+    else
+    return view('errors/404');
+}
+//? api 
 public function index()
 {
   $obj = Project::with(['teams.users', 'activities'])->get();
   //!broma del team
-
-
   return response($obj, Response::HTTP_OK);
-  /*$posts = App\Post::whereHas('comments', function ($query) {
-    $query->where('content', 'like', 'foo%');
-})->get();/**/ 
+  
 }
 public function show($id){
 
@@ -52,41 +59,35 @@ public function destroy($id)
 }
 public function store(Request $request)
 {
-  //$other = $request->only(['other']);
   $newP = $request->except(['other']);
   //return $newP;
   $client = $request->input('other.client');
   $teams = $request->input('other.teams');
 
-  $p = new Project;
+  if ($idedit = $request->input("idedit") != null){
+    $p = Project::findOrFail($idedit);
+     $p->activities()->detach(); // add team con actividad tiene que ser imborrable
+    
+  }else{
+    $p = new Project;
+    
+  }
+ 
+  // preguntar si existe o no/ 
+ 
   $p->name = $request->input("name");
   $p->description = $request->input("description");
   $p->type = $request->input("type");
-  $p->start = Carbon::parse($request->input("start"));
-  $p->finish = Carbon::parse($request->input("finish"));
+  $p->start = Carbon::parse($request->input("dates")[0]);
+  $p->finish = Carbon::parse($request->input("dates")[1]);
   $p->client_id = $client;
-
   //$p->clients()->attach($request->input(""));
   $p->save();
-  $p->teams()->attach($teams);
+  foreach ($teams as $t) {
+    $p->activities()->attach(1, ['team_id'=> $t]); // add team con actividad tiene que ser imborrable
+  }
   $p->save();
-  /*
-  $p = new Project;
-  $p->name = "s";
-  $p->description = "sad";
-  $p->type = "web-design";
-  $p->start = "20-10-2018";
-  $p->finish = "21-10-2018";
-  $p->save();*/
- //  $project = Project::create({name: "asdasdasd", type: "web-design", description: "asdasdasd", start: "2018-05-07T04:00:00.000Z", finish: "2018-05-19T04:00:00.000Z"});
-   //$project->clients()->attach($client);
-   //$project->teams()->attach($teams);
 
-  /* return response()->json([
-    'name' => $teams,
-    'state' => 'CA'
-]);*/
-   // $company = Company::create($request->all());
    return $p;
 }
 

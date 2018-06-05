@@ -66,8 +66,7 @@
                                 props: ['id','clients.name','activities','teams'],
                                 mounted() {
                                     this.read();
-                                    console.log("mrk");
-                                    // this.percent_complete_project();
+                                 
                                 }
                             }
                         </script>

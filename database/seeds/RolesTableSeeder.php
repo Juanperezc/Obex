@@ -25,7 +25,10 @@ class RolesTableSeeder extends Seeder
 			'slug' => 'create.projects',
 			'description' => '', // optional
 		]);
-		
+		$editProjectPermission = Permission::create([
+			'name' => 'Edit Projects',
+			'slug' => 'edit.projects',
+		]);
 		$deleteProjectPermission = Permission::create([
 			'name' => 'Delete Projects',
 			'slug' => 'delete.projects',
@@ -45,6 +48,7 @@ class RolesTableSeeder extends Seeder
 	            'level' => 5,
 			]);
 			$adminRole->attachPermission($createProjectPermission); // permission attached to a role
+			$adminRole->attachPermission($editProjectPermission); // permission attached to a role
 			$adminRole->attachPermission($deleteProjectPermission); // permission attached to a role
 
 	    }

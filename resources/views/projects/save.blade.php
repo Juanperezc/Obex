@@ -14,7 +14,7 @@
            
             </div>
             <div class="ibox-content">
-                <project-save></project-save>
+                <project-save id="{{$id}}"></project-save>
             </div>
         </div>
     </div>
