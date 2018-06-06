@@ -1,4 +1,4 @@
-@extends('layouts.app') @section('title', 'Main page') @section('content')
+@extends('layouts.app-nh') @section('title', 'Inicio') @section('content')
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-md-6">

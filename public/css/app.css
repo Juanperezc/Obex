@@ -14195,10 +14195,8 @@ code {
 }
 
 .ibox {
-  clear: both;
   margin-bottom: 25px;
   margin-top: 0;
-  padding: 0;
 }
 
 .ibox.collapsed .ibox-content {
@@ -19377,10 +19375,8 @@ body.md-skin {
 }
 
 .md-skin .ibox {
-  clear: both;
   margin-bottom: 25px;
   margin-top: 0;
-  padding: 0;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
@@ -19936,5 +19932,9 @@ body.md-skin {
 .over-crown {
   position: absolute;
   left: 0;
+}
+
+.breadcrumb > .active {
+  font-weight: bold;
 }
 

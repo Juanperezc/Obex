@@ -26,9 +26,13 @@
         <!-- Page wraper -->
         <div id="page-wrapper" class="gray-bg">
 
+            
             <!-- Page wrapper -->
             @include('layouts.topnavbar')
 
+            <!-- Page heading -->
+            @include('layouts.heading')
+            <!-- -->
             <!-- Main view  -->
             @yield('content')
 

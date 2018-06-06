@@ -13,11 +13,12 @@ window.Vue = require('vue');
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('button-password', require('./components/ButtonPasswordComponent.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+//* project
 Vue.component('project-table', require('./components/projects/ProjectTableComponent.vue'));
-//* details
 Vue.component('project-detail', require('./components/projects/ProjectDetailComponent.vue'));
 Vue.component('project-save', require('./components/projects/ProjectSaveComponent.vue'));
-
+//*teams
+Vue.component('teams-table', require('./components/teams/TeamTableComponent.vue'));
 //vue
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
