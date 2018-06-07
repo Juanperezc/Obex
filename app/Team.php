@@ -25,11 +25,11 @@ class Team extends Model
     }
     public function projects()
     {
-        return $this->belongsToMany('App\Project','activity_project_team')->withPivot('activity_id');
+        return $this->belongsToMany('App\Project');
     }
     public function activities()
     {
-        return $this->belongsToMany('App\Activity','activity_project_team')->withPivot('project_id')->as('subscription');
+        return $this->belongsToMany('App\Activity')->as('subscription');
     }
 
 }

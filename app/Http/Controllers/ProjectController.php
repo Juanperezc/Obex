@@ -35,7 +35,7 @@ public function view_edit($id){
 //? api 
 public function index()
 {
-  $obj = Project::with(['teams.users', 'activities'])->get();
+  $obj = Project::with(['teams.users', 'teams.activities'])->get();
   //!broma del team
   return response($obj, Response::HTTP_OK);
   
@@ -43,9 +43,7 @@ public function index()
 public function show($id){
   return response(Project::with(['teams.users' => function ($q) {
     $q->orderBy('users.id', 'desc');
-  }, 'teams.activities' => function ($q) use ($id) {
-    $q->whereRaw("project_id = $id");
-  }, 'clients'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
+  }, 'teams.activities', 'clients'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
 }
 public function destroy($id)
 {
@@ -55,39 +53,36 @@ public function destroy($id)
 }
 public function store(Request $request)
 {
-  $newP = $request->except(['other']);
   $client = $request->input('other.client');
   $teams = $request->input('other.teams');
-  if ($idedit = $request->input("idedit") != null){
-      $p = Project::find($idedit);
-   // if (count($teams) > 0){
-      $p->activities()->detach();
-    // add team con actividad tiene que ser imborrable
-    //}
-  }else{
-    $p = new Project;
-  }
-
-  // preguntar si existe o no/ 
- 
+  $p = new Project;
   $p->name = $request->input("name");
   $p->description = $request->input("description");
   $p->type = $request->input("type");
   $p->start = Carbon::parse($request->input("dates")[0]);
   $p->finish = Carbon::parse($request->input("dates")[1]);
   $p->client_id = $client;
-  //$p->clients()->attach($request->input(""));
-
-  if (count($teams) > 0){
-    foreach ($teams as $t) {
-      $p->activities()->attach(1, ['team_id'=> $t]);
-      // add team con actividad tiene que ser imborrable
-    }
-  }
   $p->save(); 
-
-
+  $p->teams()->attach($teams);
+  $p->save(); 
    return $p;
+}
+public function update(Request $request)
+{
+  $client = $request->input('other.client');
+  $teams = $request->input('other.teams');
+  $idedit = $request->input('idedit');
+  $p = Project::findOrFail($idedit);
+  $p->name = $request->input("name");
+  $p->description = $request->input("description");
+  $p->type = $request->input("type");
+  $p->start = Carbon::parse($request->input("dates")[0]);
+  $p->finish = Carbon::parse($request->input("dates")[1]);
+  $p->client_id = $client;
+  //$p->save(); 
+  $p->teams()->sync($teams);
+  $p->save(); 
+  return $p;
 }
 
 

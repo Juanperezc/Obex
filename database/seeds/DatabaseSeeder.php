@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call('ProjectTableSeeder');
         $this->call('ActivitiesTableSeeder');
         $this->call('TeamUserTableSeeder');
-        $this->call('ActivityProjectTeamTableSeeder');
-      
+        $this->call('ProjectTeamTableSeeder');
+        $this->call('ActivityTeamTableSeeder');
 
     }
 }

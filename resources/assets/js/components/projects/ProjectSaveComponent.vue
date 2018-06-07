@@ -17,12 +17,8 @@
 	
 					<el-date-picker value-format="yyyy-MM-dd" v-model="formGeneral.dates" type="daterange" start-placeholder="Fecha de inicio" end-placeholder="Fecha de finalización">
 					</el-date-picker>
-	
 				</el-form-item>
-	
-	
 			</el-form>
-	
 		</tab-content>
 		<tab-content title="Cliente y Equipos" icon="fa fa-users" :before-change="validateSecondStep">
 			<el-form :inline="true" :model="formTeam" class="demo-form-inline" :rules="trules" ref="teamForm" label-width="220px">
@@ -39,7 +35,6 @@
 	
 			</el-form>
 		</tab-content>
-	
 		<el-button type="primary" slot="prev">Atras</el-button>
 		<el-button type="primary" slot="next">Siguiente</el-button>
 		<el-button type="primary" slot="finish">Finalizar</el-button>
@@ -70,7 +65,7 @@
 					name: '',
 					type: '',
 					description: '',
-				
+	
 					dates: [],
 				},
 				grules: {
@@ -147,11 +142,7 @@
 	
 				var Form = this.formGeneral;
 				this.formGeneral.other = this.formTeam;
-				if (this.id != -1) {
-					this.formGeneral.idedit = this.id
-				} else {
-					this.formGeneral.idedit = null
-				}
+	
 	
 				console.log(Form);
 				window
@@ -168,19 +159,42 @@
 							showConfirmButton: false,
 							timer: 1500
 						})
-						if (this.id == -1) {
-							this.resetFormresetForms();
-						}
 	
-						//   this.mute = true;
+						this.resetFormresetForms();
 					})
 					.catch(({
 						resp
 					}) => {
 						console.log(resp);
-						//alert("Could not create your company");
+	
 					});
 	
+			},
+			updateProject() {
+				var Form = this.formGeneral;
+				this.formGeneral.other = this.formTeam;
+				this.formGeneral.idedit = parseInt(this.id);
+				console.log(Form);
+				window.axios
+					.put('/api/projects/' + this.id, Form)
+					.then(({
+						resp
+					}) => {
+						console.log(resp);
+						this.$swal({
+							position: 'top-end',
+							type: 'success',
+							title: 'El Proyecto se ha guardado correctamente',
+							showConfirmButton: false,
+							timer: 1500
+						});
+					})
+					.catch(({
+						resp
+					}) => {
+						console.log(resp);
+	
+					});
 			},
 			readEdit() {
 				window
@@ -228,7 +242,12 @@
 	
 			},
 			onComplete: function() {
-				this.saveProject();
+				if (this.id != -1) {
+					this.updateProject();
+				} else {
+					this.saveProject();
+				}
+	
 			},
 			validateFirstStep() {
 				return new Promise((resolve, reject) => {

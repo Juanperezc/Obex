@@ -11,10 +11,7 @@ class Activity extends Model
     protected $dates = ['deleted_at'];
     public function teams()
     {
-       return $this->belongsToMany('App\Team','activity_project_team')->withPivot('project_id');
+       return $this->belongsToMany('App\Team');
     }
-    public function project()
-    {
-       return $this->belongsToMany('App\Project','activity_project_team')->withPivot('team_id');
-    }
+
 }
