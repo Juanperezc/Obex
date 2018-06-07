@@ -72,19 +72,5 @@ Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
       ]);
     });
 /*// routes/web.php
-Route::group(['prefix' => 'books'], function () {
-// First Route
-Route::get('/first', function () {
-return 'The Colour of Magic';
-});
-// Second Route
-Route::get('/second', function () {
-return 'Reaper Man';
-});
-
-// Third Route
-Route::get('/third', function () {
-return 'Lords and Ladies';
-});
 
 });*/

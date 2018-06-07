@@ -22,18 +22,31 @@ class RolesTableSeeder extends Seeder
 
 		$createProjectPermission = Permission::create([
 			'name' => 'Create Projects',
-			'slug' => 'create.projects',
+			'slug' => 'create.project',
 			'description' => '', // optional
 		]);
 		$editProjectPermission = Permission::create([
 			'name' => 'Edit Projects',
-			'slug' => 'edit.projects',
+			'slug' => 'edit.project',
 		]);
 		$deleteProjectPermission = Permission::create([
 			'name' => 'Delete Projects',
-			'slug' => 'delete.projects',
+			'slug' => 'delete.project',
 		]);
-
+		//? Teams
+		$createTeamPermission = Permission::create([
+			'name' => 'Create Projects',
+			'slug' => 'create.team',
+			'description' => '', // optional
+		]);
+		$editTeamPermission = Permission::create([
+			'name' => 'Edit Projects',
+			'slug' => 'edit.team',
+		]);
+		$deleteTeamPermission = Permission::create([
+			'name' => 'Delete Projects',
+			'slug' => 'delete.team',
+		]);
 
 
 	    /**
@@ -50,6 +63,10 @@ class RolesTableSeeder extends Seeder
 			$adminRole->attachPermission($createProjectPermission); // permission attached to a role
 			$adminRole->attachPermission($editProjectPermission); // permission attached to a role
 			$adminRole->attachPermission($deleteProjectPermission); // permission attached to a role
+			$adminRole->attachPermission($createTeamPermission); // permission attached to a role
+			$adminRole->attachPermission($editTeamPermission); // permission attached to a role
+			$adminRole->attachPermission($deleteTeamPermission); // permission attached to a role
+
 
 	    }
 

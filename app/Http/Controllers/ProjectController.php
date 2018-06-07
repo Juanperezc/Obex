@@ -21,15 +21,12 @@ public function view($id = null)
   }
        
 }
-public function view_create($id = null)
-{
-
+public function view_create($id = -1)
+{ 
     return view('projects/save', compact('id'));
-
-  
 }
-public function view_edit($id = null){
-  $project = Project::findOrFail($id);
+public function view_edit($id){
+    $project = Project::findOrFail($id);
     if ($project)
     return view('projects/save', compact('id'));
     else
@@ -44,7 +41,6 @@ public function index()
   
 }
 public function show($id){
-
   return response(Project::with(['teams.users' => function ($q) {
     $q->orderBy('users.id', 'desc');
   }, 'teams.activities' => function ($q) use ($id) {
@@ -60,19 +56,18 @@ public function destroy($id)
 public function store(Request $request)
 {
   $newP = $request->except(['other']);
-  //return $newP;
   $client = $request->input('other.client');
   $teams = $request->input('other.teams');
-
   if ($idedit = $request->input("idedit") != null){
-    $p = Project::findOrFail($idedit);
-     $p->activities()->detach(); // add team con actividad tiene que ser imborrable
-    
+      $p = Project::find($idedit);
+   // if (count($teams) > 0){
+      $p->activities()->detach();
+    // add team con actividad tiene que ser imborrable
+    //}
   }else{
     $p = new Project;
-    
   }
- 
+
   // preguntar si existe o no/ 
  
   $p->name = $request->input("name");
@@ -82,22 +77,19 @@ public function store(Request $request)
   $p->finish = Carbon::parse($request->input("dates")[1]);
   $p->client_id = $client;
   //$p->clients()->attach($request->input(""));
-  $p->save();
-  foreach ($teams as $t) {
-    $p->activities()->attach(1, ['team_id'=> $t]); // add team con actividad tiene que ser imborrable
+
+  if (count($teams) > 0){
+    foreach ($teams as $t) {
+      $p->activities()->attach(1, ['team_id'=> $t]);
+      // add team con actividad tiene que ser imborrable
+    }
   }
-  $p->save();
+  $p->save(); 
+
 
    return $p;
 }
 
-/*public function update(Request $request, $id)
-{
-  $crud = Crud::findOrFail($id);
-  $crud->color = $request->color;
-  $crud->save();
 
-  return response(null, Response::HTTP_OK);
-}*/
 
 }

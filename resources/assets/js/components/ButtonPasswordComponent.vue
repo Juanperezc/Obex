@@ -1,5 +1,5 @@
 <template>
-<button v-on:click="checkFunc" id="buttonp" value="true" type="button" class="btn btn-default"><i class="fa fa-eye"></i>
+<button v-on:click="checkFunc" id="buttonp" value="true" type="button" class="btn btn-default"><i class="fa fa-eye-slash"></i>
                                         </button>
 </template>
 
@@ -16,7 +16,7 @@
                       
                       $("#password").attr("type", "password");
                 }
-              $("#buttonp > i").toggleClass('fa-eye fa-eye-slash');
+              $("#buttonp > i").toggleClass('fa-eye-slash fa-eye');
               
 
             }

@@ -1,6 +1,6 @@
 /*<template>
 	<form-wizard @on-complete="onComplete" shape="tab" color="#18A689" ref="wizard" error-color="#ff4949" v-bind:title="title" v-bind:subtitle="subtitle">
-		<tab-content title="Personal details" icon="fa fa-user" :before-change="validateFirstStep">
+		<tab-content title="Proyectos" icon="fa fa-user" :before-change="validateFirstStep">
 			<el-form :inline="true" :model="formGeneral" class="demo-form-inline" :rules="grules" ref="generalForm" label-width="220px">
 				<el-form-item label="Nombre del proyecto" prop="name">
 					<el-input v-model="formGeneral.name" placeholder=""></el-input>
@@ -15,7 +15,7 @@
 				</el-form-item>
 				<el-form-item label="Fechas" prop="dates">
 	
-					<el-date-picker  format="yyyy-MM-dd"  value-format="yyyy-MM-dd" v-model="formGeneral.dates" type="daterange" start-placeholder="Fecha de inicio" end-placeholder="Fecha de finalización">
+					<el-date-picker value-format="yyyy-MM-dd" v-model="formGeneral.dates" type="daterange" start-placeholder="Fecha de inicio" end-placeholder="Fecha de finalización">
 					</el-date-picker>
 	
 				</el-form-item>
@@ -24,18 +24,19 @@
 			</el-form>
 	
 		</tab-content>
-		<tab-content title="Equipos" icon="fa fa-users" :before-change="validateSecondStep">
+		<tab-content title="Cliente y Equipos" icon="fa fa-users" :before-change="validateSecondStep">
 			<el-form :inline="true" :model="formTeam" class="demo-form-inline" :rules="trules" ref="teamForm" label-width="220px">
-				<el-form-item label="Equipos" prop="teams">
-					<el-select v-model=" formTeam.teams" multiple="multiple" placeholder="Select">
-						<el-option v-for="item in formTeam.oTeams" :key="item.value" :label="item.label" :value="item.value"></el-option>
-					</el-select>
-				</el-form-item>
 				<el-form-item label="Cliente" prop="client">
 					<el-select v-model="formTeam.client" placeholder="Selecciona un Cliente">
 						<el-option v-for="item in formTeam.oClient" :key="item.value" :label="item.label" :value="item.value"></el-option>
 					</el-select>
 				</el-form-item>
+				<el-form-item label="Equipos">
+					<el-select v-model=" formTeam.teams" multiple="multiple" placeholder="Select">
+						<el-option v-for="item in formTeam.oTeams" :key="item.value" :label="item.label" :value="item.value"></el-option>
+					</el-select>
+				</el-form-item>
+	
 			</el-form>
 		</tab-content>
 	
@@ -69,8 +70,7 @@
 					name: '',
 					type: '',
 					description: '',
-					start: '',
-					finish: '',
+				
 					dates: [],
 				},
 				grules: {
@@ -90,7 +90,6 @@
 						trigger: 'blur'
 					}],
 					dates: [{
-	
 						required: true,
 						message: 'Porfavor selecciona una fecha',
 						trigger: 'change'
@@ -106,7 +105,7 @@
 	
 				trules: {
 					teams: [{
-						required: true,
+						//	required: true,
 						message: 'Porfavor selecciona al menos un equipo',
 						trigger: 'blur'
 					}],
@@ -148,7 +147,12 @@
 	
 				var Form = this.formGeneral;
 				this.formGeneral.other = this.formTeam;
-				this.formGeneral.idedit = this.id
+				if (this.id != -1) {
+					this.formGeneral.idedit = this.id
+				} else {
+					this.formGeneral.idedit = null
+				}
+	
 				console.log(Form);
 				window
 					.axios
@@ -156,7 +160,7 @@
 					.then(({
 						resp
 					}) => {
-
+						console.log(resp);
 						this.$swal({
 							position: 'top-end',
 							type: 'success',
@@ -164,17 +168,17 @@
 							showConfirmButton: false,
 							timer: 1500
 						})
-						if (this.id == null){
-                         this.resetFormresetForms();
+						if (this.id == -1) {
+							this.resetFormresetForms();
 						}
-						
+	
 						//   this.mute = true;
 					})
 					.catch(({
 						resp
 					}) => {
 						console.log(resp);
-						alert("Could not create your company");
+						//alert("Could not create your company");
 					});
 	
 			},
@@ -194,8 +198,8 @@
 						data.teams.forEach(t => {
 							this.formTeam.teams.push(t.id);
 						});
-
-					//	this.formGeneral.dates[1] = data.end;
+	
+						//	this.formGeneral.dates[1] = data.end;
 					});
 			},
 			readClients() {
@@ -264,8 +268,8 @@
 		created() {
 			this.readTeams();
 			this.readClients();
-			if (this.id != null) {
-	this.readEdit() 
+			if (this.id != -1) {
+				this.readEdit()
 			}
 		}
 	

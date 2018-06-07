@@ -16,13 +16,14 @@ class CreateActivityProjectTeamTable extends Migration
         Schema::create('activity_project_team', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('project_id')->unsigned();
-            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');;
             $table->integer('team_id')->unsigned();
-            $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');;
             $table->integer('activity_id')->unsigned();
-            $table->foreign('activity_id')->references('id')->on('activities');
+            $table->foreign('activity_id')->references('id')->on('activities')->onDelete('cascade');;
             $table->unique(['project_id', 'team_id','activity_id']);
-             $table->timestamps();$table->softDeletes();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

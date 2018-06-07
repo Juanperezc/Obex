@@ -18,9 +18,9 @@ class CreateTeamUserTable extends Migration
             $table->increments('id');
             //* claves foraneas
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
             $table->integer('team_id')->unsigned();
-            $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');;
           
              $table->timestamps();$table->softDeletes();
         });
