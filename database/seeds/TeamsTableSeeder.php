@@ -12,12 +12,11 @@ class TeamsTableSeeder extends Seeder
     public function run()
     {
         //
-        $newTeam = Team::create(['description' => 'First', 'leader' => 1 , 'work_area' => 1
+        $newTeam = Team::create(['name' => 'First', 'description' => 'First', 'leader' => 1 , 'work_area' => 1
         ]);
-        
-        $newTeam = Team::create(['description' => 'Second', 'leader' => 3 , 'work_area' => 2
+        $newTeam = Team::create(['name' => 'Second', 'description' => 'Second', 'leader' => 3 , 'work_area' => 2
         ]);
-        $newTeam = Team::create(['description' => 'Test', 'leader' => 1 , 'work_area' => 2
+        $newTeam = Team::create(['name' => 'Third', 'description' => 'Test', 'leader' => 1 , 'work_area' => 2
         ]);
     }
 }

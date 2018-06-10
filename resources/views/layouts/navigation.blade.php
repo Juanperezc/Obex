@@ -81,11 +81,11 @@
             </li>
             @endrole
             @role('admin|manager')
-            <li class="{{ areActiveRoutes(['team.view','team.create','team.modify']) }}">
+            <li class="{{ areActiveRoutes(['team.view','team.areas']) }}">
                 <a href="#"><i class="fa fa-group"></i> <span class="nav-label">Equipos</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="{{ isActiveRoute('team.view') }}"><a href="{{ url('panel/team/') }}" ><i class="fa fa-eye"></i>Ver Equipos</a></li>
-                <li class="{{ isActiveRoute('team.create') }}"><a href="{{ url('panel/team/create') }}" ><i class="fa fa-plus"></i>Crear Equipo</a></li>
+                <li class="{{ isActiveRoute('team.view') }}"><a href="{{ url('panel/team/') }}" ><i class="fa fa-eye"></i>Gestionar Equipos</a></li>
+                <li class="{{ isActiveRoute('team.areas') }}"><a href="{{ url('panel/team/areas') }}" ><i class="fa fa-plus"></i>Gestionar Areas</a></li>
                
                 </ul>
             </li>

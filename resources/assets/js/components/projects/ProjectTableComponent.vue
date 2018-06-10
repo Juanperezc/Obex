@@ -26,7 +26,7 @@
     
                 </td>
                 <td class="project-actions">
-                    <action-table-component v-bind="p" :key="p.id" @delete="del"></action-table-component>
+                    <action-table-component v-bind="p" :key="p.id" @delete="del" @edit="ed"></action-table-component>
                 </td>
             </tr>
         </tbody>
@@ -62,7 +62,10 @@
                         this.mute = false;
                     });
             },
-    
+            ed(p){
+            console.log("esta es la p", p.id);
+            window.location.href= '/panel/' + p.section + '/edit/' + p.id;
+            },
             del(id) {
                 this
                     .$swal({

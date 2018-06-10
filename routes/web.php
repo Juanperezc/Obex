@@ -51,8 +51,7 @@ Route::view('/resources', 'projects/resources')->name("resources");
 Route::group(['prefix' => 'team', 'as'=>'team.', 'middleware' => ['role:admin|manager']], function () {
 
     Route::view('/', 'teams/index')->name("view");
-    Route::view('/create', 'teams/create')->name("create");
-    Route::view('/modify', 'teams/modify')->name("modify");
+    Route::view('/areas', 'teams/areas')->name("areas");
     });
 
 
@@ -68,6 +67,12 @@ Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
         'except' => ['create', 'edit']
       ]);
       Route::resource('/clients', 'ClientController', [
+        'except' => ['create', 'edit']
+      ]);
+      Route::resource('/users', 'UserController', [
+        'except' => ['create', 'edit']
+      ]);
+      Route::resource('/work_areas', 'WorkAreaController', [
         'except' => ['create', 'edit']
       ]);
     });

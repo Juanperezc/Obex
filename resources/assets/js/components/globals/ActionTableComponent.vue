@@ -4,7 +4,7 @@
                                 <i class="fa fa-folder"></i>
                                 Ver
         </a>
-         <a v-if="Laravel.user.can['edit.' + section]" :href="'/panel/' + section + '/edit/' + id"  class="btn btn-white btn-sm">
+         <a v-if="Laravel.user.can['edit.' + section]" href="#" @click="ed" class="btn btn-white btn-sm">
                                 <i class="fa fa-folder"></i>
                                 Editar
         </a>
@@ -13,6 +13,7 @@
                                 Borrar
         </a>
     </div>
+
 </template>
 <script>
     export default {
@@ -22,9 +23,12 @@
             }
         },
          methods: {
-  
+      ed() {
+        console.log(this.id);
+        this.$emit('edit', this);
+      },
       del() {
-              console.log(this.id);
+        console.log(this.id);
         this.$emit('delete', this.id);
       }
     },

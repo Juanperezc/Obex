@@ -13,23 +13,27 @@ class Team extends Model
     protected $dates = ['deleted_at'];
     protected $appends = ['section'];
     protected $fillable = [
-        'description'
+        'id', 'description'
     ];
-  /*  protected $hidden = [
-        'activities'
-    ]; */
-//*makevisible
+
     public function users()
     {
         return $this->belongsToMany('App\User');
     }
-    public function projects()
+    public function leader(){
+        return $this->belongsTo('App\User', 'leader');
+    }
+    public function work_area(){
+        return $this->belongsTo('App\Work_Area', 'work_area');
+    }
+    public function project()
     {
-        return $this->belongsToMany('App\Project');
+        return $this->belongsTo('App\Project');
     }
     public function activities()
     {
         return $this->belongsToMany('App\Activity')->as('subscription');
     }
+
 
 }

@@ -18,7 +18,6 @@
 
   
   <div id='app' >
- 
             <!-- Main view  -->
             @yield('content')
      

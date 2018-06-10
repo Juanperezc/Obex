@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
 use App\Project;
+use App\Team;
 class ProjectController extends Controller
 {
     //
@@ -63,7 +64,8 @@ public function store(Request $request)
   $p->finish = Carbon::parse($request->input("dates")[1]);
   $p->client_id = $client;
   $p->save(); 
-  $p->teams()->attach($teams);
+  $tl =  Team::whereIn('id', $teams)->get();
+  $p->teams()->saveMany($tl);
   $p->save(); 
    return $p;
 }
@@ -80,9 +82,12 @@ public function update(Request $request)
   $p->finish = Carbon::parse($request->input("dates")[1]);
   $p->client_id = $client;
   //$p->save(); 
-  $p->teams()->sync($teams);
+  $tl =  Team::whereIn('id', $teams)->get();
+  //$p->teams()->delete();
+  $p->teams()->saveMany($tl);
+  //$p->teams()->sync($teams);
   $p->save(); 
-  return $p;
+  return $tl;
 }
 
 

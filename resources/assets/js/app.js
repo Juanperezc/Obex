@@ -19,6 +19,8 @@ Vue.component('project-detail', require('./components/projects/ProjectDetailComp
 Vue.component('project-save', require('./components/projects/ProjectSaveComponent.vue'));
 //*teams
 Vue.component('teams-table', require('./components/teams/TeamTableComponent.vue'));
+//*area
+Vue.component('areas-table', require('./components/areas/AreasTableComponent.vue'));
 //vue
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';

@@ -36,14 +36,14 @@ public function view_edit($id = null){
 //? api 
 public function index()
 {
-  return response(Team::with(['users', 'activities'])->get()->jsonSerialize(), Response::HTTP_OK);
+  return response(Team::with(['users','project', 'activities', 'work_area', 'leader'])->get()->jsonSerialize(), Response::HTTP_OK);
   
 }
 public function show($id){
 
   return response(Team::with(['users' => function ($q) {
     $q->orderBy('users.id', 'desc');
-  }, 'activities'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
+  }, 'project','activities'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
 }
 public function destroy($id)
 {
@@ -52,36 +52,39 @@ public function destroy($id)
 }
 public function store(Request $request)
 {
-  $newP = $request->except(['other']);
-  //return $newP;
-  $client = $request->input('other.client');
-  $teams = $request->input('other.teams');
-
-  if ($idedit = $request->input("idedit") != null){
-    $p = Team::findOrFail($idedit);
-     $p->activities()->detach(); // add team con actividad tiene que ser imborrable
-    
-  }else{
-    $p = new Team;
-    
-  }
- 
-  // preguntar si existe o no/ 
- 
-  $p->name = $request->input("name");
-  $p->description = $request->input("description");
-  $p->type = $request->input("type");
-  $p->start = Carbon::parse($request->input("dates")[0]);
-  $p->finish = Carbon::parse($request->input("dates")[1]);
-  $p->client_id = $client;
-  //$p->clients()->attach($request->input(""));
-  $p->save();
-  foreach ($teams as $t) {
-    $p->activities()->attach(1, ['team_id'=> $t]); // add team con actividad tiene que ser imborrable
-  }
-  $p->save();
-
-   return $p;
+  $t = new Team;
+  $users = $request->input('users');
+  $work_area = $request->input("work_area");
+  $leader = $request->input("leader");
+  $t->name = $request->input("name");
+  $t->description = $request->input("description");
+  $t->work_area = $request->input("work_area");
+  $t->description = $request->input("description");
+  $t->work_area = $work_area;
+  $t->leader = $leader; // tambien se puede con relaciones
+  $t->save();
+  $t->users()->attach($users);
+  $t->save();
+  return $t;
 }
-
+public function update(Request $request)
+{
+  $idedit = $request->input('edit');
+  $work_area = $request->input("work_area");
+  $leader = $request->input("leader");
+  if ($idedit != 0){
+    $t = Team::findOrFail($idedit);
+    $users = $request->input('users');
+    $t->name = $request->input("name");
+    $t->description = $request->input("description");
+    $t->users()->sync($users);
+    $t->work_area = $work_area;
+    $t->leader = $leader; // tambien se puede con relaciones
+    $t->save();
+    return $t;
+  }else{
+    return response(null, Response::HTTP_ERROR);
+  }
+ 
+}
 }

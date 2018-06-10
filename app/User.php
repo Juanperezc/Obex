@@ -49,5 +49,9 @@ class User extends Authenticatable
     {
         return "test";
     }
+    public function teamleader()
+    {
+        return $this->hasOne('App\Team', 'leader');
+    }
   
 }

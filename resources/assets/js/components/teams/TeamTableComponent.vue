@@ -1,42 +1,60 @@
 <template>
-    <div class="col-lg-12">
-        <div v-bind:key="t.id" v-for="t in teams" class="ibox col-lg-6">
-            <div class="ibox-title">
-                <span class="pull-right">  <action-table-component v-bind="t"  :key="t.id" @delete="del"></action-table-component></span>
-                <h5>IT-01 - Equipo de diseño</h5>
-            </div>
-            <div class="ibox-content">
-                <div class="team-members">
-                    <a href="#"><img alt="member" class="img-circle" src="/images/a1.png"></a>
-                    <a href="#"><img alt="member" class="img-circle" src="/images/a2.png"></a>
-                    <a href="#"><img alt="member" class="img-circle" src="/images/a3.png"></a>
-                    <a href="#"><img alt="member" class="img-circle" src="/images/a5.png"></a>
-                    <a href="#"><img alt="member" class="img-circle" src="/images/a6.png"></a>
-                </div>
-                <h4>Informacion acerca del equipo de diseño</h4>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi totam soluta illum. Natus ullam reprehenderit at? Fuga, dolorum quia? Ipsam eveniet aliquam pariatur reiciendis labore, veniam eum sunt nemo magnam?
-                </p>
-                <div>
-                    <span>Estado del proyecto en curso:</span>
-                    <div class="stat-percent">48%</div>
-                    <div class="progress progress-mini">
-                        <div style="width: 48%;" class="progress-bar"></div>
+    <div>
+        <team-save v-bind:dialogv="dialogFormVisible" v-bind:teamedit="tedit" @close="close_d"></team-save>
+        <div class="wrapper wrapper-content animated fadeInRight">
+    
+            <div class="row">
+    
+                <div class="wrapper wrapper-content animated fadeInRight">
+    
+                    <div class="col-lg-12">
+                        <div class="ibox">
+                            <div class="ibox-title">
+                                <h5>Todos los Equipos</h5>
+                                <div class="ibox-tools">
+                                    <a href="#" @click="create" class="btn btn-primary btn-xs">Crear nuevo Equipo</a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row m-b-sm m-t-sm">
+                                    <div class="col-md-1">
+                                        <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Recargar</button>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="input-group"><input type="text" placeholder="Buscar" class="input-sm form-control"> <span class="input-group-btn">
+                                                        <button type="button" class="btn btn-sm btn-primary"> Buscar</button> </span></div>
+                                    </div>
+                                </div>
+    
+                                <div class="project-list">
+                                    <table class="table table-hover">
+                                        <tbody>
+                                            <tr v-bind:key="t.id" v-for="t in teams">
+                                                <td>
+                                                    T-{{t.id}} - {{t.name}}
+                                                </td>
+                                                <td>
+                                                    {{t.description}}
+                                                </td>
+                                                <td>
+                                                    <div class="team-members">
+                                                        <a v-bind:key="u.id" v-for="u in t.users.slice(0, 5)" v-bind:class="{parentimg: u.id == t.leader.id }" href="">
+                                                            <img alt="image" class="img-circle" v-bind:src="'/storage/avatars/' + u.profile_img">
+                                                            <img v-if="u.id == t.leader.id" src="/images/icons/crown.png" class="over-crown" style="width: 15px; height: 15px;" />
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <action-table-component v-bind="t" :key="t.id" @delete="del" @edit="ed"></action-table-component>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row  m-t-sm">
-                    <div class="col-sm-4">
-                        <div class="font-bold">Proyectos</div>
-                        12
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="font-bold">ID-Proyecto</div>
-                        0001
-                    </div>
-                    <div class="col-sm-4 text-right">
-                        <div class="font-bold">Presupuesto</div>
-                        $200,913 <i class="fa fa-level-up text-navy"></i>
-                    </div>
+    
                 </div>
     
             </div>
@@ -46,19 +64,27 @@
 
 <script>
     import ActionTableComponent from '../globals/ActionTableComponent.vue';
+    import TeamSaveComponent from './TeamSaveComponent.vue';
     export default {
         components: {
-            'action-table-component': ActionTableComponent
+            'action-table-component': ActionTableComponent,
+            'team-save': TeamSaveComponent
         },
         data() {
             return {
                 teams: [],
-                working: false
+                users: [],
+                working: false,
+                dialogFormVisible: false,
+                tedit: {
+                    id: 0,
+                    title: ''
+                }
             }
         },
         methods: {
             read() {
-                this.mute = true;
+                this.teams = [];
                 window
                     .axios
                     .get('/api/teams')
@@ -70,10 +96,37 @@
                                 .teams
                                 .push(team);
                         });
-                        //this.mute = false;
                     });
             },
+            close_d() {
+                this.dialogFormVisible = false;
+                this.read();
+            },
+            create() {
+                console.log("create");
+                this.dialogFormVisible = true;
+               var td = {
+                    'id': '',
+                    'title': ''
+                }
+                td.id = 0;
+                td.title = "Crear Equipo"
+                this.tedit = td;
     
+            },
+            ed(t) {
+                //    console.log("esta es la t", t.id);
+                this.dialogFormVisible = true;
+    
+                var td = {
+                    'id': '',
+                    'title': ''
+                }
+                td.id = t.id;
+                td.title = "Editar Equipo"
+                this.tedit = td;
+    
+            },
             del(id) {
                 this
                     .$swal({
@@ -114,7 +167,8 @@
     
         },
         created() {
-           this.read();
+            this.read();
+    
         }
     }
 </script>
