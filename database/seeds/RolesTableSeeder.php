@@ -20,9 +20,9 @@ class RolesTableSeeder extends Seeder
 
 
 
-		$createProjectPermission = Permission::create([
-			'name' => 'Create Projects',
-			'slug' => 'create.project',
+		$viewProjectPermission = Permission::create([
+			'name' => 'View Projects',
+			'slug' => 'view.project',
 			'description' => '', // optional
 		]);
 		$editProjectPermission = Permission::create([
@@ -34,9 +34,9 @@ class RolesTableSeeder extends Seeder
 			'slug' => 'delete.project',
 		]);
 		//? Teams
-		$createTeamPermission = Permission::create([
-			'name' => 'Create Projects',
-			'slug' => 'create.team',
+		$viewTeamPermission = Permission::create([
+			'name' => 'View Projects',
+			'slug' => 'view.team',
 			'description' => '', // optional
 		]);
 		$editTeamPermission = Permission::create([
@@ -47,6 +47,22 @@ class RolesTableSeeder extends Seeder
 			'name' => 'Delete Projects',
 			'slug' => 'delete.team',
 		]);
+		//? WArea
+	/*	$viewWAreaPermission = Permission::create([
+			'name' => 'View Projects',
+			'slug' => 'view.area',
+			'description' => '', // optional
+		]);*/
+		$editWAreaPermission = Permission::create([
+			'name' => 'Edit Projects',
+			'slug' => 'edit.area',
+		]);
+		$deleteWAreaPermission = Permission::create([
+			'name' => 'Delete Projects',
+			'slug' => 'delete.area',
+		]);
+		
+
 
 
 	    /**
@@ -60,12 +76,15 @@ class RolesTableSeeder extends Seeder
 	            'description' => 'Admin Role',
 	            'level' => 5,
 			]);
-			$adminRole->attachPermission($createProjectPermission); // permission attached to a role
+			$adminRole->attachPermission($viewProjectPermission); // permission attached to a role
 			$adminRole->attachPermission($editProjectPermission); // permission attached to a role
 			$adminRole->attachPermission($deleteProjectPermission); // permission attached to a role
-			$adminRole->attachPermission($createTeamPermission); // permission attached to a role
+			$adminRole->attachPermission($viewTeamPermission); // permission attached to a role
 			$adminRole->attachPermission($editTeamPermission); // permission attached to a role
 			$adminRole->attachPermission($deleteTeamPermission); // permission attached to a role
+			//$adminRole->attachPermission($viewWAreaPermission); // permission attached to a role
+			$adminRole->attachPermission($editWAreaPermission); // permission attached to a role
+			$adminRole->attachPermission($deleteWAreaPermission); // permission attached to a role
 
 
 	    }

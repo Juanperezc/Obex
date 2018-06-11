@@ -19,6 +19,7 @@ Vue.component('project-detail', require('./components/projects/ProjectDetailComp
 Vue.component('project-save', require('./components/projects/ProjectSaveComponent.vue'));
 //*teams
 Vue.component('teams-table', require('./components/teams/TeamTableComponent.vue'));
+Vue.component('teams-detail', require('./components/teams/TeamDetailComponent.vue'));
 //*area
 Vue.component('areas-table', require('./components/areas/AreasTableComponent.vue'));
 //vue

@@ -4,6 +4,6 @@
 
 @section('content')
   <div class="wrapper wrapper-content animated fadeInRight">
- <team-detail id="{{$id}}" ></team-detail>
+ <teams-detail id="{{$id}}" ></teams-detail>
     </div>
 @endsection

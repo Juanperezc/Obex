@@ -14,25 +14,10 @@ public function view($id = null)
   if ($id == null){
     return view('teams/index');
   }else{
-    return view('teams/detail', compact('id'));
+    return view('teams/view', compact('id'));
   }
        
 }
-public function view_create($id = null)
-{
-
-    return view('teams/save', compact('id'));
-
-  
-}
-public function view_edit($id = null){
-  $team = Team::findOrFail($id);
-    if ($team)
-    return view('teams/save', compact('id'));
-    else
-    return view('errors/404');
-}
-
 //? api 
 public function index()
 {
@@ -41,9 +26,7 @@ public function index()
 }
 public function show($id){
 
-  return response(Team::with(['users' => function ($q) {
-    $q->orderBy('users.id', 'desc');
-  }, 'project','activities'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
+  return response(Team::with(['users','project', 'activities', 'work_area', 'leader'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
 }
 public function destroy($id)
 {

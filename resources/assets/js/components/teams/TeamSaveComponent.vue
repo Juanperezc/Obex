@@ -93,7 +93,7 @@
             },
             readOworka() {
                 window.axios
-                    .get('/api/work_areas')
+                    .get('/api/wareas')
                     .then(({
                         data
                     }) => {

@@ -8,7 +8,7 @@
                 <dl class="dl-horizontal">
                     <dt>Estatus:</dt>
                     <dd>
-                        <span class="label label-primary">{{ status(state) }}</span>
+                        <span class="label label-primary">{{ status(deleted_at) }}</span>
                     </dd>
                 </dl>
             </div>
@@ -19,23 +19,26 @@
                     <dt>Id:</dt>
                     <dd>
                         {{id}}</dd>
-                    <dt >Cliente:</dt>
+                    <dt>Cliente:</dt>
                     <dd>
                         <a href="#" class="text-navy">{{ clients.name}}</a>
                     </dd>
-
+    
                 </dl>
             </div>
             <div class="col-lg-7" id="cluster_info">
                 <dl class="dl-horizontal">
-
+                    <dt>Fecha de Inicio:</dt>
+                    <dd>{{start}}</dd>
+                    <dt>Fecha de cierre:</dt>
+                    <dd>{{finish}}</dd>
                     <dt>Ultima Actualizacion:</dt>
                     <dd>{{updated_at}}</dd>
                     <dt>Creado:</dt>
                     <dd>
                         {{created_at}}
                     </dd>
-
+    
                 </dl>
             </div>
         </div>
@@ -48,47 +51,50 @@
                             <div v-bind:style="{ width: percent_complete + '%' }" class="progress-bar"></div>
                         </div>
                         <small>Proyecto completado en
-                            <strong>{{percent_complete}}%</strong>
-                        </small>
+                                <strong>{{percent_complete}}%</strong>
+                            </small>
                     </dd>
                 </dl>
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
-
     //  import ActionTableComponent from './ActionTableComponent.vue';
     export default {
         components: {
             // 'action-table-component': ActionTableComponent
         },
         data() {
-            return {loading: false}
+            return {
+                loading: false
+            }
         },
         methods: {
-
-            status: function (status) {
-                if (status == 0) {
+    
+            status: function(status) {
+                if (status == null) {
                     return "Activo";
                 } else {
                     return "Inactivo";
                 }
             }
-
+    
         },
         props: [
             'id',
             'name',
             'state',
             'clients',
+            'start',
+            'finish',
             'updated_at',
             'created_at',
+            'deleted_at',
             'teams',
             'percent_complete'
         ]
-
+    
     }
 </script>

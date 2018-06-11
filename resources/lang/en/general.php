@@ -20,5 +20,6 @@ return [
     'Project' => 'Project',
     'Team' => 'Team',
     'Activity' => 'Activity',
+    'Areas' => 'Work Area',
 
 ];

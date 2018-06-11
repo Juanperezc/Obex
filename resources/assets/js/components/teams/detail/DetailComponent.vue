@@ -8,7 +8,7 @@
                 <dl class="dl-horizontal">
                     <dt>Estatus:</dt>
                     <dd>
-                        <span class="label label-primary">{{ status(state) }}</span>
+                        <span class="label label-primary">{{ status(deleted_at) }}</span>
                     </dd>
                 </dl>
             </div>
@@ -16,79 +16,81 @@
         <div class="row">
             <div class="col-lg-5">
                 <dl class="dl-horizontal">
-                    <dt>Id:</dt>
+                    <dt>Descripcion:</dt>
                     <dd>
-                        {{id}}</dd>
-                    <dt >Cliente:</dt>
+                        {{description}}</dd>
+                    <dt>Area de Trabajo:</dt>
                     <dd>
-                        <a href="#" class="text-navy">{{ clients.name}}</a>
+                        <a v-if="work_area" :href="'#'" class="text-navy">{{ work_area.name }}</a>
                     </dd>
-
+                    <dt>Proyecto:</dt>
+                    <dd>
+                        <a v-if="project" :href="'/panel/project/view/' + project.id" class="text-navy">{{ project.name }}</a>
+                    </dd>
+                    <dt>Participantes:</dt>
+                    <dd class="project-people">
+                        <div>
+                            <a v-if="users" v-bind:key="u.id" v-for="u in users" v-bind:class="{parentimg: u.id == leader.id }" href="">
+                                <img alt="image" class="img-circle" v-bind:src="'/storage/avatars/' + u.profile_img">
+                                <img v-if="u.id == leader.id" src="/images/icons/crown.png" class="over-crown" style="width: 15px; height: 15px;" />
+                            </a>
+                        </div>
+                    </dd>
                 </dl>
             </div>
             <div class="col-lg-7" id="cluster_info">
                 <dl class="dl-horizontal">
-
+    
                     <dt>Ultima Actualizacion:</dt>
                     <dd>{{updated_at}}</dd>
                     <dt>Creado:</dt>
                     <dd>
                         {{created_at}}
                     </dd>
-
+    
                 </dl>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <dl class="dl-horizontal">
-                    <dt>Completed:</dt>
-                    <dd>
-                        <div class="progress progress-striped active m-b-sm">
-                            <div v-bind:style="{ width: percent_complete + '%' }" class="progress-bar"></div>
-                        </div>
-                        <small>Proyecto completado en
-                            <strong>{{percent_complete}}%</strong>
-                        </small>
-                    </dd>
-                </dl>
-            </div>
-        </div>
+    
     </div>
-
 </template>
 
 <script>
-
     //  import ActionTableComponent from './ActionTableComponent.vue';
     export default {
-        components: {
-            // 'action-table-component': ActionTableComponent
-        },
         data() {
-            return {loading: false}
+            return {
+    
+                loading: false
+            }
         },
         methods: {
-
-            status: function (status) {
-                if (status == 0) {
+    
+            status: function(status) {
+                if (status == null) {
                     return "Activo";
                 } else {
                     return "Inactivo";
                 }
             }
-
+    
         },
         props: [
             'id',
             'name',
-            'state',
-            'clients',
+            'description',
+            'leader',
+            'work_area',
             'updated_at',
             'created_at',
-            'teams',
-            'percent_complete'
-        ]
-
+            'deleted_at',
+            'project',
+            'users',
+    
+        ],
+        created() {
+            //console.log(this.work_area.name);
+        }
+    
     }
 </script>

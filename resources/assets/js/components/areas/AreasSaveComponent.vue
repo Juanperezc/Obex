@@ -1,14 +1,12 @@
 <template>
-    <el-dialog :title="teamedit.title" :visible.sync="dialogv" :before-close="close_d">
+    <el-dialog :title="areaedit.title" :visible.sync="dialogv" :before-close="close_d">
         <el-form :model="form" :rules="frules" ref="form">
-            <el-form-item label="Nombre del Equipo" prop="name" :label-width="formLabelWidth">
+            <el-form-item label="Nombre del Area" prop="name" :label-width="formLabelWidth">
                 <el-input v-model="form.name" placeholder=""></el-input>
             </el-form-item>
             <el-form-item label="Descripcion" prop="description" :label-width="formLabelWidth">
                 <el-input type="textarea" v-model="form.description"></el-input>
             </el-form-item>
-   
-           
         </el-form>
         <span slot="footer" class="dialog-footer">
                                                                                      <el-button @click="close_d">Cancelar</el-button>
@@ -21,14 +19,9 @@
     export default {
         data() {
             return {
-    
-               
                 form: {
                     name: '',
                     description: '',
-                    users: [],
-                    work_area: '',
-                    leader: '',
                     edit: 0
                 },
                 frules: {
@@ -42,53 +35,23 @@
                         message: 'Porfavor escribe una descripcion',
                         trigger: 'blur'
                     }],
-                    work_area: [{
-                        required: true,
-                        message: 'Porfavor selecciona un area para el equipo',
-                        trigger: 'blur'
-                    }],
-                    users: [{
-                        required: true,
-                        message: 'Porfavor selecciona al menos un Integrante del equipo',
-                        trigger: 'blur'
-                    }],
-                    leader: [{
-                        required: true,
-                        message: 'Porfavor selecciona un lider de equipo',
-                        trigger: 'blur'
-                    }],
+                  
     
                 },
                 formLabelWidth: '100px'
             }
         },
         methods: {
-           
-            readOworka() {
+            
+            readArea(id) {
                 window.axios
-                    .get('/api/work_areas')
-                    .then(({
-                        data
-                    }) => {
-                        this.Oworka = [];
-                        this.Oworka = data;
-                    });
-    
-                //console.log(this.Ousers);
-            },
-            readteam(id) {
-                window.axios
-                    .get('/api/teams/' + id)
+                    .get('/api/wareas/' + id)
                     .then(({
                         data
                     }) => {
                         this.form.name = data.name;
                         this.form.description = data.description;
-                        this.form.users = [];
-                        data.users.forEach(user => {
-                            this.form.users.push(user.id);
-                        });
-                        console.log(this.form.users);
+                 
     
                     });
             },
@@ -105,9 +68,9 @@
                 this.$refs.form.validate((valid) => {
                     if (valid) {
                         if (this.form.edit != 0) {
-                            this.updateTeam();
+                            this.updateWareas();
                         } else {
-                            this.saveTeam();
+                            this.saveWareas();
                         }
                     } else {
     
@@ -116,11 +79,11 @@
                 });
     
             },
-            saveTeam() {
+            saveWareas() {
                 console.log(this.form);
                 window
                     .axios
-                    .post('/api/teams', this.form)
+                    .post('/api/wareas', this.form)
                     .then(({
                         resp
                     }) => {
@@ -142,9 +105,9 @@
                     });
     
             },
-            updateTeam() {
+            updateWareas() {
                 window.axios
-                    .put('/api/teams/' + this.form.edit, this.form)
+                    .put('/api/wareas/' + this.form.edit, this.form)
                     .then(({
                         resp
                     }) => {
@@ -168,18 +131,17 @@
     
         },
         watch: {
-            teamedit: function(newVal, oldVal) {
+            areaedit: function(newVal, oldVal) {
     
                 if (newVal.id != 0) {
                     console.log("edit");
                     this.form.edit = newVal.id;
-                    this.readteam(newVal.id);
+                    this.readArea(newVal.id);
                 } else {
                     console.log("created");
                     this.form = {
                         name: '',
                         description: '',
-                        users: [],
                         edit: 0
                     }
                 }
@@ -193,10 +155,8 @@
     
     
         },
-        props: ['dialogv', 'teamedit'],
+        props: ['dialogv', 'areaedit'],
         created() {
-            this.readOusers();
-            this.readOworka();
         }
     }
 </script>

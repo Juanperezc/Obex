@@ -49,21 +49,12 @@
                         <li class="{{ isActiveRoute('manage-account.client-register') }}">
                             <a href="{{ url('panel/manage-account/client-register') }}">
                                 <i class="fa fa-plus"></i>
-                                Registrar Clientes
+                                Gestionar Clientes
                             </a>
                         </li>
                         <li class="{{ isActiveRoute('manage-account.user-register') }}">
                             <a href="{{ url('panel/manage-account/user-register') }}">
-                                <i class="fa fa-plus"></i>Registrar Usuarios</a>
-                        </li>
-                        <li class="{{ isActiveRoute('manage-account.client-management') }}">
-                            <a href="{{ url('panel/manage-account/client-management') }}">
-                                <i class="fa fa-exclamation-triangle"></i>Modificar o Eliminar Clientes
-                            </a>
-                        </li>
-                        <li class="{{ isActiveRoute('manage-account.user-management') }}">
-                            <a href="{{ url('panel/manage-account/user-management') }}">
-                                <i class="fa fa-exclamation-triangle"></i>Modificar o Eliminar Usuarios</a>
+                                <i class="fa fa-plus"></i>Gestionar Usuarios</a>
                         </li>
                     </ul>
                 </li>

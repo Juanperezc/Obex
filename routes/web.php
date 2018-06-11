@@ -37,7 +37,6 @@ Route::group(['prefix' => 'manage-account', 'as'=>'manage-account.', 'middleware
     Route::view('/client-management', 'account-management/client-management')->name("client-management");
     Route::view('/user-management', 'account-management/user-management')->name("user-management");
 });
-
 //Route::view('/manage-resource', 'other/building')->name("manage-resource")->middleware('role:admin|manager');
 Route::view('/manage-notification', 'other/building')->name("manage-notification")->middleware('role:admin');
 Route::group(['prefix' => 'project', 'as'=>'project.', 'middleware' => ['role:admin|manager']], function () {
@@ -49,14 +48,11 @@ Route::view('/resources', 'projects/resources')->name("resources");
 });
 
 Route::group(['prefix' => 'team', 'as'=>'team.', 'middleware' => ['role:admin|manager']], function () {
-
     Route::view('/', 'teams/index')->name("view");
+    Route::get('/view/{id}', 'TeamController@view')->name("view");
     Route::view('/areas', 'teams/areas')->name("areas");
     });
-
-
     //? api vue ////
-
 });
 Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
 
@@ -72,7 +68,7 @@ Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
       Route::resource('/users', 'UserController', [
         'except' => ['create', 'edit']
       ]);
-      Route::resource('/work_areas', 'WorkAreaController', [
+      Route::resource('/wareas', 'WorkAreaController', [
         'except' => ['create', 'edit']
       ]);
     });

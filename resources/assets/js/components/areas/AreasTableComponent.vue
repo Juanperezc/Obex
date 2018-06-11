@@ -22,7 +22,7 @@
                                     </div>
                                     <div class="col-md-11">
                                         <div class="input-group"><input type="text" placeholder="Buscar" class="input-sm form-control"> <span class="input-group-btn">
-                                                        <button type="button" class="btn btn-sm btn-primary"> Buscar</button> </span></div>
+                                                                <button type="button" class="btn btn-sm btn-primary"> Buscar</button> </span></div>
                                     </div>
                                 </div>
     
@@ -31,13 +31,16 @@
                                         <tbody>
                                             <tr v-bind:key="a.id" v-for="a in areas">
                                                 <td>
-                                                    T-{{t.id}} - {{t.name}}
+                                                    A-{{a.id}}
                                                 </td>
                                                 <td>
-                                                    {{t.description}}
+                                                    {{a.name}}
                                                 </td>
                                                 <td>
-                                                    <action-table-component v-bind="t" :key="t.id" @delete="del" @edit="ed"></action-table-component>
+                                                    {{a.description}}
+                                                </td>
+                                                <td>
+                                                    <action-table-component v-bind="a" :key="a.id" @delete="del" @edit="ed"></action-table-component>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -78,7 +81,7 @@
                 this.areas = [];
                 window
                     .axios
-                    .get('/api/areas')
+                    .get('/api/wareas')
                     .then(({
                         data
                     }) => {
@@ -96,26 +99,25 @@
             create() {
                 console.log("create");
                 this.dialogFormVisible = true;
-               var td = {
+                var ad = {
                     'id': '',
                     'title': ''
                 }
-                td.id = 0;
-                td.title = "Crear Equipo"
-                this.aedit = td;
+                ad.id = 0;
+                ad.title = "Crear Equipo"
+                this.aedit = ad;
     
             },
-            ed(t) {
+            ed(a) {
                 //    console.log("esta es la t", t.id);
                 this.dialogFormVisible = true;
-    
-                var td = {
+                var ad = {
                     'id': '',
                     'title': ''
                 }
-                td.id = t.id;
-                td.title = "Editar Equipo"
-                this.aedit = td;
+                ad.id = a.id;
+                ad.title = "Editar Equipo"
+                this.aedit = ad;
     
             },
             del(id) {
@@ -134,7 +136,7 @@
                         if (result.value) {
                             window
                                 .axios
-                                .delete(`/api/areas/${id}`)
+                                .delete(`/api/wareas/${id}`)
                                 .then(() => {
                                     let index = this
                                         .areas

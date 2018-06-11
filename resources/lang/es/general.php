@@ -20,5 +20,5 @@ return [
     'Project' => 'Proyecto',
     'Team' => 'Equipo',
     'Activity' => 'Actividad',
-
+    'Areas' => 'Areas de Trabajo',
 ];
