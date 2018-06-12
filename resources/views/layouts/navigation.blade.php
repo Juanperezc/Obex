@@ -35,7 +35,7 @@
                 <li class="{{ isActiveRoute('main') }}">
                     <a href="{{ url('panel/') }}">
                         <i class="fa fa-home"></i>
-                        <span class="nav-label">Dashboard</span>
+                        <span class="nav-label">Inicio</span>
                     </a>
                 </li>
                 @role('admin')
@@ -54,7 +54,7 @@
                         </li>
                         <li class="{{ isActiveRoute('manage-account.user-register') }}">
                             <a href="{{ url('panel/manage-account/user-register') }}">
-                                <i class="fa fa-plus"></i>Gestionar Usuarios</a>
+                            <i class="fa fa-plus"></i>Gestionar Usuarios</a>
                         </li>
                     </ul>
                 </li>

@@ -17,7 +17,6 @@ class Project extends Model
     {
        return $this->hasMany('App\Team');
     }
-
     public function clients(){
     return $this->belongsTo('App\Client', 'client_id');
     }
