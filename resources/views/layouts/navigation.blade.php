@@ -70,10 +70,10 @@
                 @endrole
          
             @role('admin|manager')
-            <li class="{{ areActiveRoutes(['project.view','project.create','project.modify']) }}">
+            <li class="{{ areActiveRoutes(['project.view','project.create','project.modify','project.activity']) }}">
                 <a href="#"><i class="fa fa-book"></i> <span class="nav-label">Proyectos</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="{{ isActiveRoute('project.view') }}"><a href="{{ url('panel/project/') }}" ><i class="fa fa-eye"></i>Gestionar Proyectos</a></li>
+                <li class="{{ areActiveRoutes(['project.view','project.activity']) }}"><a href="{{ url('panel/project/') }}" ><i class="fa fa-eye"></i>Gestionar Proyectos</a></li>
                 <li class="{{ isActiveRoute('project.create') }}"><a href="{{ url('panel/project/create') }}"><i class="fa fa-plus"></i>Crear Proyecto</a></li>
 
 

@@ -46,10 +46,8 @@ public function store(Request $request)
   $leader = $request->input("leader");
   $t->name = $request->input("name");
   $t->description = $request->input("description");
-  $t->work_area = $request->input("work_area");
-  $t->description = $request->input("description");
-  $t->work_area = $work_area;
-  $t->leader = $leader; // tambien se puede con relaciones
+  $t->work_area_id = $work_area;
+  $t->leader_id = $leader; // tambien se puede con relaciones
   $t->save();
   $t->users()->attach($users);
   $t->save();

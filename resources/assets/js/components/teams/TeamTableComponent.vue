@@ -21,7 +21,7 @@
                                         <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> Recargar</button>
                                     </div>
                                     <div class="col-md-11">
-                                        <div class="input-group"><input type="text" placeholder="Buscar" class="input-sm form-control"> <span class="input-group-btn">
+                                        <div class="input-group"><input type="text" v-model="search" placeholder="Buscar" class="input-sm form-control"> <span class="input-group-btn">
                                                         <button type="button" class="btn btn-sm btn-primary"> Buscar</button> </span></div>
                                     </div>
                                 </div>
@@ -29,7 +29,7 @@
                                 <div class="project-list">
                                     <table class="table table-hover">
                                         <tbody>
-                                            <tr v-bind:key="t.id" v-for="t in teams">
+                                            <tr v-bind:key="t.id" v-for="t in filteredTeams">
                                                 <td>
                                                     T-{{t.id}} - {{t.name}}
                                                 </td>
@@ -79,7 +79,8 @@
                 tedit: {
                     id: 0,
                     title: ''
-                }
+                },
+                search: '',
             }
         },
         methods: {
@@ -165,6 +166,15 @@
                 }
             }
     
+        },
+        computed: {
+            filteredTeams: function() {
+                var self = this;
+                return this.teams.filter(function(cust) {
+                    return cust.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
+                });
+                //return this.customers;
+            }
         },
         created() {
             this.read();
