@@ -39,6 +39,7 @@
     
                 Ousers: [],
                 Oworka: [],
+                
                 form: {
                     name: '',
                     description: '',
@@ -111,8 +112,8 @@
                     }) => {
                         this.form.name = data.name;
                         this.form.description = data.description;
-                        this.form.leader = data.leader
-                        this.form.work_area = data.work_area
+                        this.form.leader = data.leader.id
+                        this.form.work_area = data.work_area.id
                         this.form.users = [];
                         data.users.forEach(user => {
                             this.form.users.push(user.id);
@@ -172,6 +173,7 @@
     
             },
             updateTeam() {
+                console.log(this.form);
                 window.axios
                     .put('/api/teams/' + this.form.edit, this.form)
                     .then(({

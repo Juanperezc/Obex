@@ -32,13 +32,24 @@ Route::get('/post', function () {
     return 'Hello World';
 });
 Route::group(['prefix' => 'manage-account', 'as'=>'manage-account.', 'middleware' => ['role:admin']], function () {  //middleware(['first', 'second'])->
-    Route::view('/client-register', 'account-management/client-register')->name("client-register");
-    Route::view('/user-register', 'account-management/user-register')->name("user-register");
-    Route::view('/client-management', 'account-management/client-management')->name("client-management");
-    Route::view('/user-management', 'account-management/user-management')->name("user-management");
+    Route::group(['prefix' => 'user', 'as'=>'user.', 'middleware' => ['role:admin']], function () {
+        Route::get('/', 'UserController@view')->name("view");
+Route::get('/view/{id}', 'UserController@view')->name("view");
+Route::get('/create', 'UserController@view_create')->name("create");
+Route::get('/edit/{id}', 'UserController@view_edit')->name("edit");
+
+    });
+    Route::group(['prefix' => 'client', 'as'=>'client.', 'middleware' => ['role:admin']], function () {
+        Route::get('/', 'ClientController@view')->name("view");
+        Route::get('/view/{id}', 'ClientController@view')->name("view");
+        Route::get('/create', 'ClientController@view_create')->name("create");
+        Route::get('/edit/{id}', 'ClientController@view_edit')->name("edit");
+    });
+   
 });
-//Route::view('/manage-resource', 'other/building')->name("manage-resource")->middleware('role:admin|manager');
+
 Route::view('/manage-notification', 'other/building')->name("manage-notification")->middleware('role:admin');
+
 Route::group(['prefix' => 'project', 'as'=>'project.', 'middleware' => ['role:admin|manager']], function () {
 Route::get('/', 'ProjectController@view')->name("view");
 Route::get('/view/{id}', 'ProjectController@view')->name("view");
@@ -56,22 +67,11 @@ Route::group(['prefix' => 'team', 'as'=>'team.', 'middleware' => ['role:admin|ma
     //? api vue ////
 });
 Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
+    Route::get('teams/unselected', 'TeamController@unselected');
 
-    Route::resource('/projects', 'ProjectController', [
-        'except' => ['create', 'edit']
-      ]);
-      Route::resource('/teams', 'TeamController', [
-        'except' => ['create', 'edit']
-      ]);
-      Route::resource('/clients', 'ClientController', [
-        'except' => ['create', 'edit']
-      ]);
-      Route::resource('/users', 'UserController', [
-        'except' => ['create', 'edit']
-      ]);
-      Route::resource('/wareas', 'WorkAreaController', [
-        'except' => ['create', 'edit']
-      ]);
+    Route::apiResources(['projects' => 'ProjectController', 
+    'teams' => 'TeamController', 'clients' => 'ClientController',
+    'users' => 'UserController', 'wareas' => 'WorkAreaController']);
     });
 /*// routes/web.php
 

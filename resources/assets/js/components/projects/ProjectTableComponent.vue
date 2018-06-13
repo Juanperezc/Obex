@@ -27,17 +27,17 @@
                                 <a href="project_detail.html">{{ p.name }}</a>
                                 <br>
                                 <small>Creado el
-                                                                {{ p.start }}</small>
+                                                                        {{ p.start }}</small>
                             </td>
                             <td class="project-completion">
                                 <small>Completación:
-                                                                {{p.percent_complete}}%</small>
+                                                                        {{p.percent_complete}}%</small>
                                 <div class="progress progress-mini">
                                     <div v-bind:style="{ width: p.percent_complete + '%' }" class="progress-bar"></div>
                                 </div>
                             </td>
                             <td class="project-people">
-                                <div v-bind:key="t.id" v-for="t in p.teams.slice(0,1)">
+                                <div v-if="p.teams.length > 0" v-bind:key="t.id" v-for="t in p.teams.slice(0,3)">
                                     <a v-bind:key="u.id" v-for="u in t.users.slice(0, 3)" href="">
                                         <img alt="image" class="img-circle" v-bind:src="'/storage/avatars/' + u.profile_img"></a>
                                 </div>
@@ -45,14 +45,14 @@
                             </td>
                             <td class="project-actions">
                                 <action-table-component v-bind="p" :key="p.id" @delete="del" @edit="ed" edit="Gestionar Recursos"></action-table-component>
-                            
+    
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        
+    
     </div>
 </template>
 

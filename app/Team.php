@@ -21,10 +21,10 @@ class Team extends Model
         return $this->belongsToMany('App\User');
     }
     public function leader(){
-        return $this->belongsTo('App\User', 'leader');
+        return $this->belongsTo('App\User');
     }
     public function work_area(){
-        return $this->belongsTo('App\Work_Area', 'work_area');
+        return $this->belongsTo('App\Work_Area');
     }
     public function project()
     {

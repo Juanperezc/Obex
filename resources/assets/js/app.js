@@ -11,8 +11,7 @@ window.Vue = require('vue');
 
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('button-password', require('./components/ButtonPasswordComponent.vue'));
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('button-password', require('./components/globals/ButtonPasswordComponent.vue'));
 //* project
 Vue.component('project-table', require('./components/projects/ProjectTableComponent.vue'));
 Vue.component('project-detail', require('./components/projects/ProjectDetailComponent.vue'));

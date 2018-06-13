@@ -40,31 +40,40 @@
                 </li>
                 @role('admin')
                 <li
-                    class="{{ areActiveRoutes(['manage-account.user-register', 'manage-account.user-management','manage-account.client-register','manage-account.client-management']) }}">
+                    class="{{ areActiveRoutes(['manage-account.client.view', 'manage-account.client.create','manage-account.user.view','manage-account.client.create']) }}">
                     <a href="#">
                         <i class="fa fa-gears"></i>
                         <span class="nav-label">Gestionar Cuentas</span>
                     </a>
                     <ul class="nav nav-second-level collapse">
-                        <li class="{{ isActiveRoute('manage-account.client-register') }}">
-                            <a href="{{ url('panel/manage-account/client-register') }}">
+                        <li class="{{ areActiveRoutes(['manage-account.client.view', 'manage-account.client.create']) }}">
+                            <a href="#">
                                 <i class="fa fa-plus"></i>
                                 Gestionar Clientes
+                              
                             </a>
+                            <ul class="nav nav-third-level collapse">
+                                <li class="{{ isActiveRoute('manage-account.client.view') }}"><a href="{{ url('panel/manage-account/client') }}" ><i class="fa fa-eye"></i>Ver Clientes</a></li>
+                                <li class="{{ isActiveRoute('manage-account.client.create') }}"><a href="{{ url('panel/manage-account/client/create') }}"><i class="fa fa-plus"></i>Añadir Cliente</a></li>
+                            </ul>
                         </li>
-                        <li class="{{ isActiveRoute('manage-account.user-register') }}">
-                            <a href="{{ url('panel/manage-account/user-register') }}">
+                        <li class="{{ areActiveRoutes(['manage-account.user.view', 'manage-account.user.create']) }}">
+                            <a href="#">
                             <i class="fa fa-plus"></i>Gestionar Usuarios</a>
+                            <ul class="nav nav-third-level collapse">
+                                <li class="{{ isActiveRoute('manage-account.user.view') }}"><a href="{{ url('panel/manage-account/user') }}" ><i class="fa fa-eye"></i>Ver Usuario</a></li>
+                                <li class="{{ isActiveRoute('manage-account.user.create') }}"><a href="{{ url('panel/manage-account/user/create') }}"><i class="fa fa-plus"></i>Añadir Usuario</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
                 @endrole
          
             @role('admin|manager')
-            <li class="{{ areActiveRoutes(['project.view','project.create','project.activity','project.modify']) }}">
+            <li class="{{ areActiveRoutes(['project.view','project.create','project.modify']) }}">
                 <a href="#"><i class="fa fa-book"></i> <span class="nav-label">Proyectos</span> </a>
                 <ul class="nav nav-second-level collapse">
-                <li class="{{ areActiveRoutes(['project.view','project.activity']) }}"><a href="{{ url('panel/project/') }}" ><i class="fa fa-eye"></i>Gestionar Proyectos</a></li>
+                <li class="{{ isActiveRoute('project.view') }}"><a href="{{ url('panel/project/') }}" ><i class="fa fa-eye"></i>Gestionar Proyectos</a></li>
                 <li class="{{ isActiveRoute('project.create') }}"><a href="{{ url('panel/project/create') }}"><i class="fa fa-plus"></i>Crear Proyecto</a></li>
 
 
@@ -82,11 +91,11 @@
             </li>
             @endrole
             @role('admin|manager')
-            <li class="{{ areActiveRoutes(['report.team', 'report.project']) }}" >
+            <li class="{{ areActiveRoutes(['report.team', 'report.user']) }}" >
                 <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Reportes</span> </a>
                 <ul class="nav nav-second-level collapse">
                 <li class="{{ isActiveRoute('report.team') }}"><a href="{{ url('panel/report/team') }}" ><i class="fa fa-group"></i>Equipo</a></li>
-                <li class="{{ isActiveRoute('report.project') }}"><a href="{{ url('panel/report/project') }}" ><i class="fa fa-stack-overflow"></i>Proyecto</a></li>
+                <li class="{{ isActiveRoute('report.user') }}"><a href="{{ url('panel/report/user') }}" ><i class="fa fa-stack-overflow"></i>Proyecto</a></li>
                 </ul>
             </li>
             @endrole

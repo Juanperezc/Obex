@@ -14,6 +14,6 @@ class Work_Area extends Model
     protected $appends = ['section'];
     public function team()
     {
-        return $this->belongsTo('App\Team', 'work_area');
+        return $this->hasMany('App\Team');
     }
 }

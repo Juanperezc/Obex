@@ -24,6 +24,11 @@ public function index()
   return response(Team::with(['users','project', 'activities', 'work_area', 'leader'])->get()->jsonSerialize(), Response::HTTP_OK);
   
 }
+public function unselected()
+{
+  return response(Team::with(['users','project', 'activities', 'work_area', 'leader'])->whereNull('project_id')->get()->jsonSerialize(), Response::HTTP_OK);
+  
+}
 public function show($id){
 
   return response(Team::with(['users','project', 'activities', 'work_area', 'leader'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
@@ -61,8 +66,8 @@ public function update(Request $request)
     $t->name = $request->input("name");
     $t->description = $request->input("description");
     $t->users()->sync($users);
-    $t->work_area = intval($work_area);
-    $t->leader = intval($leader); // tambien se puede con relaciones
+    $t->work_area()->associate($work_area);
+    $t->leader()->associate($leader); // tambien se puede con relaciones
     $t->save();
     return $t;
   }else{

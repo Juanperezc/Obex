@@ -25,7 +25,7 @@ class User extends Authenticatable
     protected $dates = ['deleted_at'];
     protected $appends = ['test','can'];
     protected $fillable = [
-        'name', 'email', 'password',
+        'id', 'name', 'email', 'password',
     ];
 
     /**
@@ -49,9 +49,9 @@ class User extends Authenticatable
     {
         return "test";
     }
-    public function teamleader()
+    public function leader()
     {
-        return $this->hasOne('App\Team', 'leader');
+        return $this->hasMany('App\Team', 'leader_id');
     }
   
 }
