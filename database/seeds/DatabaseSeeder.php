@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call('ActivitiesTableSeeder');
         $this->call('TeamUserTableSeeder');
         $this->call('ProjectTeamTableSeeder');
-        $this->call('ActivityTeamTableSeeder');
+     //   $this->call('ActivityTeamTableSeeder');
 
     }
 }

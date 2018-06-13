@@ -32,7 +32,7 @@ class Team extends Model
     }
     public function activities()
     {
-        return $this->belongsToMany('App\Activity')->as('subscription');
+        return $this->hasMany('App\Activity');
     }
 
 

@@ -27,11 +27,11 @@
                                 <a href="project_detail.html">{{ p.name }}</a>
                                 <br>
                                 <small>Creado el
-                                                {{ p.start }}</small>
+                                                                {{ p.start }}</small>
                             </td>
                             <td class="project-completion">
                                 <small>Completación:
-                                                {{p.percent_complete}}%</small>
+                                                                {{p.percent_complete}}%</small>
                                 <div class="progress progress-mini">
                                     <div v-bind:style="{ width: p.percent_complete + '%' }" class="progress-bar"></div>
                                 </div>
@@ -45,12 +45,14 @@
                             </td>
                             <td class="project-actions">
                                 <action-table-component v-bind="p" :key="p.id" @delete="del" @edit="ed"></action-table-component>
+                            
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+        
     </div>
 </template>
 
@@ -60,8 +62,9 @@
         components: {
             'action-table-component': ActionTableComponent
         },
-        data() {
+        data: () => {
             return {
+    
                 projects: [],
                 search: '',
                 working: false

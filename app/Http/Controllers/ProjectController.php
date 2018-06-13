@@ -22,6 +22,11 @@ public function view($id = null)
   }
        
 }
+public function activity($id = null)
+{
+    return view('activities/index', compact('id'));
+       
+}
 public function view_create($id = -1)
 { 
     return view('projects/save', compact('id'));

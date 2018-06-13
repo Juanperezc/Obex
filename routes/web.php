@@ -42,6 +42,7 @@ Route::view('/manage-notification', 'other/building')->name("manage-notification
 Route::group(['prefix' => 'project', 'as'=>'project.', 'middleware' => ['role:admin|manager']], function () {
 Route::get('/', 'ProjectController@view')->name("view");
 Route::get('/view/{id}', 'ProjectController@view')->name("view");
+Route::get('/{id}/activity/', 'ProjectController@activity')->name("activity");
 Route::get('/create', 'ProjectController@view_create')->name("create");
 Route::get('/edit/{id}', 'ProjectController@view_edit')->name("edit");
 Route::view('/resources', 'projects/resources')->name("resources");

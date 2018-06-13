@@ -22,15 +22,18 @@ Vue.component('teams-table', require('./components/teams/TeamTableComponent.vue'
 Vue.component('teams-detail', require('./components/teams/TeamDetailComponent.vue'));
 //*area
 Vue.component('areas-table', require('./components/areas/AreasTableComponent.vue'));
+//*activity
+Vue.component('activity-table', require('./components/activities/ActivityTableComponent.vue'))
 //vue
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import swalPlugin from './plugins/VueSweetalert2';
 import locale from 'element-ui/lib/locale/lang/es'
-
+import vueKanban from 'vue-kanban'
+//*import 'vue-kanban/src/assets/kanban.scss';
 Vue.use(swalPlugin);
 Vue.use(ElementUI, { locale })
-
+Vue.use(vueKanban)
 
 const app = new Vue({
     el: '#app',

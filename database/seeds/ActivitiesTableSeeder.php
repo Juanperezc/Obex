@@ -15,19 +15,19 @@ class ActivitiesTableSeeder extends Seeder
         //
         $a1 = Activity::create(['name' => 'Test1', 'type' => 'development', 'description' => 'Lorem ipsu'
         , 'start' => Carbon::parse('2000-01-01'), 'finish' => Carbon::parse('2000-02-02')
-    ,'state' => 'culminated'
+    ,'state' => 'culminated', 'team_id' => 1
         ]);
         $a2 = Activity::create(['name' => 'Test2', 'type' => 'marketing', 'description' => 'Lorem ipsu'
         , 'start' => Carbon::parse('03/10/2017'), 'finish' => Carbon::parse('05/10/2018')
-    ,'state' => 'culminated'
+    ,'state' => 'culminated', 'team_id' => 1
         ]);
         $a3 = Activity::create(['name' => 'Test3', 'type' => 'marketing', 'description' => 'Lorem ipsu'
         , 'start' => Carbon::parse('03/10/2017'), 'finish' => Carbon::parse('05/10/2018')
-    ,'state' => 'in-progress'
+    ,'state' => 'in-progress', 'team_id' => 2
         ]);
         $a3 = Activity::create(['name' => 'Test4', 'type' => 'design', 'description' => 'Lorem ipsu'
         , 'start' => Carbon::parse('03/10/2017'), 'finish' => Carbon::parse('05/10/2018')
-    ,'state' => 'in-progress'
+    ,'state' => 'in-progress', 'team_id' => 2
         ]);
     }
 }
