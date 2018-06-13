@@ -61,8 +61,8 @@ public function update(Request $request)
     $t->name = $request->input("name");
     $t->description = $request->input("description");
     $t->users()->sync($users);
-    $t->work_area = $work_area;
-    $t->leader = $leader; // tambien se puede con relaciones
+    $t->work_area = intval($work_area);
+    $t->leader = intval($leader); // tambien se puede con relaciones
     $t->save();
     return $t;
   }else{

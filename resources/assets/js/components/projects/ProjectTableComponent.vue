@@ -44,7 +44,7 @@
     
                             </td>
                             <td class="project-actions">
-                                <action-table-component v-bind="p" :key="p.id" @delete="del" @edit="ed"></action-table-component>
+                                <action-table-component v-bind="p" :key="p.id" @delete="del" @edit="ed" edit="Gestionar Recursos"></action-table-component>
                             
                             </td>
                         </tr>
