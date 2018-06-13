@@ -87,12 +87,17 @@ public function update(Request $request)
   $p->finish = Carbon::parse($request->input("dates")[1]);
   $p->client_id = $client;
   //$p->save(); 
-  $tl =  Team::whereIn('id', $teams)->get();
-  //$p->teams()->delete();
-  $p->teams()->saveMany($tl);
+  if (count($teams) > 0){
+    $tl =  Team::whereIn('id', $teams)->get();
+    //$p->teams()->delete();
+    $p->teams()->saveMany($tl);
+  }else{
+    $p->teams()->delete();
+  }
+
   //$p->teams()->sync($teams);
   $p->save(); 
-  return $tl;
+  return $p;
 }
 
 
