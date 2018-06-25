@@ -17,13 +17,13 @@ class ProjectTableSeeder extends Seeder
         $project2t = Team::whereIn('id', [2, 3])->get();
 
         $project1 = Project::create(['name' => 'Test1', 'type' => 'web-design', 'description' => 'Lorem ipsu'
-        , 'start' => Carbon::parse('2000-01-01'), 'finish' => Carbon::parse('2000-02-02')
+        , 'start' => Carbon::parse('2018-02-01'), 'finish' => Carbon::parse('2019-01-05')
     ,'state' => 'in-progress', 'client_id' => 1
         ]);
          // activity 1 to team 
        // $project1->clients()->attach([1]);
         $project2 = Project::create(['name' => 'Test2', 'type' => 'web-design', 'description' => 'Lorem ipsu'
-        , 'start' => Carbon::parse('03/10/2017'), 'finish' => Carbon::parse('05/10/2018')
+        , 'start' => Carbon::parse('03/05/2018'), 'finish' => Carbon::parse('05/04/2019')
     ,'state' => 'in-progress', 'client_id' => 1
         ]);
         $project1->teams()->saveMany($project1t);

@@ -11,7 +11,7 @@ class ClientTableSeeder extends Seeder
      */
     public function run()
     {
-        $newClient = Client::create(['name' => 'Pedro Perez', 'phone' => '04245869872' , 'email' => 'test@gmail.com', 'direction' => 'Lorem ipsu', 'type' => 'natural'
+        $newClient = Client::create(['name' => 'Pedro Perez', 'phone' => '04245869872' , 'email' => 'pedro@gmail.com', 'direction' => 'Lorem ipsu', 'type' => 'natural'
         ]);
         //
     }

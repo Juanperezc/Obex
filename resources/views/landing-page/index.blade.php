@@ -54,8 +54,8 @@
         <div class="item">
             <div class="container">
                 <div class="carousel-caption blank">
-                    <h1>Donde quieras <br/> Cuando quieras</h1>
-                    <p>100% en todas las pataformas</p>
+                    <h1 style="color: white">Donde quieras <br/> Cuando quieras</h1>
+                    <p style="color: white">100% en todas las pataformas</p>
                     <p><a class="btn btn-lg btn-primary" href="#" role="button">Leer mas</a></p>
                 </div>
             </div>
@@ -74,7 +74,7 @@
 </div>
 
 
-<section id="features" class="container services">
+<section id="features" class="container services" style="color: white">
     <div class="row">
         <div class="col-sm-3">
             <h2>Completamente Adaptable</h2>
@@ -101,7 +101,7 @@
 
 
 <section id="team" class="gray-section team">
-    <div class="container">
+    <div class="container" style="color: black">
         <div class="row m-b-lg">
             <div class="col-lg-12 text-center">
                 <div class="navy-line"></div>
@@ -113,67 +113,40 @@
                 <div class="team-member">
                     <img src="images/avatar3.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Isacc</span> Perez</h4>
-                    <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus. </p>
-                    <ul class="list-inline social-icon">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
+                    <p>Gestor de Soporte y Representante de Usuarios</p>
+                    
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="team-member wow">
                     <img src="images/avatar1.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Juan</span> Perez</h4>
-                    <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
-                    <ul class="list-inline social-icon">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
+                    <p>Arquitecto de SW y Jefe Programador</p>
+                    <br>
+                    
                 </div>
             </div>
             <div class="col-sm-3 wow">
                 <div class="team-member">
                     <img src="images/avatar2.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Marco</span> Padua</h4>
-                    <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
-                    <ul class="list-inline social-icon">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
+                    <p>Lider del proyecto, Analista y Arquitecto de SW</p>
+                    
                 </div>
             </div>
             <div class="col-sm-3 wow fadeInRight">
                 <div class="team-member">
                     <img src="images/avatar2.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Marco</span> Saenz</h4>
-                    <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
-                    <ul class="list-inline social-icon">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
+                    <p>Analista, Arquitecto de SW y Experto en Pruebas</p>
+                    
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="timeline gray-section">
+<section class="timeline gray-section" style="color: black">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -238,7 +211,7 @@
 </section>
 
 
-<section id="contact" class="gray-section contact">
+<section id="contact" class="gray-section contact" style="color: black">
     <div class="container">
         <div class="row m-b-lg">
             <div class="col-lg-12 text-center">
@@ -259,17 +232,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <a href="mailto:test@email.com" class="btn btn-primary">Envianos un Mensaje</a>
-                <p class="m-t-sm">
-                   Siguenos en nuestras redes sociales
-                </p>
-                <ul class="list-inline social-icon">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                </ul>
+               
             </div>
         </div>
         <div class="row">

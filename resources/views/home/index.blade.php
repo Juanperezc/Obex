@@ -4,10 +4,10 @@
         <div class="col-md-6">
             <div class="widget navy-bg p-lg text-center">
                 <div class="m-b-md">
-                    <i class="fa fa-bell fa-4x"></i>
+                    <i class="fa fa-tasks fa-4x"></i>
                     <h1 class="m-xs">5</h1>
                     <h3 class="font-bold no-margins">
-                        Nuevas Notificaciones
+                        Total Actividades
                     </h3>
                 </div>
             </div>

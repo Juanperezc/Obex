@@ -30,8 +30,8 @@ class UsersTableSeeder extends Seeder
 
 	        $newUser = User::create([
 				'doc_id' => '25141826',
-				'name' => 'Admin',
-				'last_name' => 'Admin',
+				'name' => 'Juan',
+				'last_name' => 'Perez',
 	            'email' => 'admin@obex.com',
 				'password' => bcrypt('password'),
 				'profile_img' => 'a1.png',
@@ -49,8 +49,8 @@ class UsersTableSeeder extends Seeder
 
 	        $newUser = User::create([
 				'doc_id' => '25141827',
-				'name' => 'User',
-				'last_name' => 'User',
+				'name' => 'Marco',
+				'last_name' => 'Saenz',
 	            'email' => 'user@obex.com',
 				'password' => bcrypt('password'),
 				'profile_img' => 'a2.png',
@@ -67,8 +67,8 @@ class UsersTableSeeder extends Seeder
 
 	        $newUser = User::create([
 				'doc_id' => '25141828',
-				'name' => 'Project-Manager',
-				'last_name' => 'Project-Manager',
+				'name' => 'Marco',
+				'last_name' => 'Padua',
 	            'email' => 'projectmanager@obex.com',
 				'password' => bcrypt('password'),
 				'profile_img' => 'a3.png',

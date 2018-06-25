@@ -61,38 +61,10 @@
                         <h4>
                             <strong>$user->name</strong>
                         </h4>
-                        <p>
-                            <i class="fa fa-map-marker"></i>
-                            21
-                        </p>
+                        
 
-                        <div class="row m-t-lg">
-                            <div class="col-md-4">
-                                <span class="bar">5,3,9,6,5,9,7,3,5,2</span>
-                                <h5>
-                                    <strong>169</strong>
-                                    Quinielas
-                                </h5>
-                            </div>
-                            <div class="col-md-4"></div>
-                            <!-- -->
-                            <div class="col-md-4">
-                                <img alt="maricoelquelolea" class="rank-ico img-responsive" src="ico/chess.svg">
-
-                            </div>
-
-                        </div>
-                        <div class="user-button">
-                            <div class="row">
-                                <br>
-                                <div class="col-md-12">
-                                    <button type="button" class="btn btn-warning btn-sm btn-block">
-                                        <i class="fa fa-coffee"></i>
-                                        Quiero ser un adminsitrador de quinielas
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>

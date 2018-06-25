@@ -48,7 +48,7 @@
                     <ul class="nav nav-second-level collapse">
                         <li class="{{ areActiveRoutes(['manage-account.client.view', 'manage-account.client.create']) }}">
                             <a href="#">
-                                <i class="fa fa-plus"></i>
+                                <i class="fa fa-address-card-o"></i>
                                 Gestionar Clientes
                               
                             </a>
@@ -59,7 +59,7 @@
                         </li>
                         <li class="{{ areActiveRoutes(['manage-account.user.view', 'manage-account.user.create']) }}">
                             <a href="#">
-                            <i class="fa fa-plus"></i>Gestionar Usuarios</a>
+                            <i class="fa fa-user-o"></i>Gestionar Usuarios</a>
                             <ul class="nav nav-third-level collapse">
                                 <li class="{{ isActiveRoute('manage-account.user.view') }}"><a href="{{ url('panel/manage-account/user') }}" ><i class="fa fa-eye"></i>Ver Usuario</a></li>
                                 <li class="{{ isActiveRoute('manage-account.user.create') }}"><a href="{{ url('panel/manage-account/user/create') }}"><i class="fa fa-plus"></i>Añadir Usuario</a></li>
@@ -99,11 +99,6 @@
                 </ul>
             </li>
             @endrole
-         
-          
-            <li class="{{ isActiveRoute('manage-notification') }}">
-                <a href="{{ url('panel/manage-notification') }}"><i class="fa fa-bullhorn"></i> <span class="nav-label">Notificaciones al cliente(?)</span> </a>
-            </li>
         </ul>
 
         </div>

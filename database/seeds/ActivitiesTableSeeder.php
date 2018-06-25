@@ -13,20 +13,20 @@ class ActivitiesTableSeeder extends Seeder
     public function run()
     {
         //
-        $a1 = Activity::create(['name' => 'Test1', 'type' => 'development', 'description' => 'Lorem ipsu'
-        , 'start' => Carbon::parse('2000-01-01'), 'finish' => Carbon::parse('2000-02-02')
+        $a1 = Activity::create(['name' => 'Posicionamiento', 'type' => 'development', 'description' => 'Planificcion y posicionamiento del producto'
+        , 'start' => Carbon::parse('2018-02-01'), 'finish' => Carbon::parse('2018-03-03')
     ,'state' => 'culminated', 'team_id' => 1
         ]);
-        $a2 = Activity::create(['name' => 'Test2', 'type' => 'marketing', 'description' => 'Lorem ipsu'
-        , 'start' => Carbon::parse('03/10/2017'), 'finish' => Carbon::parse('05/10/2018')
+        $a2 = Activity::create(['name' => 'Plan de ventas', 'type' => 'marketing', 'description' => 'Diseño de plan de ventas del producto'
+        , 'start' => Carbon::parse('04-03-2018'), 'finish' => Carbon::parse('05-04-2018')
     ,'state' => 'culminated', 'team_id' => 1
         ]);
-        $a3 = Activity::create(['name' => 'Test3', 'type' => 'marketing', 'description' => 'Lorem ipsu'
-        , 'start' => Carbon::parse('03/10/2017'), 'finish' => Carbon::parse('05/10/2018')
+        $a3 = Activity::create(['name' => 'Pronosticos', 'type' => 'marketing', 'description' => 'Pronosticos y proyecciones de ventas'
+        , 'start' => Carbon::parse('02-01-2018'), 'finish' => Carbon::parse('28-01-2018')
     ,'state' => 'in-progress', 'team_id' => 2
         ]);
-        $a3 = Activity::create(['name' => 'Test4', 'type' => 'design', 'description' => 'Lorem ipsu'
-        , 'start' => Carbon::parse('03/10/2017'), 'finish' => Carbon::parse('05/10/2018')
+        $a3 = Activity::create(['name' => 'Dieño DB', 'type' => 'design', 'description' => 'Diseño de base de datos del sistema'
+        , 'start' => Carbon::parse('29-01-2018'), 'finish' => Carbon::parse('15-02-2018')
     ,'state' => 'in-progress', 'team_id' => 2
         ]);
     }

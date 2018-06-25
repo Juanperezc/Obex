@@ -11,9 +11,9 @@ class WorkAreasTableSeeder extends Seeder
      */
     public function run()
     {
-        $newW1 = WA::create(['name' => 'First', 'description' => 'First'
+        $newW1 = WA::create(['name' => 'Departamento de Mercadeo', 'description' => 'Se encarga del posicionamiento de los productos en los consumidores y de contacto con el cliente en primera instancia'
         ]);
-        $newW2 = WA::create(['name' => 'Second', 'description' => 'Second']);
+        $newW2 = WA::create(['name' => 'Departamento de Desarrollo', 'description' => 'Se encarga del desarro del los productos producidos por Obex']);
         //
     }
 }

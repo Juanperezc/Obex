@@ -32,8 +32,8 @@ Route::get('/post', function () {
     return 'Hello World';
 });
 Route::group(['prefix' => 'manage-account', 'as'=>'manage-account.', 'middleware' => ['role:admin']], function () {  //middleware(['first', 'second'])->
-    Route::group(['prefix' => 'user', 'as'=>'user.', 'middleware' => ['role:admin']], function () {
-        Route::get('/', 'UserController@view')->name("view");
+Route::group(['prefix' => 'user', 'as'=>'user.', 'middleware' => ['role:admin']], function () {
+Route::get('/', 'UserController@view')->name("view");
 Route::get('/view/{id}', 'UserController@view')->name("view");
 Route::get('/create', 'UserController@view_create')->name("create");
 Route::get('/edit/{id}', 'UserController@view_edit')->name("edit");

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <area-save v-bind:dialogv="dialogFormVisible" v-bind:areaedit="aedit" @close="close_d"></area-save>
+        <users-save v-bind:dialogv="dialogFormVisible" v-bind:areuedit="uedit" @close="close_d"></users-save>
         <div class="wrapper wrapper-content animated fadeInRight">
     
             <div class="row">
@@ -10,9 +10,9 @@
                     <div class="col-lg-12">
                         <div class="ibox">
                             <div class="ibox-title">
-                                <h5>Todos las Areas</h5>
+                                <h5>Todos los clientes</h5>
                                 <div class="ibox-tools">
-                                    <a href="#" @click="create" class="btn btn-primary btn-xs">Crear nueva Area</a>
+                                    <a href="#" @click="create" class="btn btn-primary btn-xs">Crear nuevo cliente</a>
                                 </div>
                             </div>
                             <div class="ibox-content">
@@ -29,15 +29,15 @@
                                 <div class="project-list">
                                     <table class="table table-hover">
                                         <tbody>
-                                            <tr v-bind:key="a.id" v-for="a in areas">
+                                            <tr v-bind:key="u.id" v-for="u in users">
                                                 <td>
-                                                    A-{{a.id}}
+                                                    U-{{u.id}}
                                                 </td>
                                                 <td>
-                                                    {{a.name}}
+                                                    {{u.name}}
                                                 </td>
                                                 <td>
-                                                    {{a.description}}
+                                                  <img alt="image" class="img-circle" v-bind:src="'/storage/avatars/' + u.profile_img"></a>
                                                 </td>
                                                 <td>
                                                     <action-table-component v-bind="a" :key="a.id" @delete="del" @edit="ed"></action-table-component>
@@ -59,18 +59,18 @@
 
 <script>
     import ActionTableComponent from '../globals/ActionTableComponent.vue';
-    import AreasSaveComponent from './AreasSaveComponent.vue';
+    import UserSaveComponent from './UserSaveComponent.vue';
     export default {
         components: {
             'action-table-component': ActionTableComponent,
-            'area-save': AreasSaveComponent
+            'users-save': UserSaveComponent
         },
         data() {
             return {
-                areas: [],
+                users: [],
                 working: false,
                 dialogFormVisible: false,
-                aedit: {
+                uedit: {
                     id: 0,
                     title: ''
                 }
@@ -78,16 +78,16 @@
         },
         methods: {
             read() {
-                this.areas = [];
+                this.users = [];
                 window
                     .axios
-                    .get('/api/wareas')
+                    .get('/api/wusers')
                     .then(({
                         data
                     }) => {
                         data.forEach(area => {
                             this
-                                .areas
+                                .users
                                 .push(area);
                         });
                     });
@@ -99,25 +99,25 @@
             create() {
                 console.log("create");
                 this.dialogFormVisible = true;
-                var ad = {
+                var ud = {
                     'id': '',
                     'title': ''
                 }
-                ad.id = 0;
-                ad.title = "Crear Equipo"
-                this.aedit = ad;
+                ud.id = 0;
+                ud.title = "Crear Usuario"
+                this.uedit = ud;
     
             },
-            ed(a) {
+            ed(u) {
                 //    console.log("esta es la t", t.id);
                 this.dialogFormVisible = true;
-                var ad = {
+                var ud = {
                     'id': '',
                     'title': ''
                 }
-                ad.id = a.id;
-                ad.title = "Editar Equipo"
-                this.aedit = ad;
+                ud.id = u.id;
+                ud.title = "Editar Usuario"
+                this.uedit = ud;
     
             },
             del(id) {
@@ -136,13 +136,13 @@
                         if (result.value) {
                             window
                                 .axios
-                                .delete(`/api/wareas/${id}`)
+                                .delete(`/api/wusers/${id}`)
                                 .then(() => {
                                     let index = this
-                                        .areas
+                                        .users
                                         .findIndex(crud => crud.id === id);
                                     this
-                                        .areas
+                                        .users
                                         .splice(index, 1);
                                     //this.mute = false;
                                 });
