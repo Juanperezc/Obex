@@ -53,33 +53,38 @@ public function view_create($id = -1)
  
     }
 
-    public function show($id){
-
-        return response(User::findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
+      public function show($id){
+        return response(User::with(['teams'])->findOrFail($id)->jsonSerialize(), Response::HTTP_OK);
       }
       public function destroy($id)
       {
-        $team = User::destroy($id);
+        $user = User::destroy($id);
         return response(null, Response::HTTP_OK);
       }
       public function store(Request $request)
       {
-        $a = new User;
-        $a->name = $request->input("name");
-        $a->description = $request->input("description");
-        $a->save();
-        return $a;
+        $u = new User;
+        $u->name = $request->input("name");
+        $u->last_name = $request->input("last_name");
+        //$u->salary = $request->input("salary");
+        $u->email = $request->input("email");
+        $u->password = bcrypt($request->input("password"));
+        $u->save();
+        return $u;
       }
       public function update(Request $request)
       {
         $idedit = $request->input('edit');
         if ($idedit != 0){
-          $a = User::findOrFail($idedit);
+          $u = User::findOrFail($idedit);
        
-          $a->name = $request->input("name");
-          $a->description = $request->input("description");
-          $a->save();
-          return $a;
+          $u->name = $request->input("name");
+          $u->last_name = $request->input("last_name");
+         // $u->salary = $request->input("salary");
+          $u->email = $request->input("email");
+        //  $u->password = bcrypt($request->input("password"));
+          $u->save();
+          return $u;
         }else{
           return response(null, Response::HTTP_ERROR);
         }

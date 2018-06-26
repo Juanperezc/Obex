@@ -15,14 +15,14 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('doc_id')->unique();// cedula
+            $table->string('doc_id')->unique()->nullable();// cedula
             $table->string('name');
             $table->string('last_name');
-            $table->string('profile_img')->nullable()->default('a5.png');
-            $table->decimal('salary', 8, 2)->default(0);
+            $table->string('profile_img')->nullable()->default('a1.png');
+            $table->decimal('salary', 8, 2)->default(0)->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('charge')->unsigned();
+            $table->integer('charge')->unsigned()->nullable();
             
             $table->rememberToken();
              $table->timestamps();$table->softDeletes();

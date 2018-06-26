@@ -20,5 +20,10 @@ return [
     'Project' => 'Proyecto',
     'Team' => 'Equipo',
     'Activity' => 'Actividad',
-    'Areas' => 'Areas de Trabajo',
+    'Areas' => 'Areas de trabajo',
+    'Client.view' => 'Ver clientes',
+    'Client.create' => 'Crear clientes',
+    'User.view' => 'Ver usuarios',
+    'User.create' => 'Crear usuarios',
+    'Manage-account' => 'Administrar cuentas',
 ];

@@ -21,5 +21,10 @@ return [
     'Team' => 'Team',
     'Activity' => 'Activity',
     'Areas' => 'Work Area',
+    'Client.view' => 'View Client ',
+    'Client.create' => 'Create Client',
+    'User.view' => 'View User',
+    'User.create' => 'Create User',
+    'Manage-account' => 'Account Managament',
 
 ];

@@ -20,14 +20,14 @@ class PermissionsTableSeeder extends Seeder
 	     * Add Permissions
 	     *
 	     */
-        if (Permission::where('name', '=', 'Can View Users')->first() === null) {
+        /*if (Permission::where('name', '=', 'Can View Users')->first() === null) {
 			Permission::create([
 			    'name' => 'Can View Users',
 			    'slug' => 'view.user',
 			    'description' => 'Can view users',
 			    'model' => 'Permission',
 			]);
-        }
+        }*/
 
         if (Permission::where('name', '=', 'Can Create Users')->first() === null) {
 			Permission::create([
