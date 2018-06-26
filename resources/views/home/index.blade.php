@@ -18,7 +18,7 @@
                     <i class="fa fa-calendar fa-4x"></i>
                     <h1 class="m-xs">Hoy es:</h1>
                    <h3 class="font-bold no-margins">
-                        23 de mayo del 2018
+                        26 de junio del 2018
                     </h3>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                             <span class="vertical-date">
                                 Hoy
                                 <br/>
-                                <small>Fecha: May 23</small>
+                                <small>Fecha: Junio 26</small>
                             </span>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                             <span class="vertical-date">
                                 Hoy
                                 <br/>
-                                <small>Fecha: May 23</small>
+                                <small>Fecha: Junio 26</small>
                             </span>
                         </div>
 
@@ -93,7 +93,7 @@
                             <span class="vertical-date">
                                 Mañana
                                 <br/>
-                                <small>Fecha: May 24</small>
+                                <small>Fecha: Junio 27</small>
                             </span>
                         </div>
 
