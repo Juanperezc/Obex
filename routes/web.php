@@ -71,7 +71,8 @@ Route::group(['prefix' => 'api', 'as'=>'api.'], function () {
 
     Route::apiResources(['projects' => 'ProjectController', 
     'teams' => 'TeamController', 'clients' => 'ClientController',
-    'users' => 'UserController', 'wareas' => 'WorkAreaController']);
+    'users' => 'UserController', 'wareas' => 'WorkAreaController',
+    'activity' => 'ActivityController']);
     });
 /*// routes/web.php
 

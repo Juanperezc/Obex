@@ -23,7 +23,7 @@
                                         <input
                                             type="text"
                                             v-model="search"
-                                            placeholder="Busca Un Proyecto"
+                                            placeholder="Busca un usuario"
                                             class="input-sm form-control"></div>
                                     </div>
 

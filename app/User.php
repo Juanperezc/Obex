@@ -26,6 +26,10 @@ class User extends Authenticatable
      */
     //* esto!!
   //  protected $dateFormat = 'U';
+  protected $casts = [
+    'created_at' => 'datetime:d-m-Y',
+    'updated_at' => 'datetime:d-m-Y'
+];
     protected $dates = ['deleted_at'];
     protected $appends = ['test','can','section'];
     protected $fillable = [

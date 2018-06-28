@@ -22,7 +22,7 @@
                             @endif @if (count($errors) > 0)
                             <div class="alert alert-danger">
                                 <strong>Whoops!</strong>
-                                There were some problems with your input.<br><br>
+                                Hubo un problema.<br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -42,7 +42,7 @@
 
                         </div>
                         <div >
-                            <form action="/profile" method="post" enctype="multipart/form-data">
+                            <form action="/panel/profile" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                   <center><input
@@ -59,7 +59,7 @@
                     </div>
                     <div class="ibox-content profile-content">
                         <h4>
-                            <strong>$user->name</strong>
+                            <strong>{{$user->name}}</strong>
                         </h4>
                         
 

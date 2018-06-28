@@ -9,6 +9,10 @@ class Work_Area extends Model
 {
     use SoftDeletes;
     use WorkAreaTrait;
+    protected $casts = [
+        'created_at' => 'datetime:d-m-Y',
+        'updated_at' => 'datetime:d-m-Y'
+    ];
     protected $dates = ['deleted_at'];
     protected $table = 'work_areas';
     protected $appends = ['section'];

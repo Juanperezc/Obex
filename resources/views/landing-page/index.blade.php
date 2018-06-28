@@ -111,7 +111,7 @@
         <div class="row">
             <div class="col-sm-3 wow fadeInLeft">
                 <div class="team-member">
-                    <img src="images/avatar3.jpg" class="img-responsive img-circle img-small" alt="">
+                    <img src="images/Isaac.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Isacc</span> Perez</h4>
                     <p>Gestor de Soporte y Representante de Usuarios</p>
                     
@@ -119,7 +119,7 @@
             </div>
             <div class="col-sm-3">
                 <div class="team-member wow">
-                    <img src="images/avatar1.jpg" class="img-responsive img-circle img-small" alt="">
+                    <img src="images/Juan.jpeg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Juan</span> Perez</h4>
                     <p>Arquitecto de SW y Jefe Programador</p>
                     <br>
@@ -128,7 +128,7 @@
             </div>
             <div class="col-sm-3 wow">
                 <div class="team-member">
-                    <img src="images/avatar2.jpg" class="img-responsive img-circle img-small" alt="">
+                    <img src="images/marco_padua.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Marco</span> Padua</h4>
                     <p>Lider del proyecto, Analista y Arquitecto de SW</p>
                     
@@ -136,7 +136,7 @@
             </div>
             <div class="col-sm-3 wow fadeInRight">
                 <div class="team-member">
-                    <img src="images/avatar2.jpg" class="img-responsive img-circle img-small" alt="">
+                    <img src="images/marco.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Marco</span> Saenz</h4>
                     <p>Analista, Arquitecto de SW y Experto en Pruebas</p>
                     

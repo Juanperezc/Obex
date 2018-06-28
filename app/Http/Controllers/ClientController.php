@@ -11,7 +11,6 @@ class ClientController extends Controller
     public function index()
     {
         return response(Client::all()->jsonSerialize(), Response::HTTP_OK);
-   //   return response(Team::with(['users', 'activities'])->get()->jsonSerialize(), Response::HTTP_OK);
     }
     public function view($id = null)
     {
@@ -37,23 +36,29 @@ class ClientController extends Controller
       }
       public function store(Request $request)
       {
-        $a = new Client;
-        $a->name = $request->input("name");
-        $a->description = $request->input("description");
-        $a->save();
-        return $a;
+        $c = new Client;
+        $c->name = $request->input("name");
+        $c->phone = $request->input("phone");
+        $c->email = $request->input("email");
+        $c->direction = $request->input("direction");
+        $c->type = $request->input("type");
+        $c->save();
+        return $c;
       }
       public function update(Request $request)
       {
 
         $idedit = $request->input('edit');
         if ($idedit != 0){
-          $a = Client::findOrFail($idedit);
+          $c = Client::findOrFail($idedit);
        
-          $a->name = $request->input("name");
-          $a->description = $request->input("description");
-          $a->save();
-          return $a;
+          $c->name = $request->input("name");
+          $c->phone = $request->input("phone");
+          $c->email = $request->input("email");
+          $c->direction = $request->input("direction");
+          $c->type = $request->input("type");
+          $c->save();
+          return $c;
         }else{
           return response(null, Response::HTTP_ERROR);
         }

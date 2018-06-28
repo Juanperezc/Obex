@@ -10,6 +10,10 @@ class Team extends Model
     //
     use SoftDeletes;
     use TeamTrait;
+    protected $casts = [
+        'created_at' => 'datetime:d-m-Y',
+        'updated_at' => 'datetime:d-m-Y'
+    ];
     protected $dates = ['deleted_at'];
     protected $appends = ['section'];
     protected $fillable = [

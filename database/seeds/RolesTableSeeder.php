@@ -19,7 +19,14 @@ class RolesTableSeeder extends Seeder
 		//* Permisos */
 
 
-
+		$editClientPermission = Permission::create([
+			'name' => 'Edit Clients',
+			'slug' => 'edit.client',
+		]);
+		$deleteClientPermission = Permission::create([
+			'name' => 'Delete Clients',
+			'slug' => 'delete.client',
+		]);
 		$viewProjectPermission = Permission::create([
 			'name' => 'View Projects',
 			'slug' => 'view.project',
@@ -62,7 +69,8 @@ class RolesTableSeeder extends Seeder
 			'slug' => 'delete.area',
 		]);
 		
-
+	
+		
 
 
 	    /**
@@ -85,6 +93,8 @@ class RolesTableSeeder extends Seeder
 			//$adminRole->attachPermission($viewWAreaPermission); // permission attached to a role
 			$adminRole->attachPermission($editWAreaPermission); // permission attached to a role
 			$adminRole->attachPermission($deleteWAreaPermission); // permission attached to a role
+			$adminRole->attachPermission($editClientPermission); // permission attached to a role
+			$adminRole->attachPermission($deleteClientPermission); // permission attached to a role
 
 
 	    }

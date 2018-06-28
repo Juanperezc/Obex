@@ -23,6 +23,10 @@ function strafter($string, $substring) {
             return $output;
         }
     }
+    function getActualdate(){
+        $mytime = Carbon\Carbon::now()->format('d-m-Y h:m');
+        return $mytime;
+    }
     function areActiveRoutes(Array $routes, $output = "active")
     {
     foreach ($routes as $route)

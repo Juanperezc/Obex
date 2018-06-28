@@ -1,8 +1,8 @@
 <div class="footer">
     <div class="pull-right">
-        Example text
+        {{ getActualdate() }}
     </div>
     <div>
-        <strong>Copyright</strong> Juan,Marco y Marco &copy; 2018
+        <strong>Copyright</strong> Obex &copy; 2018
     </div>
 </div>

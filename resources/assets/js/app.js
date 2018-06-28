@@ -9,7 +9,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-
+Vue.component('home-component', require('./components/home/HomeComponent.vue'));
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('button-password', require('./components/globals/ButtonPasswordComponent.vue'));
 //* project
@@ -22,10 +22,11 @@ Vue.component('teams-detail', require('./components/teams/TeamDetailComponent.vu
 //*area
 Vue.component('areas-table', require('./components/areas/AreasTableComponent.vue'));
 //*activity
-Vue.component('activity-table', require('./components/activities/ActivityTableComponent.vue'))
+Vue.component('activity-table', require('./components/activities/ActivityTableComponent.vue'));
 
 //*accounts
-Vue.component('users-table', require('./components/users/UserTableComponent.vue'))
+Vue.component('users-table', require('./components/users/UserTableComponent.vue'));
+Vue.component('clients-table', require('./components/clients/ClientTableComponent.vue'));
 //vue
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
